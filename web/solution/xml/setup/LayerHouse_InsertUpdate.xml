@@ -1,0 +1,22 @@
+<CargasConnect>
+  <LayerHouse_InsertUpdate>
+    <LayerHouseID/>
+    <LocationID/>
+    <LayerHouseName/>
+    <YearBuilt/>
+    <HouseStyle/>
+    <CageHeight/>
+    <CageWidth/>
+    <CageDepth/>
+    <CageSizeNotes/>
+    <CubicInchesInCage/>
+    <SquareInchesInCage/>
+    <NumberCages/>
+    <DrinkersPerCage/>
+    <BirdCapacity/>
+    <BirdCapacityBrown/>
+    <PEQAPNumber/>
+    <BirdsPerHouse/>
+    <SortOrder/>
+  </LayerHouse_InsertUpdate>
+</CargasConnect>

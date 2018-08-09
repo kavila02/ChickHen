@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3" PrintWidth="9360" DocumentName="ActiveReports Document" ScriptLang="C#">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; font-variant: inherit; font-weight: normal; font-size: 10pt; font-size-adjust: inherit; font-stretch: inherit; color: rgb(0,0,0); background-repeat: inherit; background-attachment: inherit; opacity: inherit; word-spacing: inherit; letter-spacing: inherit; text-decoration: none; vertical-align: inherit; text-transform: inherit; text-align: inherit; text-indent: inherit; unicode-bidi: inherit; line-height: inherit; white-space: inherit; ddo-char-set: 0; " />
+    <Style Name="Heading1" Value="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 16pt; font-size-adjust: inherit; font-stretch: inherit; " />
+    <Style Name="Heading2" Value="font-family: Times New Roman; font-style: italic; font-variant: inherit; font-weight: bold; font-size: 14pt; font-size-adjust: inherit; font-stretch: inherit; " />
+    <Style Name="Heading3" Value="font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: bold; font-size: 13pt; font-size-adjust: inherit; font-stretch: inherit; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="PageHeader" Name="PageHeader" Height="435" BackColor="16777215" CanShrink="0">
+      <Control Type="AR.Label" Name="Label1" MOD="4" Left="90" Top="0" Width="4500" Height="450" Caption="Error Report" ClassName="Heading1" Style="font-weight: normal; font-size: 16pt; " />
+    </Section>
+    <Section Type="Detail" Name="Detail" Height="3600" BackStyle="1" BackColor="16119285" CanShrink="0">
+      <Control Type="AR.Label" Name="Label6" MOD="4" Left="0" Top="0" Width="9360" Height="1620" Caption="" Style="background-color: White; font-size: 10pt; " />
+      <Control Type="AR.Label" Name="Label2" MOD="4" Left="180" Top="180" Width="9090" Height="810" Caption="An unexpected error occurred during the processing of the report." ClassName="Heading1" Style="font-weight: normal; font-style: italic; font-size: 14pt; " />
+      <Control Type="AR.Label" Name="Label3" MOD="4" Left="180" Top="1170" Width="5760" Height="360" Caption="See below for details to report to the system administrator." />
+      <Control Type="AR.Label" Name="Label4" MOD="4" Left="180" Top="1620" Width="1710" Height="270" Caption="Error Message" Style="text-decoration: underline; font-weight: bold; " />
+      <Control Type="AR.Field" Name="txtErrorMessage" MOD="4" Left="180" Top="1980" Width="9090" Height="450" Text="Error Message Here." />
+      <Control Type="AR.Label" Name="Label5" MOD="4" Left="180" Top="2520" Width="1710" Height="270" Caption="Stack Trace" Style="text-decoration: underline; font-weight: bold; " />
+      <Control Type="AR.Field" Name="txtStackTrace" MOD="4" Left="180" Top="2880" Width="9090" Height="450" Text="Stack Trace Here." />
+    </Section>
+    <Section Type="PageFooter" Name="PageFooter" Height="360" BackColor="16777215" CanShrink="0" />
+  </Sections>
+  <PageSettings />
+</ActiveReportsLayout>

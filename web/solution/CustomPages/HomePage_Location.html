@@ -1,0 +1,27 @@
+﻿
+<div id="locationPage">
+    <table>
+        <tr>
+            <td style="text-align:center;" ng-repeat="locationRecord in parentData.detailRecords[0].HomePage_LocationList">
+                <md-content class="md-padding">
+                    <a class="md-disabled md-raised md-primary md-hue-1 csb-button md-button md-default-theme" style="text-transform:none; width:175px;"
+                       id="saveButton" href="Form.html?screenID=HomePage_LocationCard_Current&p={{locationRecord.LocationID}}&p=">
+                        {{locationRecord.Location}}
+                        <div class="md-ripple-container"></div>
+                    </a>
+                </md-content>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center;" ng-repeat="locationRecord in parentData.detailRecords[0].HomePage_LocationList">
+                <md-content class="md-padding">
+                    <a class="md-disabled md-raised md-primary md-hue-1 csb-button md-button md-default-theme" style="text-transform:none; width:175px;"
+                       id="saveButton" href="Form.html?screenID=HomePage_LocationCard_Future&p={{locationRecord.LocationID}}&p=">
+                        Future {{locationRecord.Location}}
+                        <div class="md-ripple-container"></div>
+                    </a>
+                </md-content>
+            </td>
+        </tr>
+    </table>
+</div>

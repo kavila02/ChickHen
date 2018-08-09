@@ -1,0 +1,8 @@
+<CargasConnect>
+  <Detail_Status_InsertUpdate>
+    <Detail_StatusID/>
+    <Detail_Status/>
+    <SortOrder/>
+    <IsActive/>
+  </Detail_Status_InsertUpdate>
+</CargasConnect>

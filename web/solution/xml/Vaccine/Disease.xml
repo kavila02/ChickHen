@@ -1,0 +1,8 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Disease">
+
+    <field fieldName="DiseaseName" multilineEdit="true" displayName="Disease Name"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Active"/>
+  </section>
+</fieldList>

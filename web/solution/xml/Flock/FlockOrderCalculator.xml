@@ -1,0 +1,21 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Order Calculator ({{thisRecord.FlockName}})" columnSpan="3" mobileLayoutSize="none">
+    <field fieldName="ProductBreedID" displayName="Product/Breed" customValidateFunction="Calculator_ProductBreed({thisRecord},{listItem})">
+      <lookupList>
+        <source sql="exec ProductBreed_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="NumberOfWeeks" displayName="# Weeks Current Hatch to Next House" customValidateFunction="Calculator_Recalculate({thisRecord})"/>
+    <field fieldName="WeeksHatchToHouse" displayName="# Weeks Current Hatch to Current House" customValidateFunction="Calculator_Recalculate({thisRecord})"/>
+    
+    <field fieldName="HatchDate_First" displayName="Current Hatch Date" customValidateFunction="Calculator_Recalculate({thisRecord})"/>
+    <field fieldName="HousingDate_Average" displayName="Current Housing Date" customValidateFunction="Calculator_Recalculate({thisRecord})"/>
+    <field fieldName="HousingOutDate" displayName="Current Out Date" customValidateFunction="Calculator_Recalculate({thisRecord})"/>
+    
+    <field fieldName="CalculatedHatchDate" displayName="Calculated Hatch Date" readOnly="true" className="bold" readOnlyOneWayBinding="false"/>
+    <field fieldName="CalculatedHouseDate" displayName="Calculated Housing Date" readOnly="true" className="bold" readOnlyOneWayBinding="false"/>
+    <field fieldName="CalculatedOutDate" displayName="Calculated Out Date" readOnly="true" className="bold" readOnlyOneWayBinding="false"/>
+
+    <field fieldName="Footer" displayName="" type="html" readOnly="true" columnSpan="3"/>
+  </section>
+</fieldList>

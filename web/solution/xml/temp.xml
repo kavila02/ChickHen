@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<fieldList>
+  <section>
+    <field fieldName="BatchID" displayName="{{parentData.screenPropertySet.reportUrl}}" customValidateFunction="testExport({screenPropertySet})">
+      <lookupList>
+        <element text="" value=""/>
+        <element text="Test" value="1"/>
+        <element text="Test2" value="2"/>
+      </lookupList>
+    </field>
+    <!--<field fieldName="reportFormat" displayName="reportFormat" customValidateFunction="updateReportType({screenPropertySet},{listItem})">
+      <lookupList>
+        <element text="PDF" value="PDF"/>
+        <element text="Excel" value="Excel"/>
+      </lookupList>
+    </field>
+    <field fieldName="reportformatdisplay" displayName="{{parentData.screenPropertySet.reportFormat}}" type="html"/>-->
+  </section>
+</fieldList>

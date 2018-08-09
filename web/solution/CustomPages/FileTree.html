@@ -1,0 +1,13 @@
+﻿<label for="fileTree" class="md-no-float csb-md-simulate-has-value">{{thisRecord.TreeLabel}}</label>
+<div name="fileTree"
+     data-angular-treeview="true"
+     data-tree-id="abc"
+     data-tree-model-nonrecursive="parentData.detailRecords[0].FileTree | filter:{parentID:''}:true"
+     data-child-model="parentData.detailRecords[0].FileTree | filter:{parentID:node.rowID}:true"
+     data-node-id="rowID"
+     data-node-label="displayValue"
+     data-node-select-function="selectFile"
+     data-node-children="children"
+     data-folders-only="parentData.record.foldersOnly"
+     data-class-field="className">
+</div>

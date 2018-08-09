@@ -1,0 +1,11 @@
+<CargasConnect>
+  <FlockPulletGrower_InsertUpdate>
+    <FlockPulletGrowerID/>
+    <FlockID/>
+    <PulletGrowerID/>
+    <ExpectedNumberToHouse/>
+	  <TotalHoused/>
+	  <AgeAtHousing/>
+    <NPIP/>
+  </FlockPulletGrower_InsertUpdate>
+</CargasConnect>

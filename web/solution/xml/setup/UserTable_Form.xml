@@ -1,0 +1,24 @@
+﻿<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Setup - Users" displayStyle="paging=500">
+    <field fieldName="UserName" displayName="Email/UserName" textColumns="50" required="true" />
+    <!--<field fieldName="Email" displayName="Email Address" textColumns="50" required="true" />-->
+    <field fieldName="UserGroupID" displayName="User Group" hideWhenNull="true">
+      <lookupList>
+        <source sql="EXEC csb.UserGroup_GetSelectList" />
+      </lookupList>
+    </field>
+    <field fieldName="FirstName" displayName="First Name" textColumns="50" required="true" />
+	<field fieldName="LastName" displayName="Last Name" textColumns="50" required="true" />
+    <!--<field fieldName="CustomerServiceRepID_Override" />
+	<field fieldName="SalesRepID_Override" />-->
+    <field fieldName="HidePricing" displayName="Hide Pricing?"/>
+  </section>
+  <section displayName="Change Password" displayStyle="paging=500">
+	<field fieldName="Password" displayName="Password" textColumns="50" />
+	<field fieldName="PasswordVerify" displayName="Verify Password" textColumns="50" />
+	<field fieldName="UserPassword" className="hidden" />
+	<field fieldName="UserPasswordSalt" className="hidden" />
+
+  </section>
+</fieldList>
+

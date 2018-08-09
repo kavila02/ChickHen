@@ -1,0 +1,31 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="&lt;a href=&quot;Form.html?screenID=Flock&amp;p={{thisRecord.FlockID}}&quot; class=&quot;black underline&quot; &gt;{{thisRecord.FlockName}}&lt;/a&gt; - {{thisRecord.StepName}}" columnSpan="3">
+    <field fieldName="AttachmentsHtml" type="html" displayName="Attachments" columnSpan="3"/>
+    <field fieldName="StepName" readOnly="true" displayName="Step Name" className="black" columnSpan="2" padding="1"/>
+    <field fieldName="ActionDescription" readonly="true" displayName="Description" className="black" columnSpan="3" />
+
+    <field fieldName="DateOfAction" displayName="Date" readOnly="true" className="bold" padding="2"/>
+
+
+    <field fieldName="OriginatorID" multilineEdit="true" displayName="Originator" padding="2">
+      <lookupList>
+        <source sql="exec ContactRole_Lookup"/>
+      </lookupList>
+    </field>
+
+    <field fieldName="Detail_StatusID" multilineEdit="true" displayName="Status">
+      <lookupList>
+        <source sql="exec Detail_Status_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="CompletedByID" multilineEdit="true" displayName="Completed By" visibleFieldName="Detail_StatusID" visibleFieldValue="3">
+      <lookupList>
+        <source sql="exec Contact_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="CompletedDate" multilineEdit="true" displayName="Completed Date" visibleFieldName="Detail_StatusID" visibleFieldValue="3"/>
+    <field fieldName="DetailedNotes" multilineEdit="true" displayName="Details" textRows="8" columnSpan="3"/>
+
+    
+  </section>
+</fieldList>

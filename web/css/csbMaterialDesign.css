@@ -1,0 +1,395 @@
+﻿
+#title.mobile{
+    display:none;
+}
+
+md-input-container.md-default-theme:not(.md-input-has-value) label:not(.readOnly), md-input-container.md-default-theme:not(.md-input-has-value) .md-placeholder:not(.readOnly) {
+    color: {{initCSS.resolveColor(300)}};
+}
+
+.background50 {
+  background-color: {{initCSS.resolveColor(50)}} ;
+}
+.background100 {
+  background-color: {{initCSS.resolveColor(100)}} ;
+}
+.background200 {
+  background-color: {{initCSS.resolveColor(200)}} ;
+}
+.background300 {
+  background-color: {{initCSS.resolveColor(300)}} ;
+}
+.background400 {
+  background-color: {{initCSS.resolveColor(400)}} ;
+}
+.background500 {
+  background-color: {{initCSS.resolveColor(500)}} ;
+}
+.background600 {
+  background-color: {{initCSS.resolveColor(600)}} ;
+}
+.background700 {
+  background-color: {{initCSS.resolveColor(700)}} ;
+}
+.background800 {
+  background-color: {{initCSS.resolveColor(800)}} ;
+}
+.background900 {
+  background-color: {{initCSS.resolveColor(900)}} ;
+}
+
+.csb-button{
+    font-size: inherit;
+    height: 24px;
+    min-height:24px;
+    line-height: 24px;
+    margin: 0px;
+    min-width: inherit;
+    width: auto;
+    margin-left:16px;
+    vertical-align:top;
+}
+.csb-button span{
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.mainTitle{
+    font-size: 18px;
+    /*padding:10px;*/
+    height:46px;
+    background-color: {{initCSS.resolveColor(900)}} ;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+    #xmlLeftMenu{
+        padding-left:15px !important;
+    }
+
+        .leftMenu{
+            /*min-height:700px;*/
+            width: 20%;
+            max-width: 20% !important;
+            background-color: {{initCSS.resolveColor(400)}};
+        }
+        .leftMenu ul{
+            list-style-type: none;
+        }
+        .leftMenu li{
+            padding-bottom:10px;
+        }
+        .treeView {
+            margin-left:-15px;
+        }
+        .bottom-link{
+            padding-bottom: 5px !important;
+            
+        }
+        .leftImage{
+            width:250px;
+            position: absolute;
+            bottom: 0;
+        }
+
+#leftContentContainer {
+    position: fixed;
+    display: block;
+    height: 90% !important;
+    overflow-y: auto;
+    top: 46px !important;
+}
+        md-toast{
+            z-index:9999;
+        }
+
+        .csb-menu-bar {
+    /*min-height:36px;*/
+    min-height: inherit;
+    z-index: 10;
+    font-size: inherit;
+}
+
+.csb-menu-bar>.md-toolbar-tools {
+    min-height:inherit;
+    height:auto;
+}
+
+.appBarPlaceholder{
+    height:46px;
+    z-index:-1;
+}
+.mobile .appBarPlaceholder{
+    height:43px;
+    z-index:-1;
+}
+.contextBarPlaceholder{
+    height:30px;
+    z-index:-1;
+}
+
+.contextBarLeft{
+    float:left;
+}
+.contextBarRight{
+    float:right;
+}
+.contextBarCenter{
+    margin:0 auto;
+}
+
+
+        .app-bar{
+    position:fixed;
+    display: block;
+    width:100%;
+    float:left;
+    z-index:99;
+    top:0px !important;
+    height: 46px;
+        }
+        .mobile .app-bar{
+            top:0px !important;
+            height: 44px;
+        }
+        .mobile .contextBar{
+            top:0px !important;
+        }
+        
+        .contextBar{
+             position:fixed;
+    display: block;
+    width:100%;
+    float:left;
+    z-index:98;
+    top:0px !important;
+        }
+        .contextToolbar{
+            width:80%;
+        }
+        .noLeftNav .contextToolbar, .mobile .contextToolbar{
+            width:100%;
+        }
+        .contextUser{
+            font-size:medium;
+             padding-right:20px;
+    width:100%;
+    text-align:right;
+    z-index:1001;
+    font-weight:400;
+    padding-top:5px;
+        }
+        .mainContentContainer{
+            
+        }
+
+        .mainContainer{
+            padding:0px;
+            
+            height:100%;
+            width:100%;
+            position:relative !important;
+        }
+        .noMenu.mainContainer{
+            margin-top:0px !important;
+        }
+
+        .mobile .mainContainer{
+            margin-top:0px;
+        }
+
+        .fullContent{
+            height:100%;
+            margin-left:20%;
+            max-width:80%;
+        }
+		.noLeftNav.fullContent{
+			margin-left:0px !important;
+            max-width:100%;
+		}
+
+
+        .mobile .fullContent{
+            margin-left:0px !important;
+            width:100%;
+            max-width:100%;
+            text-align:center;
+        }
+
+        html, body{
+            height:100% !important;
+        }
+        
+        .nav-sidebar li a{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            font-weight: normal;
+        }
+        .nav-sidebar a:hover, .nav-sidebar a:link, .nav-sidebar a:visited, .nav-sidebar a:active{
+            text-decoration: none;
+            color: white;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        .mainContentContainer{
+            padding:10px;
+        }
+        
+
+
+        .table-striped.md-default-theme>tbody>tr:nth-child(odd) {
+          background-color: {{initCSS.resolveColor(50)}};
+        }
+    .table-striped.md-default-theme>tbody>tr:nth-child(even) {
+    background-color: rgb(255,255,255);
+}
+
+        .table.md-default-theme > thead {
+            background-color: {{initCSS.resolveColor(900)}} ;
+          color: {{initCSS.resolveColor(50)}};
+          text-align:center;                                   
+            font-size:smaller;
+        }
+        .table.md-default-theme > thead > th {
+          text-align:center;                                   
+        }
+        .table.md-default-theme>thead>tr>th:hover {
+            background-color: {{initCSS.resolveColor(800)}} ;
+          /*border-bottom-color: {{initCSS.resolveColor(900)}};
+          border-right-color: {{initCSS.resolveColor(900)}};                                   
+            */
+        }
+
+        /*.table.md-default-theme>tbody>tr:hover {
+            border-bottom-color: {{initCSS.resolveColor('A200')}};
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+        }*/
+
+        /*.table.md-default-theme {background-color: {{ initCSS.resolvePaletteColor('accent',100) }} ;}*/
+
+
+        .table>tbody>tr>TD {
+            border-bottom-color: inherit;
+            border-bottom-style: inherit;
+            border-bottom-width: inherit;
+        }
+
+        /*override bootstrap*/
+        th {
+            text-align: inherit;
+            font-weight: inherit;
+        }
+
+        /* add to simple menu */
+		.csb-menu-bar {
+			background-color: {{initCSS.resolveColor(900)}} ;
+		}
+		app-bar{
+            background-color: {{initCSS.resolveColor(900)}} ;
+		}
+
+    .mobile #cssmenu{
+        background-color: {{initCSS.resolveColor(900)}} ;
+    }
+		
+        #cssmenu ul {
+            /*background-color: {{initCSS.resolveColor(900)}};*/
+            color: {{initCSS.resolveColor(500, 1)}};
+
+        }
+        #cssmenu ul li {
+            background-color:{{initCSS.resolveColor(900)}};
+            color: {{initCSS.resolveColor(500, 1)}};
+
+        }
+
+
+        #cssmenu ul ul li:hover > a {
+            background-color: {{initCSS.resolveColor(300)}};
+            color: {{initCSS.resolveColor(300, 1)}};
+        }
+
+
+        #cssmenu > ul > li.has-sub::after {
+          border-top-color: {{initCSS.resolveColor(100)}};
+        }
+        #cssmenu > ul > li:hover::after {
+          border-top-color: {{initCSS.resolveColor(300, 1)}};
+        }
+        #cssmenu > ul > li > ul::after {
+          border-bottom-color: {{initCSS.resolveColor(300, 1)}};
+        }
+        #cssmenu ul ul li a {
+          border-bottom: 1px solid {{initCSS.resolveColor(700)}};
+        }
+        #cssmenu ul ul li:hover ul {
+        background-color:{{initCSS.resolveColor(300)}};
+        }
+        #cssmenu ul ul li:hover ul li {
+        /*background-color:{{initCSS.resolveColor(900)}};*/
+        }
+        /*#cssmenu>ul{
+            text-align:right;
+        }
+        #cssmenu>ul>li{
+            text-align:left;
+        }*/
+
+
+
+
+/*Treeview*/
+
+div[data-tree-model] ul {
+  margin: 0;
+  list-style: disc; 
+  border: none;
+  overflow: hidden;
+  text-align:left !important;
+}
+
+div[data-tree-model] li .expanded {
+  padding: 1px 10px;
+}
+
+div[data-tree-model] li .collapsed {
+  padding: 1px 10px;
+}
+
+div[data-tree-model] li{
+    list-style-type: none;
+    margin-left:-20px;
+}
+
+div[data-tree-model] li.noKids{
+    list-style-type: disc;
+    margin-left:15px;
+}
+
+div[data-tree-model] li i, div[data-tree-model] li span{
+    vertical-align:middle !important;
+    line-height: 20px;
+}
+
+div[data-tree-model] li i, div[data-tree-model] li span {
+  cursor: pointer;
+}
+
+div[data-tree-model] li .selected {
+  background-color:{{initCSS.resolveColor(700)}};
+  color:white;
+  
+  padding: 1px 5px;
+}

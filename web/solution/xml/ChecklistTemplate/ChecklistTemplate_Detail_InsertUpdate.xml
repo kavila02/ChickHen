@@ -1,0 +1,32 @@
+<CargasConnect>
+  <ChecklistTemplate_Detail_InsertUpdate>
+    <ChecklistTemplate_DetailID/>
+    <ChecklistTemplateID/>
+    <StepName/>
+    <StepOrder/>
+    <ActionDescription/>
+    
+    <StepOrFieldCalculation/>
+    <DateOfAction_TimeFromStep/>
+    <TimeFromStep_DatePartID/>
+    <DateOfAction_FlockChecklist_DetailID/>
+    <DateOfAction_TimeFromField/>
+    <TimeFromField_DatePartID/>
+    <DateOfAction_FieldReferenceID/>
+
+    <StepOrFieldCalculation_EndDate/>
+    <DateOfAction_TimeFromStep_EndDate/>
+    <TimeFromStep_DatePartID_EndDate/>
+    <DateOfAction_FlockChecklist_DetailID_EndDate/>
+    <DateOfAction_TimeFromField_EndDate/>
+    <TimeFromField_DatePartID_EndDate/>
+    <DateOfAction_FieldReferenceID_EndDate/>
+    
+    <OriginatorID/>
+    <DetailedNotes/>
+    <CompletedByID/>
+    <CompletedDate/>
+    <DefaultDetail_StatusID/>
+    <Checklist_DetailTypeID/>
+  </ChecklistTemplate_Detail_InsertUpdate>
+</CargasConnect>

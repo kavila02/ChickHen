@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="CargasSolutionBuilderAngular">
+<head>
+    <title></title>
+    <link rel="icon" href="solution/images/favicon.ico">
+
+    <script type="text/javascript" src="js/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src='js/solution-builder.js'></script>
+
+    <script type="text/javascript" src="solution/custom.js"></script>
+
+    <script src="js/quartzMenu.js"></script>
+
+    <script src="js/angularjs/angular.min.js"></script>
+    <script src="js/dirPagination.js"></script>
+
+    <script src="js/angularjs/angular-animate.min.js"></script>
+    <script src="js/angularjs/angular-aria.min.js"></script>
+    <script src="js/angularjs/angular-messages.min.js"></script>
+    <script src="js/angularjs/angular-material.min.js"></script>
+
+    <script src="js/angularjs/ngStorage.js"></script>
+        
+    <link rel="stylesheet" href="css/jquery-ui.min.css" />
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/angular-material.min.css">
+    <link rel="stylesheet" href="css/angular-material.font.css">
+
+    <link rel="stylesheet" href="css/solutionBuilder.css">
+    <link rel="stylesheet" href="solution/custom.css" type="text/css" />
+    <link href="css/quartzMenu.css" rel="stylesheet" />
+
+    <!--solution script file-->
+    <script src="js/csbAngularUI.js"></script>
+    <script src="js/csbAngularForm.js"></script>
+
+    <script src="js/textAngular/textAngular-rangy.min.js" type="text/javascript"></script>
+    <script src="js/textAngular/textAngular-sanitize.min.js" type="text/javascript"></script>
+    <script src="js/textAngular/textAngular.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/textAngular.css">
+
+    <link rel="stylesheet" href="css/angular-material-calendar.min.css">
+    <script src="js/angular-material-calendar.js" type="text/javascript"></script>
+    
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    <style ng-controller="initializeCargasCSS as initCSS" csb-material-design-css>
+    </style>
+    <script type="text/javascript" src="js/sha256.js"></script>
+</head>
+<body layout="column" ng-controller="DataController as data" ng-class="{mobile:$mdMedia('sm')||$mdMedia('xs')}">
+
+    <div class="app-bar" ng-if="!data.screenPropertySet.noMenu">
+        <app-bar></app-bar>
+    </div>
+    
+    <div layout="row" layout-padding ng-class="{noMenu:data.screenPropertySet.noMenu}" class="mainContainer">
+
+        <div id="leftContentContainer" hide-sm hide-xs ng-if="data.screenPropertySet.hasLeftNav&&!data.screenPropertySet.noMenu&&!data.screenPropertySet.noLeftMenu&&!$mdMedia('sm')&&!$mdMedia('xs')" class="md-whiteframe-z2 leftMenu" >
+            <nav-content hide-sm hide-xs class="navcontent"></nav-content>
+            <div hide-sm hide-xs id="cssleftmenu" class="nav-sidebar" csb-left-menu>loading...</div>
+        </div>
+        <div id="fullContent" style="width:100%;" class="fullContent" ng-class="{noLeftNav:!data.screenPropertySet.hasLeftNav}">
+            <div class="contextBar">
+                <context-bar></context-bar>
+            </div>
+            <div ng-if="!data.screenPropertySet.noMenu" class="appBarPlaceholder"></div>
+            <div ng-if="!data.screenPropertySet.noContext" class="contextBarPlaceholder"></div>
+            
+            <div id="mainContentContainer" class="mainContentContainer">
+                <!--{{data.record}}-->
+                <md-content layout-padding class="md-whiteframe-z2">
+
+                    <form name="csbForm" novalidate>
+
+                        <form-content this-record="data.record" parent-data="data" dropdown-j-s-o-n="dropdownJSON"></form-content>
+                        
+                        <form-tabs></form-tabs>
+                    </form>
+
+                </md-content>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="lookupDialog"></div>
+
+</body>
+</html>

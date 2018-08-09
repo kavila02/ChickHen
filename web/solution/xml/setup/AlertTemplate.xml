@@ -1,0 +1,12 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Alert Template" columnSpan="4">
+    <field fieldName="AlertName" displayName="Alert Name"/>
+    <field fieldName="SortOrder" displayName="Sort Order"/>
+    <field fieldName="IsActive" displayName="Is Active" padding="1"/>
+    
+    <field fieldName="alertSubject" columnSpan="4" displayName="Subject"/>
+    <field fieldName="alertBody" columnSpan="3" type="htmleditor" textRows="15" displayName="Body"/>
+    <field fieldName="AlertTemplateID" type="htmlfile ~\solution\CustomPages\FieldReferenceAdd.html" />
+    
+  </section>
+</fieldList>

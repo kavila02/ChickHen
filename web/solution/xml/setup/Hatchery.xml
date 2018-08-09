@@ -1,0 +1,9 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Hatchery" displayStyle="paging:100">
+
+    <field fieldName="Hatchery" multilineEdit="true" displayName="Hatchery"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Is Active"/>
+    <field fieldName="HatcheryID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="Hatchery_Delete" visibleFieldName="HatcheryID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

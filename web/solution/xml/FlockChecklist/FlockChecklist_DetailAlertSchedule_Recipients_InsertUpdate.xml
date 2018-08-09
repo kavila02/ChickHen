@@ -1,0 +1,9 @@
+<CargasConnect>
+  <FlockChecklist_DetailAlertSchedule_Recipients_InsertUpdate>
+    <FlockChecklist_DetailAlertSchedule_RecipientsID/>
+    <FlockChecklist_DetailAlertScheduleID/>
+    <RecipientType/>
+    <ContactRoleID/>
+    <ContactID/>
+  </FlockChecklist_DetailAlertSchedule_Recipients_InsertUpdate>
+</CargasConnect>

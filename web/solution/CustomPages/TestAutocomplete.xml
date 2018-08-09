@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Selected Value">
+    <field fieldName="mainField" multilineEdit="true" displayName="Selected Value" type="autocomplete 1">
+      <lookupList>
+        <source sql="exec TestAutocomplete '{0}'"/>
+      </lookupList>
+    </field>
+    
+  </section>
+</fieldList>

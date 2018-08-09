@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?>
+<fieldList>
+  <section displayName="">
+    <field fieldName="something" displayName="Test Data:" readOnly="true"/>
+    <field fieldName="something" displayName="Test Data:" readOnly="true"/>
+    <field fieldName="something" displayName="Test Data:" readOnly="true"/>
+    <field fieldName="something" displayName="Test Data:" readOnly="true"/>
+  </section>
+</fieldList>

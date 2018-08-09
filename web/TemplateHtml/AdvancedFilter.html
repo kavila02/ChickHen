@@ -1,0 +1,56 @@
+﻿<md-dialog aria-label="Mango">
+    <form>
+        <md-toolbar style="width: 400px;">
+            <div class="md-toolbar-tools">
+                <h4>Advanced Search</h4>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" >
+                    <i class="material-icons" >close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="max-width:800px;max-height:810px; ">
+
+            <div id="advancedSearchInputs" layout="column">
+                <!--<md-input-container ng-repeat="(key,prop) in local.item.records[0]">
+                    <label for="Project">{{key}}</label>
+                    <input name="Project" type="text" ng-model="local.item.searchString[key]" />
+                </md-input-container>-->
+                <md-input-container ng-repeat="fieldItem in local.item.advancedSearchFields">
+                    
+                    <div ng-if="fieldItem.type!='date'&&fieldItem.type!='dropdown'">
+                        <label for="Project">{{fieldItem.label}}</label>
+                        <input name="Project" type="text" ng-model="local.item.searchArray[fieldItem.field]" />
+                    </div>
+                    <div ng-if="fieldItem.type=='dropdown'">
+                        <label for="Project">{{fieldItem.label}}</label>
+                        <input name="Project" type="text" ng-model="local.item.searchDropdowns[fieldItem.field]" />
+                    </div>
+                    <div class="dateWrapper" ng-if="fieldItem.type=='date'">
+                        <label for="Date">{{fieldItem.label}}</label>
+                        <div layout="rows">
+                            <input aria-label="Date" 
+                                   ng-model="local.item.searchArray[fieldItem.field]" 
+                                   name="Date" id="Date" 
+                                   jq-date="" 
+                                   valid-date="" 
+                                   size="11" 
+                                   class="" 
+                                   type="text">
+                        </div>
+                    </div>
+                </md-input-container>
+            </div>
+
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <span flex></span>
+            <md-button ng-click="answer('not useful')" aria-label="blah">
+                OK
+            </md-button>
+            <md-button ng-click="local.item.searchArray={}; local.item.searchDropdowns={}; cancel()" style="margin-right:20px;" aria-label="blah">
+                Clear
+            </md-button>
+        </div>
+    </form>
+</md-dialog>

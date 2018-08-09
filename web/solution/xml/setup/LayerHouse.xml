@@ -1,0 +1,26 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Layer Houses"  displayStyle="paging:100">
+
+    <field fieldName="LocationID" multilineEdit="true" displayName="Location">
+      <lookupList>
+        <source sql="exec Location_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="LayerHouseName" multilineEdit="true" displayName="Layer House Name"/>
+    <field fieldName="YearBuilt" multilineEdit="true" displayName="Year Built"/>
+    <field fieldName="HouseStyle" multilineEdit="true" displayName="House Style"/>
+    <field fieldName="BirdsPerHouse" multilineEdit="true" displayName="Birds Per House"/>
+    <field fieldName="CageHeight" textRows="2" multilineEdit="true" displayName="Colony Height (in)"/>
+    <field fieldName="CageWidth" textRows="2" multilineEdit="true" displayName="Colony Width (in)"/>
+    <field fieldName="CageDepth" textRows="2" multilineEdit="true" displayName="Colony Depth (in)/Perch Space"/>
+    <field fieldName="CageSizeNotes" multilineEdit="true" displayName="Colony Size Notes"/>
+    <field fieldName="CubicInchesInCage" textRows="2" multilineEdit="true" displayName="Cubic Inches in Colony/Trough Space"/>
+    <field fieldName="SquareInchesInCage" textRows="2" multilineEdit="true" displayName="Square Inches In Colony/Floor Space"/>
+    <field fieldName="NumberCages" textRows="2" multilineEdit="true" displayName="Number of Colonies/Nest Space"/>
+    <field fieldName="DrinkersPerCage" multilineEdit="true" displayName="Drinkers Per Colony"/>
+    <field fieldName="BirdCapacity" multilineEdit="true" displayName="Colony Bird Capacity White"/>
+    <field fieldName="BirdCapacityBrown" multilineEdit="true" displayName="Colony Bird Capacity Brown"/>
+    <field fieldName="PEQAPNumber" multilineEdit="true" displayName="PEQAP Number"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+  </section>
+</fieldList>

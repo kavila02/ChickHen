@@ -1,0 +1,11 @@
+﻿<fieldList>
+  <section>
+    <field fieldName="ScreenID" displayName="Screen ID" readOnly="true" fieldID="A44F98C7-447A-45A5-B8F7-642E3CE1BFD5" />
+    <field fieldName="MenuDisplay" displayName="Menu Display" readOnly="true" fieldID="7506E449-2DFC-4FBF-B8D5-DEF68FB57F84" />
+    <field fieldName="DefaultPermission" displayName="Default Permission" fieldID="A49828BC-C7A3-4E15-B75A-A83C604CA376">
+      <lookupList>
+        <source sql="EXEC csb.ScreenSecurityDefaultPermissions" />
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

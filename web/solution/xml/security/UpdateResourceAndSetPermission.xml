@@ -1,0 +1,9 @@
+<CargasConnect2><csi.Framework.Security.SecurityDataProvider.UpdateResourceAndSetPermission isAssembly="true" >
+	<ResourceName/>
+	<ResourceType/>
+	<ResourceID/>
+	<GroupUserID/>
+	<ExplicitPermission/>
+	<DefaultPermission/>
+</csi.Framework.Security.SecurityDataProvider.UpdateResourceAndSetPermission>
+</CargasConnect2>

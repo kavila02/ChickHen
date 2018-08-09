@@ -1,0 +1,8 @@
+<CargasConnect>
+  <VaccineSchedule_InsertUpdate>
+    <VaccineScheduleID/>
+    <VaccineSchedule/>
+    <SortOrder/>
+    <IsActive/>
+  </VaccineSchedule_InsertUpdate>
+</CargasConnect>

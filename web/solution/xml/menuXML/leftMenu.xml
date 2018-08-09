@@ -1,0 +1,6 @@
+<menuList>
+  
+  <menu menuID="100.0" displayName="Orders:" ScreenID="" className="menuTitle"/>
+    <menu menuID="100.1" displayName="View Open Orders" ScreenID="OrderList" className="indentMenu"/>
+    
+    </menuList>

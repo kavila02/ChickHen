@@ -1,0 +1,19 @@
+﻿
+<div ng-if="thisRecord.FlockID_ForLink!=''" ng-repeat="flockFilterRecord in parentData.detailRecords[0].FlockChecklistCalendar_FlockFilterContent|filter:{linkType:thisRecord.linkType}:true">
+    <div ng-show="flockFilterRecord.Show=='1'&&(parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LocationID==''||parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LocationID==thisRecord.LocationID)&&(parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LayerHouseID==''||parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LayerHouseID==thisRecord.LayerHouseID)">
+<a name="FlockID_ForLink" id="FlockID_ForLink" href="Form.html?screenID=Flock&amp;p={{thisRecord.FlockID_ForLink}}">
+    {{thisRecord. Display}}
+</a>
+<md-tooltip md-direction="right" ng-if="thisRecord.hoverContent>''">{{thisRecord.hoverContent}}</md-tooltip>
+        </div>
+</div>
+<!--</div>-->
+
+<div ng-if="thisRecord.FlockChecklist_DetailID!==''&&parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].ShowFlockChecklist=='1'">
+    <a name="FlockChecklist_DetailID" id="FlockChecklist_DetailID" href="Form.html?screenID=FlockChecklist_Detail_Simple&amp;p={{thisRecord.FlockChecklist_DetailID}}">
+    {{thisRecord. Display}}
+    </a>
+    <md-tooltip md-direction="right" ng-if="thisRecord.hoverContent>''">
+    {{thisRecord.hoverContent}}
+    </md-tooltip>
+</div>

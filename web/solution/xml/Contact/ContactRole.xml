@@ -1,0 +1,5 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Roles" displayStyle="paging:25">
+    <field fieldName="RoleName" multilineEdit="true" displayName="Role Name"/>
+  </section>
+</fieldList>

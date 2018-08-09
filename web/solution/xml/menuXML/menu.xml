@@ -1,0 +1,87 @@
+<!-- In order to use security, a unique alphanumeric menuID is required -->
+<menuList>
+  <menugroup menuID="0" displayName="Home" ScreenID="HomePage"></menugroup>
+  <menugroup menuID="" displayName="|" />
+  <menugroup menuID="1" displayName="Flocks" ScreenID="Flock_List"></menugroup>
+  <menugroup menuID="" displayName="|" />
+  <menugroup menuID="2" displayName="Checklists" ScreenID="FlockChecklist_List"/>
+  <menugroup menuID="" displayName="|" />
+  <menugroup menuID="3" displayName="Checklist Templates" ScreenID="ChecklistTemplate_List"/>
+  <menugroup menuID="" displayName="|" />
+  <menugroup menuID="4" displayName="Reports">
+    <menu menuID="4.1" displayName="Calendar View" ScreenID="FlockChecklistCalendar"/>
+    <menu menuID="4.2" displayName="Card View By House" ScreenID="HouseInformation"/>
+    <menu menuID="4.3" displayName="Flock Step Report" ScreenID="FlockChecklist_Detail_List_All" />
+    <menu menuID="4.4" displayName="Housing Report" ScreenID="HouseInformation_Detail_Grid"/>
+    <menu menuID="4.5" displayName="Flock by Hatchery Report" ScreenID="FlockByHatchery_Report"/>
+    <menu menuID="4.6" displayName="Layer House Info" ScreenID="LayerHouse_Report"/>
+    <menu menuID="4.7" displayName="Pullet Grower Schedule" ScreenID="PulletGrower_ScheduleReport"/>
+    <menu menuID="4.8" displayName="Layer House Week Report" ScreenID="LayerHouseWeekly_ReportParams"/>
+  </menugroup>
+  
+  <!-- Begin Setup Menu -->
+  <menugroup menuID="990" displayName="Setup" ScreenID="UserTable_List">
+    <menu menuID="990.1" displayName="Flock Info">
+      <submenu menuID="990.1.1" displayName="Pullet Grower" ScreenID="PulletGrower"/>
+      <submenu menuID="990.1.2" displayName="Product/Breed" ScreenID="ProductBreed"/>
+      <submenu menuID="990.1.3" displayName="Pullet Mover" ScreenID="PulletMover"/>
+      <submenu menuID="990.1.4" displayName="Fowl Out Mover" ScreenID = "FowlOutMover"/>
+    </menu>
+    <menu menuID="990.15" displayName="Checklist Step Type" ScreenID="Checklist_DetailType"/>
+    <menu menuID="990.2" displayName="Location Info">
+      <submenu menuID="990.2.1" displayName="Location" ScreenID="Location_List"/>
+      <submenu menuID="990.2.2" displayName="Layer House" ScreenID="LayerHouse_List"/>
+    </menu>
+    <menu menuID="990.3" displayName="Contact Info">
+      <submenu menuID="990.3.1" displayName="Contact" ScreenID="Contact"/>
+      <submenu menuID="990.3.2" displayName="Role" ScreenID="ContactRole"/>
+    </menu>
+    <menu menuID="990.4" displayName="Vaccine" ScreenID="">
+      <submenu menuID="990.4.1" displayName="Vaccine" ScreenID="Vaccine"/>
+      <submenu menuID="990.4.2" displayName="Disease" ScreenID="Disease"/>
+      <submenu menuID="990.4.3" displayName="Vaccine Schedule" ScreenID="VaccineSchedule"/>
+    </menu>
+    <menu menuID="990.43" displayName="Additive" ScreenID="Additive"/>
+    <menu menuID="990.45" displayName="Hatchery" ScreenID="Hatchery"/>
+    <menu menuID="990.5" displayName="Attachment Type" ScreenID="AttachmentType"/>
+    <menu menuID="990.6" displayName="Step Status" ScreenID="Detail_Status"/>
+    <menu menuID="990.7" displayName="Alert Setup" ScreenID="">
+      <submenu menuID="990.7.1" displayName="Alert Templates" ScreenID="AlertTemplate_List"/>
+      <submenu menuID="990.7.2" displayName="Send Alerts" ScreenID="SendEmail"/>
+    </menu>
+    <menu menuID="990.8" displayName="Delete Major Object" ScreenID="DeleteMajorObject_Get"/>
+    <menu menuID="990.10" displayName="User Setup">
+      <submenu menuID="990.10.1" displayName="Users" ScreenID="UserTable_List" />
+      <submenu menuID="990.10.2" displayName="User Groups" ScreenID="UserGroup_List" />
+      <submenu menuID="990.10.9" displayName="Portal Security" ScreenID="SecurityHome"  />
+    </menu>
+  </menugroup>
+  <!-- End Setup Menu -->
+
+  <!-- Begin Support Menu -->
+  <menugroup menuID="999" displayName="Support" ScreenID="ActivityLog_List">
+    <menu menuID="999.1" displayName="Documentation" ScreenID="Job_List">
+      <submenu menuID="999.1.1" displayName="Overview" ScreenID="Overview_Form" />
+      <submenu menuID="999.1.2" displayName="Team" ScreenID="TeamMember_List" />
+      <submenu menuID="999.1.3" displayName="Servers" ScreenID="ServerDetails_Form" />
+      <submenu menuID="999.1.4" displayName="Database objects" ScreenID="SolutionObject_List" />
+      <submenu menuID="999.1.5" displayName="Jobs" ScreenID="Job_List" />
+    </menu>
+    <menu menuID="999.2" displayName="Activity" ScreenID="ActivityLog_List">
+      <submenu menuID="999.2.1" displayName="Summary by page" ScreenID="ActivityLog_ListSummaryByPage" />
+      <submenu menuID="999.2.2" displayName="Summary by user" ScreenID="ActivityLog_ListSummaryByUser" />
+      <submenu menuID="999.2.3" displayName="Summary by IP address" ScreenID="ActivityLog_ListSummaryByIpAddress" />
+      <submenu menuID="999.2.4" displayName="Summary by time" ScreenID="ActivityLog_ListSummaryBySupportSubInterval" />
+      <submenu menuID="999.2.5" displayName="Details" ScreenID="ActivityLog_List" />
+    </menu>
+    <menu menuID="999.3" displayName="Performance" ScreenID="PerformanceLog_List">
+      <submenu menuID="999.2.1" displayName="Summary by source" ScreenID="PerformanceLog_ListSummaryBySource" />
+      <submenu menuID="999.2.2" displayName="Summary by time" ScreenID="PerformanceLog_ListSummaryBySupportSubInterval" />
+      <submenu menuID="999.2.3" displayName="Details" ScreenID="PerformanceLog_List" />
+    </menu>
+    <menu menuID="999.4" displayName="Warnings" ScreenID="WarningLog_List" />
+    <menu menuID="999.5" displayName="Exceptions" ScreenID="ExceptionLog_List" />
+  </menugroup>
+  <!-- End Support Menu -->
+
+</menuList>

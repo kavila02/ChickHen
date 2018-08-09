@@ -1,0 +1,13 @@
+<CargasConnect>
+  <FlockEvent_InsertUpdate>
+    <FlockEventID/>
+    <EventDescription/>
+    <FollowUpDescription/>
+    <CreatedBy_UserTableID/>
+    <FollowUpCreatedBy_UserTableID/>
+    <FollowUpContact/>
+    <FlockID/>
+    <UserName/>
+    <EventDate/>
+  </FlockEvent_InsertUpdate>
+</CargasConnect>

@@ -1,0 +1,26 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Step Attachments">
+    <field fieldName="DisplayName" readOnly="true" displayName="File Name"/>
+    <field fieldName="FileDescription" displayName="Description"/>
+    <field fieldName="AttachmentTypeID" displayName="Type">
+      <lookupList>
+        <source sql="exec AttachmentType_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="fileType" displayName="" readOnly="true" visibleFieldName="AttachmentID" visibleFieldValue="0" customValidateFunction="fileTypeChange({thisRecord},{scope});">
+      <lookupList>
+        <element text="" value="0"/>
+        <element text="Upload from PC" value="1"/>
+        <element text="Select Existing from Soonr" value="2"/>
+      </lookupList>
+    </field>
+    <field fieldName="upload" displayName="Upload" type="upload" ScreenID="FlockChecklist_DetailAttachment_Upload" displayStyle="" visibleFieldName="AttachmentID==0&amp;&amp;thisRecord.fileType" visibleFieldValue="1" maxFiles="1" customValidateFunction="validateFile('{thisRecord}','{files}')" customErrorMessage="File Select Issue" />
+    <!--<field fieldName="Path" readOnly="true" visibleFieldName="fileType!" visibleFieldValue="0"/>
+    <field fieldName="Folder" readOnly="true"/>-->
+    <field fieldName="Location" displayName="Save To Location" readOnly="true" visibleFieldName="fileType!" visibleFieldValue="0" />
+    <field fieldName="FileName" displayName="Save As Name" visibleFieldName="AttachmentID==0&amp;&amp;thisRecord.fileType" visibleFieldValue="1" customValidateFunction="FileNameChange({thisRecord})"/>
+    <field fieldName="FileName" displayName="File Name" visibleFieldName="AttachmentID==0&amp;&amp;thisRecord.fileType" visibleFieldValue="2" readOnly="true"/>
+    <field fieldName="ShowFileTree" readOnly="true" type="htmlfile ~\solution\CustomPages\FileTree.html" visibleFieldName="AttachmentID==0&amp;&amp;thisRecord.fileType!" visibleFieldValue="0"/>
+    
+  </section>
+</fieldList>

@@ -1,0 +1,147 @@
+﻿
+<md-content class="md-padding"  ng-repeat="locationRecord in parentData.detailRecords[0].UserLocations">
+    <span class="md-title locationTitle" ng-click="parentData.changeFunction('toggleLocation({thisRecord},' + locationRecord.LocationID + ')', 'ShowLocation', true, parentData, 'ShowLocation');">{{locationRecord.Location}}</span><br />
+    <div layout="row" layout-wrap >
+        <div flex ng-repeat="detailRecord in parentData.detailRecords[0].HouseInformation_Detail | filter: {LocationID:locationRecord.LocationID}">
+            <md-card md-theme-watch class="background300" ng-click="parentData.changeFunction('switchTrueFalse({thisRecord},\'ShowRecord\',{scope})', 'ShowRecord', true, detailRecord, 'ShowRecord');">
+                <md-card-title style="padding:5px;text-align:left;">
+                    <md-card-title-text>
+                        <span class="md-title" >{{detailRecord.LayerHouse}}</span><br />
+                        <div ng-show="detailRecord.ShowRecord=='1'">
+                            <table>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Flock:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.FlockName}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Flock #</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.FlockNumber}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Product/Breed:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.ProductBreed}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">House Style:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.HouseStyle}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Capacity:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.BirdCapacity}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Hatch Date:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.HatchDate_Average}}</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Initial Housing Date:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.HousingDate_First}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Housing Out Date:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.HousingOutDate}}</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2" class="cardTitle">
+                                        <br />
+                                        Previous Flock
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Previous Flock:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.PrevFlockName}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Previous Flock Out:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.PrevFlockHousingOutDate}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Previous Flock Hatch Date:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.PrevFlockHatchDate}}</span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="cardTitle" colspan="2">
+                                        <br />
+                                        Next Flock
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Next Flock:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.NextFlockName}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Next Flock In:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.NextFlockHousingDate}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="cardSubheader">
+                                        <span class="md-subtitle">Next Flock Hatch Date:</span>
+                                    </td>
+                                    <td class="cardText">
+                                        <span class="md-default-theme">{{detailRecord.NextFlockHatchDate}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </md-card-title-text>
+                </md-card-title>
+            </md-card>
+        </div>
+    </div>
+</md-content>
+

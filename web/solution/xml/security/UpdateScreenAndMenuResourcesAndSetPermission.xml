@@ -1,0 +1,11 @@
+﻿<cConnect>
+  <csi.Framework.Security.SecurityDataProvider.UpdateScreenAndMenuResourcesAndSetPermission isAssembly="true">
+    <ScreenID />
+    <MenuID />
+    <ScreenResourceID />
+    <MenuResourceID />
+    <GroupUserID />
+    <ExplicitPermission />
+    <DefaultPermission />
+  </csi.Framework.Security.SecurityDataProvider.UpdateScreenAndMenuResourcesAndSetPermission>
+</cConnect>

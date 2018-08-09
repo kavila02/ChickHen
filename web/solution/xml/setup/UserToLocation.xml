@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="User To Location" mobileLayoutSize="none">
+    <field fieldName="LocationID" multilineEdit="true" displayName="Location">
+      <lookupList>
+        <source sql="Location_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="UserToLocationID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="UserToLocation_Delete" visibleFieldName="UserToLocationID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

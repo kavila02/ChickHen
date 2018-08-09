@@ -1,0 +1,58 @@
+﻿<div layout="row" layout-wrap style="padding-bottom:25px;">
+    <md-input-container flex="33" flex-xs="100" class="">
+        <label for="LocationID" class="md-no-float csb-md-simulate-has-value">Location</label>
+        <md-select ng-model="parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LocationID" name="LocationID" id="LocationID" class="md-input">
+            <md-option ng-value="listItem.LocationID" ng-repeat="listItem in parentData.detailRecords[0].FlockChecklistCalendar_LocationDropdown">{{listItem.Location}}</md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container flex="33" flex-xs="100" class="">
+        <label for="LayerHouseID" class="md-no-float csb-md-simulate-has-value">Layer House</label>
+        <md-select ng-model="parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LayerHouseID" name="LayerHouseID" id="LayerHouseID" class="md-input">
+            <md-option ng-value="listItem.LayerHouseID" ng-repeat="listItem in parentData.detailRecords[0].FlockChecklistCalendar_LayerHouseDropdown|filter:{LocationID:parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].LocationID}:true">{{listItem.display}}</md-option>
+        </md-select>
+    </md-input-container>
+    <md-input-container flex="33" flex-xs="100" class="">
+        <label for="ShowFlockChecklist" class="md-no-float csb-md-simulate-has-value">Show Flock Checklist</label>
+        <md-checkbox ng-model="parentData.detailRecords[0].FlockChecklistCalendar_FilterContent[0].ShowFlockChecklist" name="ShowFlockChecklist" id="ShowFlockChecklist" class="md-primary" ng-true-value="'1'" ng-false-value="'0'"></md-checkbox>
+    </md-input-container>
+</div>
+<div layout="row" layout-wrap>
+    <div ng-repeat="filterRecord in parentData.detailRecords[0].FlockChecklistCalendar_FlockFilterContent" style="min-width:85px;">
+        <md-input-container class="" style="width:100%;">
+            <label for="Show{{$index}}" class="md-no-float csb-md-simulate-has-value">{{filterRecord.displayName}}</label>
+            <md-checkbox ng-model="filterRecord.Show" name="Show{{$index}}" id="Show{{$index}}" class="md-primary" ng-true-value="'1'" ng-false-value="'0'"></md-checkbox>
+        </md-input-container>
+    </div>
+    
+</div>
+
+{{thisRecord.selectedValue}}
+    <div layout="row">
+            <md-button aria-label="Calendar View" class="md-mini background500" style="border-radius: 50%; width:40px; height:40px; min-width:0;">
+                <md-tooltip md-direction="left">Calendar view</md-tooltip>
+                <md-icon md-font-library="material-icons" ng-click="parentData.setDirection('horizontal')">view_module</md-icon>
+            </md-button>
+            <md-button aria-label="Agenda View" class="md-mini background500" style="border-radius: 50%; width:40px; height:40px; min-width:0;">
+                <md-tooltip md-direction="left">Agenda view</md-tooltip>
+                <md-icon md-font-library="material-icons" ng-click="parentData.setDirection('vertical')">view_stream</md-icon>
+            </md-button>
+    </div>
+    <calendar-md flex layout layout-fill
+                 calendar-direction="parentData.direction"
+                 on-prev-month="parentData.prevMonth"
+                 on-next-month="parentData.nextMonth"
+                 on-day-click="parentData.dayClick"
+                 title-format="'MMMM y'"
+                 ng-model="parentData.selectedDate"
+                 day-format="parentData.dayFormat"
+                 day-label-format="'EEE'"
+                 day-label-tooltip-format="'EEEE'"
+                 day-tooltip-format="'fullDate'"
+                 week-starts-on="parentData.weekStartsOn"
+                 tooltips="parentData.tooltips"
+                 template-url="'ContentLoad/ContentLoad_ListTable.ashx?screenID=FlockChecklistCalendar_Content&isCalendar=True&p='"
+                 date-field="CalendarDate"
+                 content-Type="form"
+                 records="parentData.detailRecords[0].FlockChecklistCalendar_Content"
+                 parent-data="parentData"
+                 day-content="parentData.setDayContent"></calendar-md>

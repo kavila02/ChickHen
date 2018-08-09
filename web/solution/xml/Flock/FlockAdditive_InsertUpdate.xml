@@ -1,0 +1,11 @@
+<CargasConnect>
+  <FlockAdditive_InsertUpdate>
+    <FlockAdditiveID/>
+    <FlockID/>
+    <AdditiveID/>
+    <AdditiveStatusID/>
+    <FlockAdditiveNotes/>
+    <StartDate/>
+    <EndDate/>
+  </FlockAdditive_InsertUpdate>
+</CargasConnect>

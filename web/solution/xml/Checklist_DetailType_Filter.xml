@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<fieldList>
+  <section autoPostBack="true">
+    <field fieldName="Checklist_DetailTypeID" displayName="List Type" applicationVariableName="Checklist_DetailTypeID">
+      <lookupList>
+        <source sql="exec Checklist_DetailType_Lookup"/>
+      </lookupList>
+    </field>
+
+  </section>
+</fieldList>

@@ -1,0 +1,13 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Additive" displayStyle="paging:25">
+
+    <field fieldName="Additive" multilineEdit="true" displayName="Additive Name"/>
+    <field fieldName="AdditiveID" readOnly="true" displayName="Used For" type="link display DiseaseList" hideWhenNull="true" ScreenID="AdditiveDisease">
+    </field>
+    <field fieldName="ApprovedForColony" multilineEdit="true" displayName="ApprovedForColony"/>
+    <field fieldName="ApprovedForAviary" multilineEdit="true" displayName="ApprovedForAviary"/>
+    <field fieldName="ApprovedForOrganic" multilineEdit="true" displayName="ApprovedForOrganic"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Active"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+  </section>
+</fieldList>

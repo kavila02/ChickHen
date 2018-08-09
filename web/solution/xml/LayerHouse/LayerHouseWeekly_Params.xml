@@ -1,0 +1,5 @@
+﻿<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="" displayStyle="paging:50">
+    <field fieldName="testDate" displayName="Date"/>
+  </section>
+</fieldList>

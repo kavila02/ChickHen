@@ -1,0 +1,13 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="SchemaName"/>
+    <field fieldName="ObjectName"/>
+    <field fieldName="TypeName"/>
+    <field fieldName="CreateDateTime"/>
+    <field fieldName="ModifyDateTime"/>
+    <field fieldName="Rows"/>
+    <field fieldName="TotalPagesUsed"/>
+    <field fieldName="DataPagesUsed"/>
+    <field fieldName="IndexPagesUsed"/>
+  </section>
+</fieldList>

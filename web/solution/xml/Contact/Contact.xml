@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Contact" displayStyle="paging:25">
+
+    <field fieldName="ContactName" multilineEdit="true" displayName="Contact Name"/>
+    <field fieldName="PrimaryEmailAddress" multilineEdit="true" displayName="Primary Email Address"/>
+    <field fieldName="SecondaryEmailAddress" multilineEdit="true" displayName="Secondary Email Address"/>
+    <field fieldName="PhoneNumber" multilineEdit="true" displayName="Phone Number"/>
+    <field fieldName="Active" multilineEdit="true" displayName="Active"/>
+  </section>
+</fieldList>

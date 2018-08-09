@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Additive Disease" mobileLayoutSize="none">
+    <field fieldName="DiseaseID" multilineEdit="true" displayName="Disease">
+      <lookupList>
+        <source sql="exec Disease_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="AdditiveDiseaseID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="AdditiveDisease_Delete" visibleFieldName="AdditiveDiseaseID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

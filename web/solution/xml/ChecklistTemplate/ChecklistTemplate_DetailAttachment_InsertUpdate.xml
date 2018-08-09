@@ -1,0 +1,14 @@
+<CargasConnect>
+  <ChecklistTemplate_DetailAttachment_InsertUpdate>
+    <AttachmentID/>
+    <ChecklistTemplate_DetailAttachmentID/>
+    <ChecklistTemplate_DetailID/>
+    <FileDescription/>
+    <AttachmentTypeID/>
+    <UserName/>
+    <Path/>
+    <DisplayName/>
+    <DriveName/>
+    <FileSize/>
+  </ChecklistTemplate_DetailAttachment_InsertUpdate>
+</CargasConnect>

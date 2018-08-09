@@ -1,0 +1,16 @@
+﻿<CargasConnect>
+  <LayerHouseDaily_InsertUpdate>
+    <LayerHouseWeeklyID/>
+    <LayerHouseDailyID/>
+    <LayerHouseId />
+    <DateOfRecord/>
+    <Mortality/>
+    <FeedDelivery/>
+    <DailyEggs/>
+    <Water/>
+    <MinTemp/>
+    <MaxTemp/>
+    <Chlorine/>
+    <RationCode />
+  </LayerHouseDaily_InsertUpdate>
+</CargasConnect>

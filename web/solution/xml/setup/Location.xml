@@ -1,0 +1,23 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Location" displayStyle="paging:100">
+
+    <field fieldName="Location" multilineEdit="true" displayName="Location"/>
+    <field fieldName="LocationAbbreviation" multilineEdit="true" displayName="Abbreviation"/>
+    <field fieldName="AddressName" multilineEdit="true" displayName="Address Name"/>
+    <field fieldName="Address1" multilineEdit="true" displayName="Address1"/>
+    <field fieldName="Address2" multilineEdit="true" displayName="Address2"/>
+    <field fieldName="Address3" multilineEdit="true" displayName="Address3"/>
+    <field fieldName="City" multilineEdit="true" displayName="City"/>
+    <field fieldName="State" multilineEdit="true" displayName="State"/>
+    <field fieldName="Zip" multilineEdit="true" displayName="Zip"/>
+    
+    <field fieldName="PhoneNumber1" multilineEdit="true" displayName="Phone Number"/>
+
+    <field fieldName="USDAPlantNumber1" multilineEdit="true" displayName="USDA Plant Number 1"/>
+    <field fieldName="USDAPlantNumber2" multilineEdit="true" displayName="USDA Plant Number 2"/>
+    <field fieldName="PDANumber" multilineEdit="true" displayName="PDA Number"/>
+    <field fieldName="PDAPremiseID" multilineEdit="true" displayName="PDA Premise ID"/>
+
+    <field fieldName="FolderName" multilineEdit="true" displayName="Autotask Folder"/>
+  </section>
+</fieldList>

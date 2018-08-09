@@ -1,0 +1,7 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="New Checklist Template">
+    
+    <field fieldName="TemplateName" multilineEdit="true" displayName="Checklist Template Name"/>
+    
+  </section>
+</fieldList>

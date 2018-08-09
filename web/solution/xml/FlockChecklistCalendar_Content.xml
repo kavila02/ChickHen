@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="yes"?>
+<fieldList>
+  <section displayName="">
+    <!--<field fieldName="FlockChecklist_DetailID" toolTip="fieldName hoverContent[right]" ScreenID="FlockChecklist_Detail_Simple" type="link display Display" displayName="Step" readOnly="true" visibleFieldName="FlockChecklist_DetailID!" visibleFieldValue=""/>
+    <field fieldName="FlockID_ForLink" toolTip="fieldName hoverContent[right]" ScreenID="Flock" type="link display Display" displayName="Flock" readOnly="true" hideWhenNull="true"/>-->
+    <field fieldName="Display" displayName="" type="htmlfile ~\solution\CustomPages\Calendar_Link.html" />
+  </section>
+</fieldList>

@@ -1,0 +1,14 @@
+<CargasConnect>
+  <FlockAttachment_InsertUpdate>
+    <AttachmentID/>
+    <FlockAttachmentID/>
+    <FlockID/>
+    <FileDescription/>
+    <AttachmentTypeID/>
+    <UserName/>
+    <Path/>
+    <DisplayName/>
+    <DriveName/>
+    <FileSize/>
+  </FlockAttachment_InsertUpdate>
+</CargasConnect>

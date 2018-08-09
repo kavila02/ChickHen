@@ -1,0 +1,1428 @@
+<?xml version="1.0" standalone="yes"?>
+<screenList xmlns:xs="https://csb2018.cargascloud.com/xmlschemas/csbScreenXML.xsd">
+
+
+  <screen id="BatchReportVendor"
+				   dataStatement="exec temp"
+				   formatXML="~\solution\xml\temp.xml"
+				   pageName="Form.html">
+    <reference ScreenID="BatchDistributionReportVendor" type="report" displayName="" displayStyle=""/>
+  </screen>
+
+  <screen id="BatchDistributionReportVendor"
+	dataStatement="exec BatchReports '{0}'"
+		pageName="\solution\reports\reportSSRS\BatchDistributionReportVendor.rdlc"
+		updateXML="~\solution\xml\temp_update.xml"/>
+
+
+  <!--.....................................HomePages.xml.......................................-->
+  <screen id="HomePage" displayName="ChickHen" dataStatement="exec HomePage_Redirect @UserName='|UserName|'"
+          pageName="runProcess.aspx" >
+    <reference type="FlockList" ScreenID="HomePage_FlockList" displayStyle="" displayName=""/>
+    <reference type="Location" ScreenID="HomePage_LocationCard_Current" displayStyle="" displayName="">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+  <screen id="TestList" dataStatement="select 1 as something, 'hello' as somethingElse union select 2 as something, 'goodbye' as somethingElse"
+          formatXML="~\solution\xml\dummy.xml"
+          
+  pageName="List.html"/>
+  <screen id="TestSearch" pageName="Form.html" updateXML="~\solution\xml\dummy.xml" dataStatement="select 1 as mainField" formatXML="~\solution\CustomPages\TestAutocomplete.xml"/>
+  <screen id="TestSearchList" pageName="List.html" updateXML="~\solution\xml\dummy.xml" dataStatement="select 1 as mainField union all select 1 as mainField " formatXML="~\solution\CustomPages\TestAutocomplete.xml"/>
+  <screen id="FileTree" dataStatement="exec FilesAndFolder_TreeviewWrapper 0" formatXML="~\solution\xml\dummy.xml" />
+
+  <screen id="Calendar" displayName="ChickHen" dataStatement="exec calendar_get" pageName="Form.html" formatXML="~\solution\CustomPages\Calendar.html">
+    <reference type="detail" ScreenID="calendarContent" displayStyle="NoTab" displayName=""/>
+  </screen>
+  <screen id="calendarContent" masterDateParam="CalendarDate" pageName="Form.html" formatXML="~\solution\xml\Calendar.xml" dataStatement="exec calendar_get"/>
+
+
+  <!--<screen id="DefaultHomePage" displayName="" dataStatement="exec HomePage_Get @UserName='|UserName|'" pageName="Form.html"
+          formatXML="~\solution\xml\Home\DefaultHomePage.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoContext"/>
+  <reference type="detail" ScreenID="HomePage_FlockList" displayName="Flocks" displayStyle=""/>
+  <reference type="detail" ScreenID="HomePage_LocationList" displayName="" displayStyle="NoTab"/>
+  </screen>-->
+  <screen id="HomePage_FlockList" displayName="" dataStatement="exec HomePage_FlockList @UserName='|UserName|', @LocationID='{0}', @LayerHouseID='{1}', @ShowFuture='{2}'" pageName="List.html"
+          formatXML="~\solution\xml\Home\HomePage_FlockList.xml">
+    <reference type="findSQL" ScreenID="HomePage_FlockFilter"  displayName="" displayStyle="">
+      <link fieldName="LocationID"/>
+      <link fieldName="LayerHouseID"/>
+      <link fieldName="ShowFuture"/>
+    </reference>
+    <reference type="detail" ScreenID="HomePage_LocationList" displayName="" displayStyle="NoTab"/>
+  </screen>
+  <screen id="HomePage_FlockFilter" formatXML="~\solution\xml\Home\DefaultHomePage.xml" dataStatement="exec HomePage_Get @UserName='|UserName|'"/>
+  <screen id="HomePage_LocationList" dataStatement="exec HomePage_LocationList @UserName='|UserName|'" pageName="List.html"
+          formatXML="~\solution\xml\dummy.xml"/>
+
+  <screen id="HomePage_LocationCard_Current" displayName="{{thisRecord.Location}}" dataStatement="exec HomePage_LocationCard @LocationID='{0}', @futureFlocks=0" pageName="Form.html"
+            formatXML="~\solution\xml\Home\HomePage_LocationCard.xml"
+          >
+    <reference type="linkNoSave" ScreenID="HomePage_LocationCard_Future" displayStyle="icon:update" displayName="View Future Flocks">
+      <link fieldName="LocationID"/>
+    </reference>
+    <reference type="detail" ScreenID="HomePage_LocationCard_Detail_Current" displayStyle="" displayName="House Information"/>
+  </screen>
+  <screen id="HomePage_LocationCard_Future" displayName="{{thisRecord.Location}}" dataStatement="exec HomePage_LocationCard @LocationID='{0}', @futureFlocks=1" pageName="Form.html"
+            formatXML="~\solution\xml\Home\HomePage_LocationCardFuture.xml"
+          >
+    <reference type="linkNoSave" ScreenID="HomePage_LocationCard_Current" displayStyle="icon:restore" displayName="View Current Flocks">
+      <link fieldName="LocationID"/>
+    </reference>
+    <reference type="detail" ScreenID="HomePage_LocationCard_Detail_Future" displayStyle="" displayName="House Information"/>
+  </screen>
+
+  <screen id="HomePage_LocationCard_Detail_Current" displayName="" dataStatement="exec HomePage_LocationCard_Detail @LocationID='{0}', @futureFlocks=0" pageName="List.html"
+          formatXML="~\solution\xml\Home\HomePage_LocationCard_Detail.xml"/>
+  <screen id="HomePage_LocationCard_Detail_Future" displayName="" dataStatement="exec HomePage_LocationCard_Detail @LocationID='{0}', @futureFlocks=1" pageName="List.html"
+            formatXML="~\solution\xml\Home\HomePage_LocationCard_Detail.xml"/>
+
+
+  <!--.....................................Layer House Weekly/Daily.......................................-->
+
+
+
+  <screen id="LayerHouseWeek" displayName="" pageName="runProcess.aspx"
+          dataStatement="exec LayerHouseWeekly_Create @UserName='|UserName|',@LayerHouseID='{0}',@WeekEndingDate='{1}'">
+    <reference ScreenID="LayerHouseWeek_Get" type="forward">
+      <link fieldName="LayerHouseWeeklyID"/>
+    </reference>
+  </screen>
+
+  <screen id="LayerHouseWeek_Get" displayName=""
+          pageName="Form.html"
+          dataStatement="exec LayerHouseWeekly_Get @LayerHouseWeeklyID='{0}'"
+          formatXML="~\solution\xml\LayerHouse\LayerHouseWeek.xml"
+          updateXML="~\solution\xml\LayerHouse\LayerHouseWeekly_InsertUpdate.xml"
+    >
+    <reference type="detail" ScreenID="LayerHouseWeek_Detail" displayName="Daily"/>
+  </screen>
+
+  <screen id="LayerHouseWeek_Detail" displayName=""
+       pageName="List.html"
+       dataStatement="exec LayerHouseDaily_Get @LayerHouseWeeklyID='{0}'"
+       formatXML="~\solution\xml\LayerHouse\LayerHouseWeek_Detail.xml"
+       updateXML="~\solution\xml\LayerHouse\LayerHouseDaily_InsertUpdate.xml"
+  >
+  </screen>
+
+
+  <!--.....................................End HomePages.xml.......................................-->
+
+  <!--.....................................Flock.xml.......................................-->
+
+  <screen id="Flock_List" displayName="Flocks"
+          pageName="List.html"
+          dataStatement="exec Flock_GetList @UserName='|UserName|', @IncludeHistorical = '{0}',@IncludeCurrentFlock='{1}',@IncludeLastFlockOrdered='{2}',@IncludeInterimFlocks='{3}'"
+          formatXML="~\solution\xml\Flock\Flock_List.xml"
+          >
+    <reference type="findSQL" ScreenID="Flock_Filter"  displayStyle="" displayName="Filter">
+      <link fieldName="IncludeHistorical"/>
+      <link fieldName="IncludeCurrentFlock"/>
+      <link fieldName="IncludeLastFlockOrdered"/>
+      <link fieldName="IncludeInterimFlocks"/>
+    </reference>
+    <reference ScreenID="NewFlock" type="linkNoSave" displayName="New Flock" displayStyle="icon:control_point" />
+  </screen>
+  <screen id="Flock_Filter" formatXML="~\solution\xml\Flock\Flock_Filter.xml" dataStatement="exec Flock_Filter @UserName='|UserName|'"/>
+  
+  <screen id="FlockOrderCalculator"
+          pageName="javascript:showInDialog('Form.html', 'Flock Order Calculator', 900,600)"
+          dataStatement="exec FlockOrderCalculator @FlockID='{0}'"
+          formatXML="~\solution\xml\Flock\FlockOrderCalculator.xml"
+          updateXML="~\solution\xml\dummy.xml"
+          hideSave="true">
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+  </screen>
+
+  <screen id="NewFlock" pageName="runProcess.aspx" dataStatement="exec Flock_InsertUpdate @I_vFlockID = 0">
+    <reference ScreenID="Flock" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+
+  <screen id="Flock" displayName="Flock"
+        pageName="Form.html"
+        dataStatement="exec Flock_Get @FlockID='{0}', @UserName='|UserName|'"
+        formatXML="~\solution\xml\Flock\Flock.xml"
+        updateXML="~\solution\xml\Flock\Flock_InsertUpdate.xml"
+          >
+    <reference type="detail" ScreenID="FlockContact" displayName="Contacts" displayStyle="count-1" />
+    <reference type="detail" ScreenID="FlockPulletGrower" displayName="Pullet Growers" displayStyle="count-1" />
+    <reference type="detail" ScreenID="FlockVaccine_List_ReadOnly" displayName="Vaccines" displayStyle="count-1" />
+    <reference type="detail" ScreenID="FlockAdditive_List_ReadOnly" displayName="Additives" displayStyle="count-1" />
+    <reference type="detail" ScreenID="FlockAttachment_List" displayName="Flock Attachments" displayStyle="count-1" />
+    <reference type="detail" ScreenID="FlockChecklist_DetailAttachment_List_ForFlock" displayName="Flock Step Attachments" displayStyle="" />
+    <reference type="detail" ScreenID="HousingDates_Get" displayName="" displayStyle="NoTab"/>
+  </screen>
+
+
+  <screen id="FlockContact" displayName="Contacts"
+        pageName="List.html"
+        dataStatement="exec FlockContact_Get @FlockID='{0}'"
+        formatXML="~\solution\xml\Flock\FlockContact_List.xml"
+        updateXML="~\solution\xml\Flock\FlockContact_InsertUpdate.xml"
+          >
+
+  </screen>
+  <screen id="FlockPulletGrower" displayName="Pullet Growers"
+        pageName="List.html"
+        dataStatement="exec FlockPulletGrower_Get @FlockID='{0}'"
+        formatXML="~\solution\xml\Flock\FlockPulletGrower.xml"
+        updateXML="~\solution\xml\Flock\FlockPulletGrower_InsertUpdate.xml"
+          ></screen>
+  <screen id="FlockVaccine_List" displayName="Vaccines"
+        pageName="javascript:showInDialog('List.html', 'Flock Vaccines', 900,600)"
+        dataStatement="exec FlockVaccine_Get @FlockID='{0}', @includeNew=1"
+        formatXML="~\solution\xml\Flock\FlockVaccine_List.xml"
+        updateXML="~\solution\xml\Flock\FlockVaccine_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+    <reference type="new record" ScreenID="AddVaccineSchedule" displayName="" displayStyle="">
+      <link fieldName="FlockID"/>
+    </reference>
+  </screen>
+  <screen id="AddVaccineSchedule"
+          pageName="Form.html"
+          dataStatement="exec FlockVaccineSchedule_Get @FlockID='{0}'"
+          formatXML="~\solution\xml\Flock\FlockVaccineSchedule.xml"
+          updateXML="~\solution\xml\Flock\FlockVaccineSchedule_Create.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <screen id="FlockVaccine_List_ReadOnly" displayName="Vaccines"
+      pageName="javascript:showInDialog('List.html', 'Flock Vaccines', 900,600)"
+      dataStatement="exec FlockVaccine_Get @FlockID='{0}', @includeNew=1"
+      formatXML="~\solution\xml\Flock\FlockVaccine_List_ReadOnly.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+    <!--<reference type="new record" ScreenID="AddVaccineSchedule" displayName="" displayStyle="">
+        <link fieldName="FlockID"/>
+      </reference>-->
+  </screen>
+  <screen id="FlockVaccine" displayName="Vaccine"
+      pageName="javascript:showInDialog('Form.html', 'Flock Vaccines', 900,600)"
+      dataStatement="exec FlockVaccine_Get @FlockVaccineID='{0}', @includeNew=0"
+      formatXML="~\solution\xml\Flock\FlockVaccine.xml"
+      updateXML="~\solution\xml\Flock\FlockVaccine_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+
+  <screen id="FlockAdditive_List" displayName="Additives"
+        pageName="javascript:showInDialog('List.html', 'Flock Additives', 900,600)"
+        dataStatement="exec FlockAdditive_Get @FlockID='{0}', @includeNew=1"
+        formatXML="~\solution\xml\Flock\FlockAdditive_List.xml"
+        updateXML="~\solution\xml\Flock\FlockAdditive_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="FlockAdditive_List_ReadOnly" displayName="Additives"
+      pageName="javascript:showInDialog('List.html', 'Flock Additives', 900,600)"
+      dataStatement="exec FlockAdditive_Get @FlockID='{0}', @includeNew=1"
+      formatXML="~\solution\xml\Flock\FlockAdditive_List_ReadOnly.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="FlockAdditive" displayName="Additive"
+      pageName="javascript:showInDialog('Form.html', 'Flock Additives', 900,600)"
+      dataStatement="exec FlockAdditive_Get @FlockAdditiveID='{0}', @includeNew=0"
+      formatXML="~\solution\xml\Flock\FlockAdditive.xml"
+      updateXML="~\solution\xml\Flock\FlockAdditive_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+
+  <screen id="FlockAttachment_List"
+          pageName="List.html"
+          dataStatement="exec FlockAttachment_GetList @FlockID='{0}'"
+          formatXML="~\solution\xml\Flock\FlockAttachment_List.xml"
+          ></screen>
+
+  <screen id="FlockAttachment_Upload"
+        pageName="javascript:showInDialog('Form.html', 'Flock Attachment Upload', 900,600)"
+        displayStyle="~\solution\Attachments\Flock"
+        dataStatement="exec FlockAttachment_Get @FlockAttachmentID = '{0}', @FlockID = '{1}', @UserName = '|UserName|'"
+        formatXML="~\solution\xml\Flock\FlockAttachment.xml"
+        updateXML="~\solution\xml\Flock\FlockAttachment_InsertUpdate.xml">
+
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+    <reference type="detail" ScreenID="FileTree" displayStyle="NoTab" displayName="a"/>
+  </screen>
+
+  <screen id="FlockChecklist_DetailAttachment_List_ForFlock"
+          pageName="List.html"
+          dataStatement="exec FlockChecklist_DetailAttachment_GetList @FlockID='{0}'"
+          formatXML="~\solution\xml\Flock\FlockChecklist_DetailAttachment_List_ForFlock.xml"
+          ></screen>
+
+  <screen id="HousingDates_Get" pageName="List.html" dataStatement="exec HousingDates_Get" formatXML="~\solution\xml\dummy.xml"/>
+
+  <screen id="FlockServiceNotes_Print"
+           pageName="Form.html"
+          dataStatement="exec FlockServiceNotes_Print @FlockID='{0}'"
+          formatXML="~\solution\CustomPages\FlockServiceNotes_Print.html"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoContext" />
+  </screen>
+
+  <screen id="NewFlockEvent" pageName="runProcess.aspx" dataStatement="exec FlockEvent_InsertUpdate @I_vFlockEventID = 0, @I_vFlockID = '{0}', @I_vUserName='|UserName|'">
+    <reference ScreenID="FlockEvent_Forward" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+  <screen id="FlockEvent_List"
+          pageName="List.html"
+          dataStatement="exec FlockEvent_GetList @FlockID = '{0}', @UserName='|UserName|'"
+          formatXML="~\solution\xml\Flock\FlockEvent_List.xml"
+          displayName="fieldName titleText"
+          >
+    <reference ScreenID="NewFlockEvent" type="popupLink" displayName="New Event" displayStyle="icon:control_point" >
+      <link fieldName="FlockID"/>
+    </reference>
+  </screen>
+  <screen id="FlockEvent_Delete"
+        updateXML="~\solution\xml\Flock\FlockEvent_Delete.xml"
+          ></screen>
+  <screen id="FlockEvent"
+          pageName="javascript:showInDialog('Form.html', 'Flock Event', 900,600)"
+          dataStatement="exec FlockEvent_Get @FlockEventID = '{0}', @UserName='|UserName|'"
+          formatXML="~\solution\xml\Flock\FlockEvent.xml"
+          updateXML="~\solution\xml\Flock\FlockEvent_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+  <screen id="FlockEvent_Forward"
+          pageName="Form.html"
+          dataStatement="exec FlockEvent_Get @FlockEventID = '{0}', @UserName='|UserName|'"
+          formatXML="~\solution\xml\Flock\FlockEvent.xml"
+          updateXML="~\solution\xml\Flock\FlockEvent_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <!--.....................................End Flock.xml.......................................-->
+
+
+
+  <!--.....................................ChecklistTemplate.xml.......................................-->
+
+  <screen id="ChecklistTemplate_List" displayName="Checklist Templates"
+        pageName="List.html"
+        dataStatement="exec ChecklistTemplate_GetList @UserName='|UserName|'"
+        formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_List.xml"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_InsertUpdate.xml"
+          >
+    <reference ScreenID="NewChecklistTemplate" type="linkNoSave" displayName="New Checklist Template" displayStyle="icon:control_point" />
+    <reference ScreenID="ChecklistTemplate_List" type="contextHeader" displayName="This is the Template Setup!" displayStyle="checklistTemplateTitle"/>
+  </screen>
+
+
+  <screen id="NewChecklistTemplate"
+          pageName="javascript:showInDialog('Form.html', 'New Checklist Template', 900,600)"
+          formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate.xml"
+          updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_InsertUpdate.xml"
+          dataStatement="exec ChecklistTemplate_Get @ChecklistTemplateID=0, @UserName='|UserName|'"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <!--<screen id="NewChecklistTemplate" pageName="runProcess.aspx" dataStatement="exec ChecklistTemplate_InsertUpdate @I_vChecklistTemplateID = 0">
+    <reference ScreenID="ChecklistTemplate_Detail_List" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>-->
+
+  <screen id="ChecklistTemplate_Detail_List" displayName="fieldName listTitle"
+        pageName="List.html"
+        dataStatement="exec ChecklistTemplate_Detail_GetList @ChecklistTemplateID='{0}', @Checklist_DetailTypeID='{1}'"
+        formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_List.xml"
+          >
+    <reference ScreenID="Checklist_DetailType_Filter" type="findSQL" displayName="Load List" >
+      <link fieldName="ChecklistTemplateID"/>
+      <link fieldName="Checklist_DetailTypeID"/>
+    </reference>
+    <reference ScreenID="ChecklistTemplate_List" type="contextHeader" displayName="This is the Template Setup!" displayStyle="checklistTemplateTitle"/>
+  </screen>
+
+  <screen id="Checklist_DetailType_Filter"
+        formatXML="~\solution\xml\Checklist_DetailType_Filter.xml"
+        dataStatement="select '{0}' As ChecklistTemplateID, '{0}' As FlockChecklistID, null as Checklist_DetailTypeID"
+          />
+
+  <screen id="NewChecklistTemplate_Detail" pageName="runProcess.aspx" dataStatement="exec ChecklistTemplate_Detail_InsertUpdate @I_vChecklistTemplate_DetailID = 0, @I_vChecklistTemplateID = '{0}', @I_vChecklist_DetailTypeID = '{1}'">
+    <reference ScreenID="ChecklistTemplate_Detail" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+
+  <screen id="ChecklistTemplate_Detail" displayName="Step Detail"
+        pageName="Form.html"
+        dataStatement="exec ChecklistTemplate_Detail_Get @ChecklistTemplate_DetailID = '{0}', @ChecklistTemplateID = '{1}'"
+        formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail.xml"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_InsertUpdate.xml"
+          >
+    <reference type="link" ScreenID="ChecklistTemplate_Detail_List" displayName="Save and Return" displayStyle="icon:exit_to_app">
+      <link fieldName="ChecklistTemplateID"/>
+    </reference>
+    <reference type="detail" ScreenID="ChecklistTemplate_DetailAttachment_List" displayName="Step Attachments" displayStyle="" />
+    <reference type="detail" ScreenID="ChecklistTemplate_DetailAlertSchedule_List" displayName="Alert Schedule" displayStyle="" />
+    <reference ScreenID="ChecklistTemplate_List" type="contextHeader" displayName="This is the Template Setup!" displayStyle="checklistTemplateTitle"/>
+  </screen>
+
+  <screen id="ChecklistTemplate_Detail_Vaccine" displayName="Link Vaccines"
+          pageName="javascript:showInDialog('List.html', 'Link Vaccines', 900,600)"
+          dataStatement="exec ChecklistTemplate_Detail_Vaccine_Get @ChecklistTemplate_DetailID = '{0}'"
+          formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine.xml"
+          updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="ChecklistTemplate_Detail_Vaccine_Delete"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine_Delete.xml"
+          ></screen>
+
+
+
+
+  <screen id="ChecklistTemplate_Detail_Delete" updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Delete.xml"/>
+
+  <screen id="ChecklistTemplate_Detail_SortUp" updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_SortUp.xml"/>
+  <screen id="ChecklistTemplate_Detail_SortDown" updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_SortDown.xml"/>
+
+  <screen id="ChecklistTemplate_DetailAttachment_List"
+          pageName="List.html"
+          dataStatement="exec ChecklistTemplate_DetailAttachment_GetList @ChecklistTemplate_DetailID='{0}'"
+          formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_List.xml"
+          ></screen>
+
+  <screen id="ChecklistTemplate_DetailAttachment_Upload"
+        pageName="javascript:showInDialog('Form.html', 'Checklist Template Step Attachment Upload', 900,600)"
+        displayStyle="~\solution\Attachments\ChecklistTemplate_Detail"
+        dataStatement="exec ChecklistTemplate_DetailAttachment_Get @ChecklistTemplate_DetailAttachmentID = '{0}', @ChecklistTemplate_DetailID = '{1}', @UserName = '|UserName|'"
+        formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment.xml"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_InsertUpdate.xml">
+
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+    <reference type="detail" ScreenID="FileTree" displayStyle="NoTab" displayName="a"/>
+  </screen>
+
+  <screen id="ChecklistTemplate_DetailAlertSchedule_List" displayName="Step Alert Schedule"
+        pageName="List.html"
+        dataStatement="exec ChecklistTemplate_DetailAlertSchedule_GetList @ChecklistTemplate_DetailID = '{0}'"
+        formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_List.xml"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="ChecklistTemplate_DetailAlertSchedule_Recipients" displayName="Recipients"
+          pageName="javascript:showInDialog('List.html', 'ChecklistTemplate_Detail Attachment Upload', 900,600)"
+          dataStatement="exec ChecklistTemplate_DetailAlertSchedule_Recipients_GetList @ChecklistTemplate_DetailAlertScheduleID = '{0}'"
+          formatXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_List.xml"
+          updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+
+
+  <!--.....................................End ChecklistTemplate.xml.......................................-->
+
+
+
+  <!--.....................................FlockChecklist.xml.......................................-->
+
+
+  <screen id="FlockChecklist_List" displayName="Flock Checklists"
+        pageName="List.html"
+        dataStatement="exec FlockChecklist_GetList @FlockID = '{0}', @UserName='|UserName|'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_List.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Update.xml"
+          >
+  </screen>
+
+  <screen id="NewFlockChecklist_Select"
+        pageName="List.html"
+        dataStatement="exec NewFlockChecklist_Select @FlockID = '{0}', @UserName='|UserName|'"
+        formatXML="~\solution\xml\FlockChecklist\NewFlockChecklist_Select.xml"
+           ></screen>
+
+  <screen id="NewFlockChecklist" pageName="runProcess.aspx" dataStatement="exec CreateFlockChecklist @FlockID='{0}', @ChecklistTemplateID='{1}'">
+    <reference ScreenID="FlockChecklist_Detail_List" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+
+  <screen id="FlockChecklist_Detail_List" displayName="fieldName listTitle"
+        pageName="List.html"
+        dataStatement="exec FlockChecklist_Detail_GetList @FlockChecklistID='{0}', @Checklist_DetailTypeID='{1}'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_List.xml"
+          >
+    <reference ScreenID="Checklist_DetailType_Filter" type="findSQL" displayName="Load List" >
+      <link fieldName="FlockChecklistID"/>
+      <link fieldName="Checklist_DetailTypeID"/>
+    </reference>
+  </screen>
+
+  <screen id="NewFlockChecklist_Detail" pageName="runProcess.aspx" dataStatement="exec FlockChecklist_Detail_InsertUpdate @I_vFlockChecklist_DetailID = 0, @I_vFlockChecklistID = '{0}', @I_vChecklist_DetailTypeID = '{1}'">
+    <reference ScreenID="FlockChecklist_Detail" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+  <screen id="FlockChecklist_Detail_List_ReadOnly" displayName="fieldName listTitle"
+        pageName="List.html"
+        dataStatement="exec FlockChecklist_Detail_GetList @FlockChecklistID='{0}', @Checklist_DetailTypeID='{1}', @includeNew=0, @orderByDate=1"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_List_ReadOnly.xml"
+          >
+    <reference ScreenID="Checklist_DetailType_Filter" type="findSQL" displayName="Load List" >
+      <link fieldName="FlockChecklistID"/>
+      <link fieldName="Checklist_DetailTypeID"/>
+    </reference>
+  </screen>
+  <screen id="NewFlockChecklist_Detail" pageName="runProcess.aspx" dataStatement="exec FlockChecklist_Detail_InsertUpdate @I_vFlockChecklist_DetailID = 0, @I_vFlockChecklistID = '{0}'">
+    <reference ScreenID="FlockChecklist_Detail" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+
+  <screen id="FlockChecklist_Detail" displayName="Step Detail - {{thisRecord.StepName}}"
+        pageName="Form.html"
+        dataStatement="exec FlockChecklist_Detail_Get @FlockChecklist_DetailID = '{0}', @FlockChecklistID = '{1}'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_InsertUpdate.xml"
+          >
+    <reference type="link" ScreenID="FlockChecklist_Detail_List" displayName="Save and Return" displayStyle="icon:exit_to_app">
+      <link fieldName="FlockChecklistID"/>
+    </reference>
+    <reference type="detail" ScreenID="FlockChecklist_DetailAttachment_List" displayName="Step Attachments" displayStyle="" />
+    <reference type="detail" ScreenID="FlockChecklist_DetailAlertSchedule_List" displayName="Alert Schedule" displayStyle="" />
+  </screen>
+
+  <screen id="FlockChecklist_Detail_Vaccine" displayName="Link Vaccines"
+        pageName="javascript:showInDialog('List.html', 'Link Vaccines', 900,600)"
+        dataStatement="exec FlockChecklist_Detail_Vaccine_Get @FlockChecklist_DetailID = '{0}'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="FlockChecklist_Detail_Vaccine_Delete"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine_Delete.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_Detail_Delete" updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_Delete.xml"/>
+
+  <screen id="FlockChecklist_Detail_Simple"
+        pageName="Form.html"
+        dataStatement="exec FlockChecklist_Detail_Get @FlockChecklist_DetailID = '{0}', @FlockChecklistID = '{1}'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_Simple.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_InsertUpdate.xml"
+          >
+    <reference type="link" ScreenID="FlockChecklist_Detail_List_ReadOnly" displayName="Save and Return" displayStyle="icon:exit_to_app">
+      <link fieldName="FlockChecklistID"/>
+    </reference>
+    <reference type="detail" ScreenID="FlockChecklist_DetailAttachment_List" displayName="Step Attachments" displayStyle="" />
+  </screen>
+
+  <screen id="FlockChecklist_Detail_SortUp" updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_SortUp.xml"/>
+  <screen id="FlockChecklist_Detail_SortDown" updateXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_SortDown.xml"/>
+
+  <screen id="FlockChecklist_DetailAttachment_List"
+          pageName="List.html"
+          dataStatement="exec FlockChecklist_DetailAttachment_GetList @FlockChecklist_DetailID='{0}'"
+          formatXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_List.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_DetailAttachment_Upload"
+        pageName="javascript:showInDialog('Form.html', 'Flock Checklist Step Attachment Upload', 900,600)"
+        displayStyle="~\solution\Attachments\FlockChecklist_Detail"
+        dataStatement="exec FlockChecklist_DetailAttachment_Get @FlockChecklist_DetailAttachmentID = '{0}', @FlockChecklist_DetailID = '{1}', @UserName = '|UserName|'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAttachment.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_InsertUpdate.xml">
+
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+    <reference type="detail" ScreenID="FileTree" displayStyle="NoTab" displayName="a"/>
+  </screen>
+
+  <screen id="FlockChecklist_DetailAlertSchedule_List" displayName="Step Alert Schedule"
+        pageName="List.html"
+        dataStatement="exec FlockChecklist_DetailAlertSchedule_GetList @FlockChecklist_DetailID = '{0}'"
+        formatXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_List.xml"
+        updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_DetailAlertSchedule_Recipients" displayName="Recipients"
+          pageName="javascript:showInDialog('List.html', 'FlockChecklist_Detail Attachment Upload', 900,600)"
+          dataStatement="exec FlockChecklist_DetailAlertSchedule_Recipients_GetList @FlockChecklist_DetailAlertScheduleID = '{0}'"
+          formatXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_List.xml"
+          updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+
+  <!--.....................................End FlockChecklist.xml.......................................-->
+
+
+  <!--.....................................Reports.xml.......................................-->
+  <screen id="PulletGrower_ScheduleReport" displayName="Pullet Grower Schedule"
+          dataStatement="exec PulletGrower_ScheduleReport @reportDate='{0}'"
+          formatXML="~\solution\xml\Reports\PulletGrower_ScheduleReport.xml"
+          pageName="List.html"
+          >
+    <reference type="findSQL" ScreenID="PulletGrower_ScheduleReport_Params" displayStyle="" displayName="">
+      <link fieldName="reportDate"/>
+    </reference>
+  </screen>
+  <screen id="PulletGrower_ScheduleReport_Params" dataStatement="exec PulletGrower_ScheduleReport_Params" formatXML="~\solution\xml\Reports\PulletGrower_ScheduleReport_Params.xml"/>
+
+  <screen id="FlockChecklistCalendar" displayName="" dataStatement="select '|UserName|' As UserName" pageName="Form.html" formatXML="~\solution\CustomPages\Calendar.html">
+    <reference type="detail" ScreenID="FlockChecklistCalendar_Content" displayStyle="NoTab" displayName=""/>
+    <reference type="detail" ScreenID="FlockChecklistCalendar_FlockFilterContent" displayStyle="NoTab" displayName=""/>
+    <reference type="detail" ScreenID="FlockChecklistCalendar_LocationDropdown" displayStyle="NoTab" displayName=""/>
+    <reference type="detail" ScreenID="FlockChecklistCalendar_LayerHouseDropdown" displayStyle="NoTab" displayName=""/>
+    <reference type="detail" ScreenID="FlockChecklistCalendar_FilterContent" displayStyle="NoTab" displayName=""/>
+  </screen>
+  <screen id="FlockChecklistCalendar_Content" masterDateParam="CalendarDate" pageName="List.html" formatXML="~\solution\xml\FlockChecklistCalendar_Content.xml" dataStatement="exec FlockChecklistCalendar_Get @UserName='|UserName|'"/>
+  <screen id="FlockChecklistCalendar_FlockFilterContent" formatXML="~\solution\xml\dummy.xml" dataStatement="exec FlockChecklistCalendar_FilterContent_Get @UserName='|UserName|'"/>
+  <screen id="FlockChecklistCalendar_LocationDropdown" formatXML="~\solution\xml\dummy.xml" dataStatement="exec Location_Lookup @UserName='|UserName|'"/>
+  <screen id="FlockChecklistCalendar_LayerHouseDropdown" formatXML="~\solution\xml\dummy.xml" dataStatement="exec LayerHouse_Lookup"/>
+  <screen id="FlockChecklistCalendar_FilterContent" formatXML="~\solution\xml\dummy.xml" dataStatement="select convert(int,null) as LocationID, convert(int,null) as LayerHouseID, convert(bit,1) as ShowFlockChecklist"/>
+
+  <screen id="FlockChecklist_Detail_List_All" displayName="All Flock Steps"
+          dataStatement="exec FlockChecklist_Detail_List_All @UserName='|UserName|', @FlockID='{0}', @ChecklistTemplateID='{1}', @Detail_StatusID='{2}'"
+          pageName="List.html"
+          formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_List_All.xml"
+          >
+    <reference type="findSQL" ScreenID="FlockChecklist_Detail_List_All_Find" displayName="" displayStyle="">
+      <link fieldName="FlockID"/>
+      <link fieldName="ChecklistTemplateID"/>
+      <link fieldName="Detail_StatusID"/>
+    </reference>
+  </screen>
+  <screen id="FlockChecklist_Detail_List_All_Find" dataStatement="exec FlockChecklist_Detail_List_All_Find" formatXML="~\solution\xml\FlockChecklist\FlockChecklist_Detail_List_All_Find.xml"/>
+
+  <screen id="HouseInformation" displayName="Information by House"
+          pageName="Form.html"
+          dataStatement="select 1"
+          formatXML="~\solution\CustomPages\HouseInformation.html"
+          >
+    <reference type="detail" ScreenID="HouseInformation_Detail" displayStyle="NoTab" displayName=""/>
+    <reference type="detail" ScreenID="UserLocations" displayStyle="NoTab" displayName=""/>
+  </screen>
+  <screen id="HouseInformation_Detail"
+          dataStatement="exec HouseInformation_Get @UserName='|UserName|', @ReportDate = null"
+          formatXML="~\solution\xml\Reports\HousingInformation.xml"
+          ></screen>
+  <screen id="UserHouses"
+        dataStatement="exec HouseListForUser @UserName='|UserName|'"
+        formatXML="~\solution\xml\dummy.xml"
+          ></screen>
+  <screen id="UserLocations"
+        dataStatement="exec LocationListForUser @UserName='|UserName|'"
+        formatXML="~\solution\xml\dummy.xml"
+          ></screen>
+  <screen id="HouseInformation_Detail_Grid"
+          pageName="List.html"
+          dataStatement="exec HouseInformation_Get @UserName='|UserName|', @ReportDate = '{0}', @IncludeFuture = 1, @LocationID='{1}', @ChecklistTemplateID='{2}'"
+          formatXML="~\solution\xml\Reports\HousingInformation.xml"
+          >
+    <reference type="findSQL" ScreenID="HouseInformation_Detail_Filter" displayStyle="" displayName="Filter">
+      <link fieldName="ReportDate"/>
+      <link fieldName="LocationID"/>
+      <link fieldName="ChecklistTemplateID"/>
+    </reference>
+  </screen>
+  <screen id="HouseInformation_Detail_Filter"
+           pageName="Form.html"
+          dataStatement="select GETDATE() as ReportDate, convert(int,null) as LocationID, convert(int,null) as ChecklistTemplateID"
+          formatXML="~\solution\xml\Reports\HousingInformation_Filter.xml"
+          />
+
+  <screen id="LayerHouse_Report" displayName="Setup - Layer House"
+      pageName="List.html"
+      dataStatement="exec LayerHouse_Get"
+      formatXML="~\solution\xml\Reports\LayerHouse_ListRO.xml"
+          />
+
+  <screen id="FlockByHatchery_Report"
+           pageName="List.html"
+          dataStatement="exec FlockByHatchery_Report @HatcheryID='{0}', @startdate='{1}', @enddate='{2}', @FlockName='{3}'"
+          formatXML="~\solution\xml\Reports\FlockByHatchery_Report.xml"
+          >
+    <reference type="findSQL" ScreenID="FlockByHatchery_Report_Filter" displayStyle="" displayName="Filter">
+      <link fieldName="HatcheryID"/>
+      <link fieldName="startdate"/>
+      <link fieldName="enddate"/>
+    </reference>
+  </screen>
+
+  <screen id="FlockByHatchery_Report_Filter" dataStatement="select convert(int,null) as HatcheryID, GETDATE() as startdate, convert(date,null) as enddate"
+          formatXML="~\solution\xml\Reports\FlockByHatchery_Report_Filter.xml"/>
+
+  <screen id="LayerHouseWeek_Report" displayName="Layer House Week Report"
+        pageName="List.html"
+        dataStatement="exec LayerHouseWeek_Report @reportDate='{0}'"
+        formatXML="~\solution\xml\Reports\LayerHouseWeek_Report.xml"
+          >
+    <reference type="findSQL" ScreenID="LayerHouseWeek_Report_Params" displayStyle="" displayName="">
+      <link fieldName="reportDate" />
+    </reference>
+  </screen>
+  <screen id="LayerHouseWeek_Report_Params" dataStatement="exec LayerHouseWeek_Report_Params" formatXML="~\solution\xml\Reports\LayerHouseWeek_Report_Params.xml"/>
+
+  <screen id="LayerHouseMortality_Report" displayName="Layer House Mortality"
+      pageName="Form.html"
+      dataStatement="SELECT LocationID FROM Location WHERE LocationID = {1}"
+      formatXML="~\solution\xml\Reports\LayerHouseMortality_Report.xml"
+          >
+    <reference type="detail" ScreenID="LayerHouseMortality_Report_Detail" displayName="Mortality"></reference>
+  </screen>
+
+  <screen id="LayerHouseMortality_Report_Detail" displayName="Layer House Mortality"
+    pageName="List.html"
+    dataStatement="exec LayerHouseMortality_Report @LayerHouseID={0},@LocationID={1}"
+    formatXML="~\solution\xml\Reports\LayerHouseMortality_Report_Detail.xml"
+          />
+
+  <screen id="LayerHouseWeekly_ReportParams" pageName="Form.html" dataStatement="SELECT NULL AS LayerHouseID" formatXML="~\solution\xml\LayerHouse\LayerHouseWeekly_ReportParams.xml" >
+    <reference type="report" ScreenID="LayerHouseWeekly_Report" displayStyle="popup" >
+      <link fieldName="LayerHouseID"></link>
+    </reference>
+    <reference ScreenID="CurrentWeekAvg" type="additionalDataSet" displayName="CurrentWeekAvg" displayStyle=""/>
+  </screen>
+
+  <screen id="LayerHouseWeekly_Report" dataStatement="exec LayerHouseWeekly_Report @LayerHouseID='{0}'" formatXML="solution\xml\dummy.xml" pageName="ReportAR\layerHouseWeek.rpx" updateXML="~\solution\reports\reportAR\layerHouseWeek.xml" type="report PDF" />
+
+  <screen id="CurrentWeekAvg" dataStatement="CurrentWeekAvg @LayerHouseID='{0}'"/>
+
+  <!--.....................................End Reports.xml.......................................-->
+
+
+
+  <!--.....................................Setup.xml.......................................-->
+
+  <screen id="Checklist_DetailType" displayName="Checklist Detail Type"
+        pageName="List.html"
+        dataStatement="exec Checklist_DetailType_Get"
+        formatXML="~\solution\xml\setup\Checklist_DetailType.xml"
+        updateXML="~\solution\xml\setup\Checklist_DetailType_InsertUpdate.xml"
+          ></screen>
+
+
+
+  <screen id="Hatchery" displayName="Hatchery"
+        pageName="List.html"
+        dataStatement="exec Hatchery_Get"
+        formatXML="~\solution\xml\setup\Hatchery.xml"
+        updateXML="~\solution\xml\setup\Hatchery_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="FowlOutMover" displayName="Setup - Fowl-Out Mover"
+        pageName="List.html"
+        dataStatement="exec FowlOutMover_Get"
+        formatXML="~\solution\xml\Setup\FowlOutMover.xml"
+        updateXML="~\solution\xml\Setup\FowlOutMover_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="PulletGrower" displayName="Setup - Pullet Grower"
+        pageName="List.html"
+        dataStatement="exec PulletGrower_Get"
+        formatXML="~\solution\xml\Setup\PulletGrower.xml"
+        updateXML="~\solution\xml\Setup\PulletGrower_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="ProductBreed" displayName="Setup - Product/Breed"
+        pageName="List.html"
+        dataStatement="exec ProductBreed_Get"
+        formatXML="~\solution\xml\Setup\ProductBreed.xml"
+        updateXML="~\solution\xml\Setup\ProductBreed_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="PulletMover" displayName="Setup - Pullet Movers"
+          pageName="List.html"
+          dataStatement="exec PulletMover_Get"
+          formatXML="~\solution\xml\Setup\PulletMover.xml"
+          updateXML="~\solution\xml\Setup\PulletMover_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="Location_List" displayName="Setup - Locations"
+          pageName="List.html"
+          dataStatement="exec Location_Get"
+          formatXML="~\solution\xml\Setup\Location_List.xml"
+          ></screen>
+  <screen id="Location" displayName="Setup - Locations"
+        pageName="javascript:showInDialog('Form.html', 'Edit Location', 900,600)"
+        dataStatement="exec Location_Get @LocationID='{0}'"
+        formatXML="~\solution\xml\Setup\Location.xml"
+        updateXML="~\solution\xml\Setup\Location_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <screen id="LayerHouse_List" displayName="Setup - Layer House"
+      pageName="List.html"
+      dataStatement="exec LayerHouse_Get"
+      formatXML="~\solution\xml\Setup\LayerHouse_List.xml"
+          updateXML="~\solution\xml\Setup\LayerHouse_InsertUpdate.xml"
+          >
+    <reference ScreenID="LayerHouse_Add" type="linkNoSave" displayName="New Layer House" displayStyle="icon:control_point" />
+  </screen>
+  <screen id="LayerHouse" displayName="Setup - Layer House"
+        pageName="javascript:showInDialog('Form.html', 'Edit Layer House', 900,600)"
+        dataStatement="exec LayerHouse_Get @LayerHouseID='{0}', @includeNew=0"
+        formatXML="~\solution\xml\Setup\LayerHouse.xml"
+        updateXML="~\solution\xml\Setup\LayerHouse_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+  <screen id="LayerHouse_NoPopup" displayName="Setup - Layer House"
+        pageName="Form.html"
+        dataStatement="exec LayerHouse_Get @LayerHouseID='{0}', @includeNew=0"
+        formatXML="~\solution\xml\Setup\LayerHouse.xml"
+        updateXML="~\solution\xml\Setup\LayerHouse_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+  <screen id="LayerHouse_Add" pageName="javascript:showInDialog('runProcess.aspx', 'Edit Layer House', 900,600)" dataStatement="exec LayerHouse_InsertUpdate @I_vLayerHouseID=0, @I_vLocationID=null">
+    <reference ScreenID="LayerHouse_NoPopup" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+
+  <screen id="LayerHouse_Delete"
+          updateXML="~\solution\xml\LayerHouse\LayerHouse_Delete.xml"
+          >
+  </screen>
+
+  <screen id="LayerHouseDelete_PopupFormScreen" saveIcon="delete" displayName=""
+      pageName="javascript:showInDialog('Form.html', 'Layer House', 900,300)"
+      dataStatement="exec LayerHouse_Get @LayerHouseID = '{0}'"
+      formatXML="~\solution\xml\setup\LayerHouse_DeleteConfirm.xml"
+      updateXML="~\solution\xml\LayerHouse\LayerHouse_Delete.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <screen id="ContactRole" displayName="Setup - Roles"
+        pageName="List.html"
+        dataStatement="exec ContactRole_Get"
+        formatXML="~\solution\xml\Contact\ContactRole.xml"
+        updateXML="~\solution\xml\Contact\ContactRole_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="Contact" displayName="Setup - Contacts"
+          pageName="List.html"
+          dataStatement="exec Contact_Get"
+          formatXML="~\solution\xml\Contact\Contact.xml"
+          updateXML="~\solution\xml\Contact\Contact_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="Vaccine" displayName="Setup - Vaccines"
+        pageName="List.html"
+        dataStatement="exec Vaccine_Get"
+        formatXML="~\solution\xml\Vaccine\Vaccine.xml"
+        updateXML="~\solution\xml\Vaccine\Vaccine_InsertUpdate.xml"
+          >
+  </screen>
+
+  <screen id="Additive" displayName="Setup - Additives"
+        pageName="List.html"
+        dataStatement="exec Additive_Get"
+        formatXML="~\solution\xml\Additive\Additive.xml"
+        updateXML="~\solution\xml\Additive\Additive_InsertUpdate.xml"
+          >
+  </screen>
+
+  <screen id="AdditiveDisease" displayName="fieldname heading"
+      pageName="javascript:showInDialog('List.html', 'Additive Diseases', 900,600)"
+      dataStatement="exec AdditiveDisease_Get @AdditiveID='{0}'"
+      formatXML="~\solution\xml\Additive\AdditiveDisease.xml"
+      updateXML="~\solution\xml\Additive\AdditiveDisease_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="AdditiveDisease_Delete"
+          updateXML="~\solution\xml\Additive\AdditiveDisease_Delete.xml"
+          ></screen>
+
+
+  <screen id="VaccineAttachment_List"
+        pageName="List.html"
+          displayName="fieldName vaccineHeader"
+        dataStatement="exec VaccineAttachment_GetList @VaccineID='{0}'"
+        formatXML="~\solution\xml\Vaccine\VaccineAttachment_List.xml"
+          >
+    <reference type="linkNoSave" ScreenID="Vaccine" displayStyle="icon:arrow_back" displayName="Return to Vaccine List"/>
+  </screen>
+
+  <screen id="VaccineAttachment_Upload"
+        pageName="javascript:showInDialog('Form.html', 'Vaccine Attachment Upload', 900,600)"
+        displayStyle="~\solution\Attachments\Vaccine"
+        dataStatement="exec VaccineAttachment_Get @VaccineAttachmentID = '{0}', @VaccineID = '{1}', @UserName = '|UserName|'"
+        formatXML="~\solution\xml\Vaccine\VaccineAttachment.xml"
+        updateXML="~\solution\xml\Vaccine\VaccineAttachment_InsertUpdate.xml">
+
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+    <reference type="detail" ScreenID="FileTree" displayStyle="NoTab" displayName="a"/>
+  </screen>
+
+  <screen id="Disease" displayName="Disease"
+        pageName="List.html"
+        dataStatement="exec Disease_Get"
+        formatXML="~\solution\xml\Vaccine\Disease.xml"
+        updateXML="~\solution\xml\Vaccine\Disease_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="VaccineDisease" displayName="fieldname heading"
+      pageName="javascript:showInDialog('List.html', 'Vaccine Diseases', 900,600)"
+      dataStatement="exec VaccineDisease_Get @VaccineID='{0}'"
+      formatXML="~\solution\xml\Vaccine\VaccineDisease.xml"
+      updateXML="~\solution\xml\Vaccine\VaccineDisease_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+  <screen id="VaccineDisease_Delete"
+          updateXML="~\solution\xml\Vaccine\VaccineDisease_Delete.xml"
+          ></screen>
+
+  <screen id="VaccineSchedule" displayName="Vaccine Schedule"
+          pageName="List.html"
+          dataStatement="exec VaccineSchedule_Get"
+          formatXML="~\solution\xml\Vaccine\VaccineSchedule.xml"
+          updateXML="~\solution\xml\Vaccine\VaccineSchedule_InsertUpdate.xml"
+          ></screen>
+  <screen id="VaccineSchedule_Delete"
+          updateXML="~\solution\xml\Vaccine\VaccineSchedule_Delete.xml"
+          ></screen>
+
+  <screen id="VaccineScheduleVaccine" displayName="Vaccine Schedule Vaccine"
+          pageName="javascript:showInDialog('List.html', 'Schedule Vaccines', 900,600)"
+          dataStatement="exec VaccineScheduleVaccine_Get @VaccineScheduleID = '{0}'"
+          formatXML="~\solution\xml\Vaccine\VaccineScheduleVaccine.xml"
+          updateXML="~\solution\xml\Vaccine\VaccineScheduleVaccine_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="link" ScreenID="CloseDialog" displayName="Save and Close" displayStyle="icon:exit_to_app"/>
+  </screen>
+
+  <screen id="VaccineScheduleVaccine_Delete"
+          updateXML="~\solution\xml\Vaccine\VaccineScheduleVaccine_Delete.xml"
+          ></screen>
+
+
+
+
+
+  <screen id="AttachmentType" displayName="Setup - Attachment Type"
+        pageName="List.html"
+        dataStatement="exec AttachmentType_Get"
+        formatXML="~\solution\xml\Setup\AttachmentType.xml"
+        updateXML="~\solution\xml\Setup\AttachmentType_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="Detail_Status" displayName="Setup - Detail Status"
+        pageName="List.html"
+        dataStatement="exec Detail_Status_Get"
+        formatXML="~\solution\xml\Setup\Detail_Status.xml"
+        updateXML="~\solution\xml\Setup\Detail_Status_InsertUpdate.xml"
+          ></screen>
+
+  <screen id="SendEmail" displayName="Send Email for Date"
+          pageName="Form.html"
+          dataStatement="select GETDATE() as alertDate"
+          formatXML="~\solution\xml\Setup\SendEmail.xml"
+          updateXML="~\solution\xml\Setup\FlockChecklist_SendAlerts.xml"
+          ></screen>
+
+  <screen id="AlertTemplate_New" pageName="runProcess.aspx" dataStatement="exec AlertTemplate_InsertUpdate @I_vAlertTemplateID=0">
+    <reference ScreenID="AlertTemplate" type="forward">
+      <link fieldName="ID"/>
+    </reference>
+  </screen>
+  <screen id="AlertTemplate" displayName="Alert Template"
+        pageName="Form.html"
+        dataStatement="exec AlertTemplate_Get @AlertTemplateID='{0}'"
+        formatXML="~\solution\xml\setup\AlertTemplate.xml"
+        updateXML="~\solution\xml\setup\AlertTemplate_InsertUpdate.xml"
+          >
+    <reference type="link" ScreenID="AlertTemplate_List" displayName="Save and Return" displayStyle="icon:exit_to_app"/>
+    <reference type="detail" ScreenID="FieldReference_List" displayStyle="NoTab"/>
+  </screen>
+  <screen id="FieldReference_List" dataStatement="FieldReference_GetList_ForAlerts" formatXML="~\solution\xml\dummy.xml" />
+  <screen id="AlertTemplate_List" displayName="Alert Template"
+        pageName="List.html"
+        dataStatement="exec AlertTemplate_GetList"
+        formatXML="~\solution\xml\setup\AlertTemplate_List.xml"
+        updateXML="~\solution\xml\setup\AlertTemplate_InsertUpdate.xml"
+          >
+    <reference type="link" ScreenID="AlertTemplate_New" displayName="New" displayStyle="icon:control_point"/>
+  </screen>
+  <screen id="AlertTemplate_Delete"
+          updateXML="~\solution\xml\setup\AlertTemplate_Delete.xml"
+          ></screen>
+
+  <screen id="DeleteMajorObject_Get"
+          pageName="Form.html"
+          dataStatement="exec DeleteMajorObject_Get"
+          formatXML="~\solution\xml\Setup\DeleteMajorObject_Get.xml"
+          updateXML="~\solution\xml\Setup\DeleteMajorObject.xml"
+          saveIcon="delete"
+          saveDisplay="Delete"
+          ></screen>
+
+  <!-- Delete Screens-->
+  <screen id="ChecklistTemplate_DetailAttachment_Delete"
+        updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_Delete.xml"
+          ></screen>
+
+  <screen id="ChecklistTemplate_DetailAlertSchedule_Delete"
+          updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Delete.xml"
+          ></screen>
+
+  <screen id="ChecklistTemplate_DetailAlertSchedule_Recipients_Delete"
+          updateXML="~\solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_Delete.xml"
+          ></screen>
+
+  <screen id="FlockAttachment_Delete"
+          updateXML="~\solution\xml\Flock\FlockAttachment_Delete.xml"
+          ></screen>
+  <screen id="VaccineAttachment_Delete"
+          updateXML="~\solution\xml\Vaccine\VaccineAttachment_Delete.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_DetailAlertSchedule_Delete"
+          updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Delete.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_DetailAlertSchedule_Recipients_Delete"
+          updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_Delete.xml"
+          ></screen>
+
+  <screen id="FlockChecklist_DetailAttachment_Delete"
+          updateXML="~\solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_Delete.xml"
+          ></screen>
+
+  <screen id="FlockContact_Delete"
+          updateXML="~\solution\xml\Flock\FlockContact_Delete.xml"
+          ></screen>
+
+  <screen id="FlockPulletGrower_Delete"
+          updateXML="~\solution\xml\Flock\FlockPulletGrower_Delete.xml"
+          ></screen>
+
+  <screen id="FlockVaccine_Delete"
+          updateXML="~\solution\xml\Flock\FlockVaccine_Delete.xml"
+          ></screen>
+  <screen id="FlockAdditive_Delete"
+         updateXML="~\solution\xml\Flock\FlockAdditive_Delete.xml"
+          ></screen>
+
+  <screen id="UserToLocation_Delete"
+        updateXML="~\solution\xml\Setup\UserToLocation_Delete.xml"
+          ></screen>
+
+
+
+
+  <!--User Setup-->
+  <screen id="UserTable_List" displayName="Setup - Users"
+      pageName="List.html"
+      dataStatement="exec csb.UserTable_GetList "
+      formatXML="~\solution\xml\setup\UserTable_List.xml"
+      updateXML="~\solution\xml\setup\UserTable_InsertUpdate.xml"
+      >
+
+
+  </screen>
+
+  <screen id="UserToLocation" displayName="fieldname header"
+        pageName="javascript:showInDialog('List.html', 'User Form', 600,500)"
+        dataStatement="exec UserToLocation_Get @UserTableID='{0}'"
+        formatXML="~\solution\xml\Setup\UserToLocation.xml"
+        updateXML="~\solution\xml\Setup\UserToLocation_InsertUpdate.xml"
+          >
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+    <reference type="additionalProcess" ScreenID="AddAllLocations" displayStyle="icon:library_add" displayName="Add All Locations">
+    </reference>
+    <reference type="clientScriptOnSave" ScreenID="CloseDialog" displayStyle=""/>
+  </screen>
+
+  <screen id="AddAllLocations" pageName="runProcess.aspx" dataStatement="exec UserAddAllLocations @UserTableID = '{0}'"/>
+
+
+  <screen id="UserTable_Form" displayName="Save User"
+      oldpageName="Form.html"
+      pageName="javascript:showInDialog('Form.html', 'User Form', 600,500)"
+      dataStatement="exec csb.UserTable_GetList @UserTableID='{0}', @UserName='|UserName|'"
+      formatXML="~\solution\xml\setup\UserTable_Form.xml"
+      updateXML="~\solution\xml\setup\UserTable_InsertUpdate.xml"
+      >
+    <reference ScreenID="ClosePagedDialog" type="clientScriptOnCancel"/>
+    <reference ScreenID="ClosePagedDialog" type="clientScriptOnSave"/>
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+  </screen>
+
+  <screen id="User_Delete" displayName="Delete User"
+      updateXML="~\solution\xml\setup\UserTable_Delete.xml"
+      />
+  <screen id="UserGroup_List" displayName="User Groups"
+      pageName="List.html"
+      dataStatement="exec csb.UserGroup_GetList"
+      formatXML="~\solution\xml\setup\UserGroup_List.xml"
+      updateXML="~\solution\xml\setup\UserGroup_InsertUpdate.xml"
+      />
+  <screen id="UserGroup_Delete" displayName="Delete User Group"
+      updateXML="~\solution\xml\setup\UserGroup_Delete.xml"
+      />
+
+  <!--.....................................End Setup.xml.......................................-->
+
+
+  <!--.....................................Security.xml.......................................-->
+  <screen id="CloseDialogAndPopulateParent" dataStatement="closeDialogFromChildAndPopulateParent();" pageName="javascript:closeDialogFromChildAndPopulateParent();" hideFromNonMenuSecurity="1"/>
+  <screen id="CloseWindow" dataStatement="window.opener.location.replace(window.opener.location); CloseWindow()" hideFromNonMenuSecurity="1"/>
+  <screen id="CloseDialog" dataStatement="closeDialog(true,true,true,true);" pageName="javascript:closeDialog(true,true,true,true);" hideFromNonMenuSecurity="1"/>
+  <screen id="ClosePagedDialog" dataStatement="closeDialog(true,true,true);" pageName="javascript:closeDialog(true,true,true);" hideFromNonMenuSecurity="1"/>
+
+  <!--Security screen entries for CSB Foundation -->
+  <screen id="Message_Form" displayName="|Back"
+  pageName="Form.html"
+  dataStatement="select '{0}' as Message"
+  formatXML="~\solution\xml\Message_Form.xml"
+  hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="Home" displayStyle="autoredirect"/>
+  </screen>
+  <screen id="SecurityHome" formatXML="~\solution\xml\security\SecurityHome.xml" pageName="Form.html" displayName="Cargas Solution Builder" hideFromNonMenuSecurity="1">
+    <reference ScreenID="ScreenSecurityTreeView" type="LeftNav" displayName="" displayStyle="" />
+  </screen>
+  <screen id="ScreenSecurityTreeView" dataStatement="DP:SecurityProvider GetSecurityTreeViewNoUsersNoQuery" formatXML="~\TemplateHtml\TreeView.html" pageName="treeview" hideFromNonMenuSecurity="1"/>
+
+  <!--comment out the next line and uncomment the following if using database security-->
+  <screen id="ScreenSecurity" dataStatement="DP:SecurityProvider GetSecurityResourceForMenuAndScreen '{0}', '{1}'" formatXML="~\solution\xml\security\ScreenSecurity.xml" pageName="Form.html" updateXML="~\solution\xml\security\UpdateScreenAndMenuResources.xml" displayName="Save" displayStyle="Security For Screen and Menu Item" hideFromNonMenuSecurity="1">
+    <!--<screen id="ScreenSecurity" dataStatement="DP:SecurityProvider GetSecurityResourceForMenuAndScreenDatabase '{0}', '{1}'" formatXML="~\solution\xml\security\ScreenSecurity.xml" pageName="Form.html" updateXML="~\solution\xml\security\ScreenSecurity_Update.xml" displayName="Save" displayStyle="Security For Screen and Menu Item" hideFromNonMenuSecurity="1">-->
+    <reference ScreenID="GroupUserSecurityForScreen" type="detail" displayName="Group/User Permissions" displayStyle="">
+      <link fieldName="ScreenResourceID" />
+    </reference>
+    <reference ScreenID="TabSecurityForScreen" type="detail" displayName="Tabs" displayStyle=""/>
+    <reference ScreenID="LinkSecurityForScreen" type="detail" displayName="Links" displayStyle=""/>
+    <reference ScreenID="ScreenSecurityTreeView" type="LeftNav" displayName="" displayStyle="" />
+  </screen>
+
+  <!--comment out the next line and uncomment the following if using database security-->
+  <screen id="GroupUserSecurityForScreen" dataStatement="DP:SecurityProvider GetPermissionsListForMenuAndScreenUserGroupFromSQL '{0}', '{1}', 'exec Get_UserGroupListForSecurity'" formatXML="~\solution\xml\security\GroupUserSecurityForScreen.xml" pageName="Form.html" updateXML="~\solution\xml\security\UpdateScreenAndMenuResourcesAndSetPermission.xml" displayName="Security For Screen" hideFromNonMenuSecurity="1"/>
+  <!--<screen id="GroupUserSecurityForScreen" dataStatement="DP:SecurityProvider GroupUserSecurityForScreenDatabase '{0}', '{1}'" formatXML="~\solution\xml\security\GroupUserSecurityForScreen.xml" pageName="Form.html" updateXML="~\solution\xml\security\GroupUserSecurityForScreen_InsertUpdate.xml" displayName="Security For Screen" hideFromNonMenuSecurity="1"/>-->
+
+  <screen id="SecurityScreenForScreenIDPreProcess" dataStatement="csb.Get_SecurityScreenForScreenIDPreProcess '{0}'" formatXML="~\solution\xml\security\ScreenSecurity.xml" pageName="runProcess.aspx" displayStyle="&lt;img src=&quot;images/lock.png&quot; /&gt;" hideFromNonMenuSecurity="1">
+    <reference ScreenID="ScreenSecurity" type="forward" displayName="" displayStyle="" />
+    <reference ScreenID="UsersAndGroups" type="navigate to" displayName="" displayStyle="" />
+  </screen>
+
+  <screen id="TabSecurityForScreen" dataStatement="DP:SecurityProvider GetTabsForScreen '{1}'" formatXML="~\solution\xml\security\TabSecurityForScreen.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="LinkSecurityForScreen" dataStatement="DP:SecurityProvider GetLinksForScreen '{1}'" formatXML="~\solution\xml\security\TabSecurityForScreen.xml" hideFromNonMenuSecurity="1"/>
+
+
+  <!-- Support documentation screens -->
+  <screen id="Overview_Form" displayName="|"
+      pageName="Form.html"
+      dataStatement="exec csb.Overview_Get @OverviewID=1"
+      formatXML="~\solution\xml\support-csb\Overview_Form.xml"
+      hideFromNonMenuSecurity="1">
+  </screen>
+
+
+  <!-- Support team member screen... -->
+  <screen id="TeamMember_List" displayName="Support - Documentation - Team"
+      pageName="List.html"
+      dataStatement="exec csb.TeamMember_GetList"
+      formatXML="~\solution\xml\support-csb\TeamMember_List.xml"
+      hideFromNonMenuSecurity="1"/>
+
+  <!-- Support server details screen... -->
+  <screen id="ServerDetails_Form" displayName="|Back"
+      pageName="Form.html"
+      dataStatement="exec csb.ServerDetails_Get"
+      formatXML="~\solution\xml\support-csb\ServerDetails_Form.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="Home" displayStyle="autoredirect"/>
+  </screen>
+
+  <!-- Support database objects screens -->
+  <screen id="SolutionObject_List" displayName="Support - Documentation - Database objects"
+      pageName="List.html"
+      dataStatement="exec csb.SolutionObject_GetList @SchemaName='{0}', @SolutionObjectTypeCode='{1}', @ObjectNameFilter='{2}'"
+      formatXML="~\solution\xml\support-csb\SolutionObject_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="SolutionObject_ListFind">
+      <link fieldName="SchemaName"/>
+      <link fieldName="SolutionObjectTypeCode"/>
+      <link fieldName="ObjectNameFilter"/>
+    </reference>
+  </screen>
+  <screen id="SolutionObject_ListFind"
+      formatXML="~\solution\xml\support-csb\SolutionObject_ListFind.xml"
+      hideFromNonMenuSecurity="1"
+      />
+
+  <!-- Support jobs screen... -->
+  <screen id="Job_List" displayName="Support - Documentation - Jobs"
+      pageName="List.html"
+      dataStatement="exec csb.Job_GetList"
+      formatXML="~\solution\xml\support-csb\Job_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="Home" displayStyle="autoredirect"/>
+  </screen>
+
+  <!-- Support activity screens -->
+  <screen id="ActivityLog_ListSummaryByPage" displayName="Support - Activity - Summary by page"
+      pageName="List.html"
+      dataStatement="exec csb.ActivityLog_GetListSummaryByPage @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @IpAddressFilter='{3}', @UrlFilter='{4}', @UserAgentFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListSummaryByPage.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ActivityLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="IpAddressFilter"/>
+      <link fieldName="UrlFilter"/>
+      <link fieldName="UserAgentFilter"/>
+    </reference>
+  </screen>
+  <screen id="ActivityLog_ListSummaryByUser" displayName="Support - Activity - Summary by user"
+      pageName="List.html"
+      dataStatement="exec csb.ActivityLog_GetListSummaryByUser @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @IpAddressFilter='{3}', @UrlFilter='{4}', @UserAgentFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListSummaryByUser.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ActivityLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="IpAddressFilter"/>
+      <link fieldName="UrlFilter"/>
+      <link fieldName="UserAgentFilter"/>
+    </reference>
+  </screen>
+  <screen id="ActivityLog_ListSummaryByIpAddress" displayName="Support - Activity - Summary by IP address"
+      pageName="List.html"
+      dataStatement="exec csb.ActivityLog_GetListSummaryByIpAddress @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @IpAddressFilter='{3}', @UrlFilter='{4}', @UserAgentFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListSummaryByIpAddress.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ActivityLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="IpAddressFilter"/>
+      <link fieldName="UrlFilter"/>
+      <link fieldName="UserAgentFilter"/>
+    </reference>
+  </screen>
+  <screen id="ActivityLog_ListSummaryBySupportSubInterval" displayName="Support - Activity - Summary by time"
+      pageName="List.html"
+      dataStatement="exec csb.ActivityLog_GetListSummaryBySupportSubInterval @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @SupportSubIntervalID='{3}', @IpAddressFilter='{4}', @UrlFilter='{5}', @UserAgentFilter=''"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListSummaryBySupportSubInterval.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ActivityLog_ListSubIntervalFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="SupportSubIntervalID"/>
+      <link fieldName="IpAddressFilter"/>
+      <link fieldName="UrlFilter"/>
+    </reference>
+  </screen>
+  <screen id="ActivityLog_List" displayName="Support - Activity - Details"
+      pageName="List.html"
+      dataStatement="exec csb.ActivityLog_GetList @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @IpAddressFilter='{3}', @UrlFilter='{4}', @UserAgentFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\ActivityLog_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ActivityLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="IpAddressFilter"/>
+      <link fieldName="UrlFilter"/>
+      <link fieldName="UserAgentFilter"/>
+    </reference>
+  </screen>
+  <screen id="ActivityLog_ListFind"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListFind.xml"
+          hideFromNonMenuSecurity="1"
+      />
+  <screen id="ActivityLog_ListSubIntervalFind"
+      formatXML="~\solution\xml\support-csb\ActivityLog_ListSubIntervalFind.xml"
+          hideFromNonMenuSecurity="1"
+      />
+  <screen id="ActivityLog_Form" displayName="|Back"
+      pageName="Form.html"
+      dataStatement="exec csb.ActivityLog_Get {0}"
+      formatXML="~\solution\xml\support-csb\ActivityLog_Form.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="ActivityLog_List" displayStyle="autoredirect"/>
+  </screen>
+
+  <!-- Support performance details screens -->
+  <screen id="PerformanceLog_ListSummaryBySource" displayName="Support - Performance - Summary by source"
+      pageName="List.html"
+      dataStatement="exec csb.PerformanceLog_GetListSummaryBySource @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @PerformanceLogEntryTypeID='{3}', @SourceFilter='{4}', @SourceDetailFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\PerformanceLog_ListSummaryBySource.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="PerformanceLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="PerformanceLogEntryTypeID"/>
+      <link fieldName="SourceFilter"/>
+      <link fieldName="SourceDetailFilter"/>
+    </reference>
+  </screen>
+  <screen id="PerformanceLog_ListSummaryBySupportSubInterval" displayName="Support - Performance - Summary by time"
+      pageName="List.html"
+      dataStatement="exec csb.PerformanceLog_GetListSummaryBySupportSubInterval @SupportIntervalID='{0}', @SupportSubIntervalID='{1}', @UserID='{2}', @PagePartID='{3}', @PerformanceLogEntryTypeID=-1, @SourceFilter='{4}', @SourceDetailFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\PerformanceLog_ListSummaryBySupportSubInterval.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="PerformanceLog_ListSubIntervalFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="SupportSubIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PerformanceLogEntryTypeID"/>
+      <link fieldName="SourceFilter"/>
+      <link fieldName="SourceDetailFilter"/>
+    </reference>
+  </screen>
+  <screen id="PerformanceLog_List" displayName="Support - Performance - Details"
+      pageName="List.html"
+      dataStatement="exec csb.PerformanceLog_GetList @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @PerformanceLogEntryTypeID='{3}', @SourceFilter='{4}', @SourceDetailFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\PerformanceLog_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="PerformanceLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="PerformanceLogEntryTypeID"/>
+      <link fieldName="SourceFilter"/>
+      <link fieldName="SourceDetailFilter"/>
+    </reference>
+  </screen>
+  <screen id="PerformanceLog_ListFind" formatXML="~\solution\xml\support-csb\PerformanceLog_ListFind.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="PerformanceLog_ListSubIntervalFind" formatXML="~\solution\xml\support-csb\PerformanceLog_ListSubIntervalFind.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="PerformanceLog_Form" displayName="|Back"
+      dataStatement="exec csb.PerformanceLog_Get {0}"
+      formatXML="~\solution\xml\support-csb\PerformanceLog_Form.xml"
+      pageName="Form.html"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="PerformanceLog_List" displayStyle="autoredirect"/>
+  </screen>
+
+  <!-- Support warnings screens -->
+  <screen id="WarningLog_List" displayName="Support - Warnings"
+      pageName="List.html"
+      dataStatement="exec csb.WarningLog_GetList @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @SourceFilter='{3}', @WarningFilter='{4}'"
+      formatXML="~\solution\xml\support-csb\WarningLog_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="WarningLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="SourceFilter"/>
+      <link fieldName="WarningFilter"/>
+    </reference>
+  </screen>
+  <screen id="WarningLog_ListFind" formatXML="~\solution\xml\support-csb\WarningLog_ListFind.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="WarningLog_Form" displayName="|Back"
+      pageName="Form.html"
+      dataStatement="exec csb.WarningLog_Get {0}"
+      formatXML="~\solution\xml\support-csb\WarningLog_Form.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="WarningLog_List" displayStyle="autoredirect"/>
+  </screen>
+
+  <!-- Support exceptions screens -->
+  <screen id="ExceptionLog_List" displayName="Support - Exceptions"
+      pageName="List.html"
+      dataStatement="exec csb.ExceptionLog_GetList @SupportIntervalID='{0}', @UserID='{1}', @PagePartID='{2}', @ExceptionSummaryFilter='{3}', @MethodFilter='{4}', @UrlFilter='{5}'"
+      formatXML="~\solution\xml\support-csb\ExceptionLog_List.xml"
+      hideFromNonMenuSecurity="1">
+    <reference type="findSQL" ScreenID="ExceptionLog_ListFind">
+      <link fieldName="SupportIntervalID"/>
+      <link fieldName="UserID"/>
+      <link fieldName="PagePartID"/>
+      <link fieldName="ExceptionSummaryFilter"/>
+      <link fieldName="MethodFilter"/>
+      <link fieldName="UrlFilter"/>
+    </reference>
+  </screen>
+  <screen id="ExceptionLog_ListFind" formatXML="~\solution\xml\support-csb\ExceptionLog_ListFind.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="ExceptionLog_Form" displayName="|Back"
+      dataStatement="exec csb.ExceptionLog_Get {0}"
+      formatXML="~\solution\xml\support-csb\ExceptionLog_Form.xml"
+      pageName="Form.html"
+      hideFromNonMenuSecurity="1">
+    <reference type="redirect" ScreenID="ExceptionLog_List" displayStyle="autoredirect"/>
+  </screen>
+
+  <!--Standard screen entries for CSB Foundation - change per solution  -->
+
+
+
+  <!--Base screen entries for CSB Foundation -->
+  <screen id="FullHeader" hideFromNonMenuSecurity="1"/>
+  <screen id="FullHeaderScreen" hideFromNonMenuSecurity="1">
+    <reference type="displaySettings" ScreenID="FullHeader" displayName="" displayStyle="FullHeader"/>
+  </screen>
+  <screen id="NoHeader" pageName="css/lsNoHeader.css" hideFromNonMenuSecurity="1"/>
+  <screen id="NoHeaderScreen" hideFromNonMenuSecurity="1">
+    <reference type="displaySettings" ScreenID="NoHeader" displayName="" displayStyle="NoHeader"/>
+  </screen>
+  <screen id="NoHeaderNoMenu" pageName="css/lsNoHeaderNoMenu.css" hideFromNonMenuSecurity="1"/>
+  <screen id="NoHeaderNoMenuScreen" hideFromNonMenuSecurity="1">
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayName="" displayStyle="NoHeaderNoMenu"/>
+  </screen>
+  <screen id="PopupForm" pageName="css/lsPopupForm.css" hideFromNonMenuSecurity="1"/>
+  <screen id="PopupFormScreen" hideFromNonMenuSecurity="1">
+    <reference type="displaySettings" ScreenID="PopupForm" displayName="" displayStyle="PopupForm"/>
+  </screen>
+  <screen id="FullMenu" hideFromNonMenuSecurity="1">
+    <reference type="menu" ScreenID="FullMenuFile" displayName="" displayStyle="list"/>
+  </screen>
+  <screen id="FullMenuFile" pageName="~\solution\xml\menuXML\menu.xml" hideFromNonMenuSecurity="1"/>
+  <screen id="LeftMenu" hideFromNonMenuSecurity="1">
+    <reference ScreenID="LeftMenuFile" type="menu" displayName="" displayStyle="list"/>
+  </screen>
+  <screen id="LeftMenuFile" pageName="~\solution\xml\menuXML\leftMenu.xml" hideFromNonMenuSecurity="1">
+  </screen>
+  <screen id="LoginValidate"
+    pageName="DataLoad.aspx"
+    dataStatement="EXEC csb.Login_ValidateUsername @UserName='{0}'"
+    hideFromNonMenuSecurity="1"/>
+  <screen id="Logout"
+          pageName="Login.aspx?action=logout"/>
+
+  <!--..........................................................End Security.xml.....................................-->
+
+
+</screenList>

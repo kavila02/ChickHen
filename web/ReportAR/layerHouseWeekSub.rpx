@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ActiveReportsLayout Version="3" PrintWidth="19410" DocumentName="ARNet Document" ScriptLang="C#">
+  <StyleSheet>
+    <Style Name="Normal" Value="font-family: Arial; font-style: normal; text-decoration: none; font-weight: normal; font-size: 10pt; color: Black; " />
+    <Style Name="Heading1" Value="font-size: 16pt; font-weight: bold; " />
+    <Style Name="Heading2" Value="font-size: 14pt; font-weight: bold; font-style: italic; " />
+    <Style Name="Heading3" Value="font-size: 13pt; font-weight: bold; " />
+  </StyleSheet>
+  <Sections>
+    <Section Type="GroupHeader" Name="GroupHeader1" Height="0" DataField="LayerHouseID" BackColor="16777215" NewPage="1" CanShrink="0" />
+    <Section Type="Detail" Name="Detail" Height="3825" BackColor="16777215" CanShrink="0">
+      <Control Type="AR.Field" Name="txtCount" DataField="Count" MOD="4" Left="810" Top="1620" Width="1440" Height="288" Text="Count" />
+      <Control Type="AR.Field" Name="txtMortality" DataField="Mortality" MOD="4" Left="2790" Top="1620" Width="1440" Height="288" Text="Mortality" />
+      <Control Type="AR.Field" Name="txtFeedInventory" DataField="FeedInventory" MOD="4" Left="4590" Top="1710" Width="1440" Height="288" Text="FeedInventory" />
+      <Control Type="AR.Field" Name="txtPercentMort" DataField="PercentMort" MOD="4" Left="6660" Top="1710" Width="1440" Height="288" Text="PercentMort" />
+      <Control Type="AR.Field" Name="txtLoTemp" DataField="LoTemp" MOD="4" Left="8640" Top="1710" Width="1440" Height="288" Text="LoTemp" />
+    </Section>
+    <Section Type="GroupFooter" Name="GroupFooter1" Height="15" BackColor="16777215" CanShrink="0" />
+  </Sections>
+  <DataSources>
+    <SqlDbDataSource ConnectE="gsXroLzgWjktW8t+prCp0zeHYuwZNu5ucKBTUvkOo+9jndElWNmbmXniaNrcU6OVjhOM4QB61B4iAXhixpC8BW/GYsadwX3NUyKq6U9bOMcgHd3T1ZNT7M+QOB//KibX24LnsjXo0ce7VIdb1fa9i4IaXleoJjpKkQpORLLJTX0=" SQL="EXEC CurrentWeekAvg 7" CommandTimeout="31" />
+  </DataSources>
+  <PageSettings />
+</ActiveReportsLayout>

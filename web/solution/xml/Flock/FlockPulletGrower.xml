@@ -1,0 +1,15 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Pullet Growers">
+    <field fieldName="PulletGrowerID" multilineEdit="true" displayName="Pullet Grower" customValidateFunction="PulletGrowerLookup({thisRecord},{listItem})">
+      <lookupList>
+        <source sql="exec PulletGrower_Lookup" />
+      </lookupList>
+    </field>
+    <!--<field fieldName="NPIP" multilineEdit="true" displayName="NPIP"/>
+    <field fieldName="ExpectedNumberToHouse" multilineEdit="true" displayName="Expected # to House"/>-->
+    <field fieldName="Capacity" readOnly="true" displayName="Pullet Farm Capacity" readOnlyOneWayBinding="false"/>
+    <field fieldName="TotalHoused" multilineEdit="true" displayName="Total Housed"/>
+	  <!--<field fieldName="AgeAtHousing" multilineEdit="true" displayName="Age at Housing (wks)"/>-->
+    <field fieldName="FlockPulletGrowerID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockPulletGrower_Delete" visibleFieldName="FlockPulletGrowerID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

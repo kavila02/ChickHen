@@ -1,0 +1,8 @@
+﻿<div style="width:96px;" class="center" >
+    <a name="LinkValue" ng-if="thisRecord.newRecord=='0'" id="LinkValue" onclick="fireCSBLink(this); return false;" csb-link="showInDialog('Form.html?screenID=FlockVaccine&amp;p={{thisRecord.FlockVaccineID}}', 'Flock Vaccines', 900,600)" href="">
+        <i id="LinkValue" class="center material-icons ng-binging ng-scope">mode_edit</i>
+    </a>
+    <a name="LinkValue" ng-if="thisRecord.newRecord=='1'" id="LinkValue" ng-click="data.executeCommand('FlockVaccine',thisRecord)" href="#">
+        <i id="LinkValue" class="center material-icons ng-binging ng-scope">control_point</i>
+    </a>
+</div>

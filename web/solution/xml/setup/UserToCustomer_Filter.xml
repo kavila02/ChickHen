@@ -1,0 +1,11 @@
+﻿<fieldList>
+	<section displayStyle="fcOutlook">
+    <field fieldName="CUSTNMBR" displayName="Customer" >
+      <!--type="autocomplete 1" textColumns="50" padding="2">
+      <lookupList>
+        <source sql="exec Customer_Lookup '{0}', @enforceIntegrity=0"/>
+      </lookupList>-->
+    </field>
+    <field fieldName="CUSTNAME" displayName=""/>
+	</section>
+</fieldList>

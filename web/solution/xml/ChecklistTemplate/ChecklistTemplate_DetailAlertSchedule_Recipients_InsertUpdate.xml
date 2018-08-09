@@ -1,0 +1,9 @@
+<CargasConnect>
+  <ChecklistTemplate_DetailAlertSchedule_Recipients_InsertUpdate>
+    <ChecklistTemplate_DetailAlertSchedule_RecipientsID/>
+    <ChecklistTemplate_DetailAlertScheduleID/>
+    <RecipientType/>
+    <ContactRoleID/>
+    <ContactID/>
+  </ChecklistTemplate_DetailAlertSchedule_Recipients_InsertUpdate>
+</CargasConnect>

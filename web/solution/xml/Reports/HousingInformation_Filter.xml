@@ -1,0 +1,17 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Housing Report" displayStyle="paging:50">
+    <field fieldName="LocationID" multilineEdit="true" displayName="Location" >
+      <lookupList>
+        <source sql="exec Location_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ChecklistTemplateID" multilineEdit="true" displayName="Type">
+      <lookupList>
+        <source sql="exec ChecklistTemplate_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ReportDate" multilineEdit="true" displayName="Date"/>
+
+    
+  </section>
+</fieldList>

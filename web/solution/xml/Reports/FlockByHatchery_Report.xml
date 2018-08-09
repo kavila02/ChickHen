@@ -1,0 +1,17 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock By Hatchery Report" displayStyle="paging:50">
+    <field fieldName="Hatchery" readOnly="true" displayName="Hatchery"/>
+    <field fieldName="FlockID" readOnly="true" displayName="Flock" type="link display FlockName" ScreenID="Flock" />
+    <field fieldName="FlockID" readOnly="true" displayName="FlockDD">
+      <lookupList>
+        <source sql="exec Flock_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="HatchDate_First" readOnly="true" displayName="Hatch Date"/>
+    <field fieldName="OrderNumber" readOnly="true" displayName="Order Number" />
+    <field fieldName="ProductBreed" readOnly="true" displayName="Product/Breed" />
+    <field fieldName="NumberChicksOrdered" readOnly="true" displayName="Number Chicks Ordered" />
+
+    
+  </section>
+</fieldList>

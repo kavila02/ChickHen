@@ -1,0 +1,10 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="IpAddress"/>
+    <field fieldName="FirstLogDateTime" displayName="First access"/>
+    <field fieldName="LastLogDateTime" displayName="Last access"/>
+    <field fieldName="AccessCount" displayName="Accesses"/>
+    <field fieldName="UserCount" displayName="Users"/>
+    <field fieldName="PageCount" displayName="Pages"/>
+  </section>
+</fieldList>

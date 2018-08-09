@@ -1,0 +1,20 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock">
+    <field fieldName="FlockID" displayName="Edit" type="link icon edit" ScreenID="Flock"/>
+    <field fieldName="FlockChecklistID" displayName="View Flock Checklist" className="width96" type="link icon reorder" ScreenID="FlockChecklist_Detail_List_ReadOnly" />
+    <field fieldName="FlockChecklistID" displayName="Edit Checklist (admin)" type="link icon edit" ScreenID="FlockChecklist_Detail_List" ng-if="thisRecord.FlockChecklistID!==0"/>
+        <!--<field fieldName="FlockID" displayName="Edit Flock Checklist (admin)" className="width96" type="htmlfile ~\solution\CustomPages\FlockChecklistEdit.html"/>-->
+    <field fieldName="FlockID" displayName="Add Checklist to Flock" type="link icon control_point" ScreenID="NewFlockChecklist_Select"/>
+
+    <field fieldName="FlockNamePlusCurrentHouse" type="html" readOnly="true" displayName="Flock Name" className="center"/>
+    <field fieldName="LayerHouse" readOnly="true" displayName="Layer House" className="center">
+      
+    </field>
+    <field fieldName="HatchDate_First" readOnly="true" displayName="Hatch Date" className="center"/>
+    <field fieldName="HousingDate_Average" readOnly="true" displayName="Housing Date (Avg)" className="center"/>
+
+    <field fieldName="FlockID" displayName="Order Calc" readOnly="true" type="link icon event_note" ScreenID="FlockOrderCalculator"/>
+    <field fieldName="FlockID" displayName="Events" readOnly="true" type="link icon view_agenda" ScreenID="FlockEvent_List"/>
+
+  </section>
+</fieldList>

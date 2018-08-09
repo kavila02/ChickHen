@@ -1,0 +1,19 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist Detail" columnSpan="3">
+    <field fieldName="FlockID" displayName="Flock">
+      <lookupList>
+        <source sql="exec Flock_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ChecklistTemplateID" displayName="Template List">
+      <lookupList>
+        <source sql="exec ChecklistTemplate_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="Detail_StatusID" displayName="Status">
+      <lookupList>
+        <source sql="exec Detail_Status_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

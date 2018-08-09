@@ -1,0 +1,11 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Housing Report" displayStyle="paging:50">
+    <field fieldName="LayerHouse" readOnly="true" displayName="House" />
+    <field fieldName="FlockName" readOnly="true" displayName="Flock"/>
+    <field fieldName="HatchDate_Average" readOnly="true" displayName="Hatch Date" />
+    <field fieldName="HousingDate_First" readOnly="true" displayName="Housing Date" />
+    <field fieldName="HousingOutDate" readOnly="true" displayName="Housing Out Date" />
+
+    
+  </section>
+</fieldList>

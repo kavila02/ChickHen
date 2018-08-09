@@ -1,0 +1,19 @@
+﻿<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Setup - Users" displayStyle="paging=100">
+    <field fieldName="UserTableID" type="link display Locations" displayName="Locations" ScreenID="UserToLocation"/>
+
+    <field fieldName="UserID" multilineEdit="true" displayName="UserName" />
+    
+    <field fieldName="ContactName" multilineEdit="true" displayName="Contact Name" />
+    <field fieldName="EmailAddress" multilineEdit="true" displayName="Email Address" />
+    <field fieldName="UserGroupID" multilineEdit="true" displayName="User Group" >
+      <lookupList>
+        <source sql="exec csb.UserGroup_GetSelectList"/>
+      </lookupList>
+    </field>
+    
+    
+	<field fieldName="UserTableID" displayName="Delete" ScreenID="User_Delete" type="command icon Delete" toolTip="Delete User" />
+  </section>
+</fieldList>
+				

@@ -1,0 +1,13 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Pullet Grower Schedule Report" displayStyle="paging:50">
+    <field fieldName="PulletGrower" readOnly="true" displayName="Pullet Grower"/>
+    <field fieldName="Capacity" readOnly="true" displayName="Capacity" />
+    <field fieldName="TotalHoused" readOnly="true" displayName="Total Housed" />
+    <field fieldName="FlockName" readOnly="true" displayName="Current Flock"/>
+    <field fieldName="PreviousHousingDate" readOnly="true" displayName="Previous Flock Housing Date" />
+    <field fieldName="NextHatchDate" readOnly="true" displayName="Next Flock Hatch Date" />
+    
+
+    
+  </section>
+</fieldList>

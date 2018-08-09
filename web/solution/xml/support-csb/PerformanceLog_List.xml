@@ -1,0 +1,11 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="LogDateTime"/>
+    <field fieldName="UserFullName"/>
+    <field fieldName="XmlScreenID"/>
+    <field fieldName="Milliseconds"/>
+    <field fieldName="PerformanceLogEntryTypeName"/>
+    <field fieldName="PerformanceLogID" type="link display Source" ScreenID="PerformanceLog_Form" displayName="Source"/>
+    <field fieldName="SourceDetail"/>
+  </section>
+</fieldList>

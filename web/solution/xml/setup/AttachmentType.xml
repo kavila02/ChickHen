@@ -1,0 +1,13 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="AttachmentType" displayStyle="paging:100">
+
+    <field fieldName="AttachmentType" multilineEdit="true" displayName="Attachment Type"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Active"/>
+    <field fieldName="ShowOnScreenID" multilineEdit="true" displayName="Screen Type">
+      <lookupList>
+        <source sql="exec ShowOnScreen_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

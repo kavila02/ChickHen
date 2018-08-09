@@ -1,0 +1,29 @@
+<fieldList>
+  <section displayName="Support - Documentation - Servers">
+  </section>
+  <section displayName="Web server" className="sectionHeaderRowLevel2">
+    <field fieldName="WebServerName" displayName="Server name"/>
+    <field fieldName="WebServerIpAddress" displayName="IP address"/>
+    <field fieldName="WebServerVersion" displayName="Version"/>
+  </section>
+  <section displayName="Web site" className="sectionHeaderRowLevel2">
+    <field fieldName="WebSiteRootFolder" displayName="Root folder"/>
+  </section>
+  <section displayName="Database server" className="sectionHeaderRowLevel2">
+    <field fieldName="DatabaseServerName" displayName="Server name"/>
+    <field fieldName="DatabaseServerVersion" displayName="Version"/>
+    <field fieldName="DatabaseServerInstallFolder" displayName="Install folder"/>
+  </section>
+  <section displayName="Database" className="sectionHeaderRowLevel2">
+    <field fieldName="DatabaseName" displayName="Database name"/>
+    <field fieldName="CompatibilityLevel" displayName="Compatibility level"/>
+    <field fieldName="CreateDateTime" displayName="Created" format="yyyy-MM-dd HH:mm"/>
+    <field fieldName="DataMB" displayName="Data size (MB)" format="N0"/>
+    <field fieldName="LogMB" displayName="Log size (MB)" format="N0"/>
+    <field fieldName="LastBackup" displayName="Last backup"/>
+    <field fieldName="RecoveryModel" displayName="Recovery model"/>
+    <field fieldName="PageVerifyOption" displayName="Page verify option"/>
+    <field fieldName="AutoCreateStats" displayName="Auto create stats?"/>
+    <field fieldName="AutoUpdateStats" displayName="Auto update stats?"/>
+  </section>
+</fieldList>

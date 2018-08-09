@@ -1,0 +1,7 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist">
+    <field fieldName="linkField" displayName="Create" type="link icon playlist_add" ScreenID="NewFlockChecklist"/>
+    <field fieldName="TemplateName" multilineEdit="true" displayName="Flock Checklist Name"/>
+    
+  </section>
+</fieldList>

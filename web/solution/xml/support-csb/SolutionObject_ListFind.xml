@@ -1,0 +1,15 @@
+<fieldList>
+  <section displayStyle="fcSingleValue" >
+    <field fieldName="SolutionObjectTypeCode">
+      <lookupList>
+        <source sql="exec csb.SolutionObjectType_GetList @IncludeAll=1"/>
+      </lookupList>
+    </field>
+    <field fieldName="SchemaName">
+      <lookupList>
+        <source sql="exec csb.SolutionSchema_GetList @IncludeAll=1"/>
+      </lookupList>
+    </field>
+    <field fieldName="ObjectNameFilter"/>
+  </section>
+</fieldList>

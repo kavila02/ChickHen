@@ -1,0 +1,40 @@
+<screenList>
+
+  <!--.....................................Setup.xml.......................................-->
+
+  <screen id="UserTable_List" displayName="Setup - Users"
+      pageName="List.html"
+      dataStatement="exec csb.UserTable_GetList @IncludeAll=1, @UserName='|UserName|'"
+      formatXML="solution\xml\setup\UserTable_List.xml"
+      >
+    <reference ScreenID="UserTable_Form" type="additionalProcess" displayName="&lt;img src=&quot;images/New.gif&quot;/&gt;" />
+
+  </screen>
+  <screen id="UserTable_Form" displayName="Save User"
+      oldpageName="Form.html"
+      pageName="javascript:showInDialog('Form.html', 'User Form', 600,500)"
+      dataStatement="exec csb.UserTable_GetList @UserTableID='{0}', @UserName='|UserName|'"
+      formatXML="solution\xml\setup\UserTable_Form.xml"
+      updateXML="solution\xml\setup\UserTable_InsertUpdate.xml"
+      >
+    <reference ScreenID="ClosePagedDialog" type="clientScriptOnCancel"/>
+    <reference ScreenID="ClosePagedDialog" type="clientScriptOnSave"/>
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoMenu" />
+  </screen>
+
+  <screen id="User_Delete" displayName="Delete User"
+      updateXML="solution\xml\setup\UserTable_Delete.xml"
+      />
+  <screen id="UserGroup_List" displayName="User Groups"
+      pageName="List.html"
+      dataStatement="exec csb.UserGroup_GetList"
+      formatXML="solution\xml\setup\UserGroup_List.xml"
+      updateXML="solution\xml\setup\UserGroup_InsertUpdate.xml"
+      />
+  <screen id="UserGroup_Delete" displayName="Delete User Group"
+      updateXML="solution\xml\setup\UserGroup_Delete.xml"
+      />
+
+  <!--.....................................End Setup.xml.......................................-->
+  
+</screenList>

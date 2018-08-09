@@ -1,0 +1,26 @@
+<fieldList>
+  <section displayStyle="fcSingleValue" >
+    <field fieldName="SupportIntervalID">
+      <lookupList>
+        <source sql="exec csb.SupportInterval_GetList"/>
+      </lookupList>
+    </field>
+    <field fieldName="UserID">
+      <lookupList>
+        <source sql="exec csb.User_GetList @IncludeAll=1"/>
+      </lookupList>
+    </field>
+    <field fieldName="PagePartID">
+      <lookupList>
+        <source sql="exec csb.PagePart_GetList @IncludeAll=1"/>
+      </lookupList>
+    </field>
+    <field fieldName="SupportSubIntervalID">
+      <lookupList>
+        <source sql="exec csb.SupportSubInterval_GetList @IncludeDefault=1"/>
+      </lookupList>
+    </field>
+    <field fieldName="IpAddressFilter"/>
+    <field fieldName="UrlFilter"/>
+  </section>
+</fieldList>

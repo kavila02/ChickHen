@@ -1,0 +1,10 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+
+  <section columnSpan="4" displayName="Layer House Week: {{thisRecord.display}}">
+    <field fieldName="LocationID" readOnly="true" className="black" columnSpan="2" displayName="Location" >
+      <lookupList>
+        <source sql="exec Location_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

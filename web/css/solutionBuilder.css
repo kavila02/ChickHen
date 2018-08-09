@@ -1,0 +1,569 @@
+﻿md-select-value {
+    border-bottom: none !important;
+}
+
+md-toast {
+    background-color: #323232;
+}
+
+#fullContent {
+    padding: 0px;
+}
+
+#siteLogoImage {
+    height: 40px;
+    padding-top: 3px;
+    padding-left: 3px;
+}
+#SiteTitle {
+    height: 46px;
+}
+
+#SiteLogo {
+    padding: 0px !important;
+}
+
+h1.md-subheader {
+    font-weight: bold !important;
+}
+
+#mainTree * {
+    color: black !important;
+}
+
+.LoginTitle {
+    background-color: rgb(27,94,32);
+    font-size: 14px;
+    line-height: 1.42857143;
+    box-sizing: border-box;
+    font-family: RobotoDraft,Roboto,'Helvetica Neue',sans-serif;
+    z-index: 10;
+    min-height: 70px;
+    float: left;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF !important;
+    width: 100%;
+}
+
+
+.navbar-inverse {
+    background-color: #006600 !important;
+    color: #FFFFFF !important;
+    background-image: none;
+}
+
+.navbar-brand {
+    color: #FFFFFF !important;
+}
+
+.navbar-nav > li > a {
+    color: #FFFFFF !important;
+}
+
+    .navbar-nav > li > a:hover {
+        color: #B2B2B2 !important;
+    }
+
+.nav-sidebar > li > a:hover {
+    background-color: #006600 !important;
+}
+
+.sidebar {
+    background-color: #66A366; /*I like this color, but the color below is what's on their current website*/
+    /*background-color: #FFD685;*/
+    color: #FFFFFF !important;
+}
+
+    .sidebar a {
+        color: #FFFFFF !important;
+    }
+
+.main {
+    padding-left: 0px;
+}
+
+
+
+.csbError {
+    display: none;
+    color: red;
+}
+
+.calendar-md-title {
+    overflow: hidden;
+}
+
+.dl-calendar dt {
+    font-weight: 700 !important;
+    padding-left: 0px !important;
+}
+
+.calendar {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.calendarDay {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.week {
+    min-height: 150px;
+}
+
+/* override default bootstrap  */
+
+.table a {
+    font-weight: bold;
+    color: black;
+}
+
+body {
+    font-family: RobotoDraft,Roboto,'Helvetica Neue',sans-serif;
+}
+
+
+/* override default angular material design*/
+.highlight {
+    /*color: red;*/
+    background-color: lightblue;
+}
+
+.csb-pageheader .md-container {
+    top: 0px !important;
+}
+
+.csb-quick-search {
+    width: 25%;
+}
+
+label {
+    font-size: 14px !important;
+}
+
+/*td>md-input-container .md-input {
+    padding:0px;
+    line-height: initial;
+}*/
+
+
+td > md-input-container .csb-error-message div {
+    top: -24px;
+    right: 0px;
+}
+/* more precise selector for date control in grid */
+td > md-input-container > div .csb-error-message div {
+    top: initial;
+    right: 0px;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+    padding: 4px 2px;
+    vertical-align: middle;
+}
+
+/* related to ng-message  */
+.csb-error-message {
+    z-index: 1;
+    line-height: inherit;
+}
+
+/*md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
+    -webkit-transform: translate3d(0, 6px, 0) scale(.75);
+    transform: translate3d(0, 6px, 0) scale(.75);
+}*/
+
+/*.csb-md-simulate-has-value {
+    -webkit-transform: translate3d(0, 6px, 0) scale(.75);
+    transform: translate3d(0, 6px, 0) scale(.75);
+    -webkit-transform-origin: left top;
+    transform-origin: left top; 
+    color:rgba(0,0,0,0.54) ;
+}*/
+
+/*md-input-container.md-default-theme label.csb-md-simulate-has-value {*/
+label.csb-md-simulate-has-value {
+    -webkit-transform: translate3d(0, 6px, 0) scale(.75);
+    transform: translate3d(0, 6px, 0) scale(.75);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    color: rgba(0,0,0,0.54);
+}
+
+/*.md-select-label {
+    border-bottom-width: 2px;
+
+}*/
+/*md-button has position relative. This is overriden for an upload label. This is to fix that issue*/
+label.md-button {
+    position: relative !important;
+}
+
+
+.ui-datepicker-trigger {
+    align-self: center;
+}
+
+
+    .ui-datepicker-trigger:hover {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.4);
+        transition: box-shadow .28s cubic-bezier(.4,0,.2,1)
+    }
+
+
+
+
+
+.headerInline {
+    display: inline;
+    padding-right: 5px;
+}
+
+.csb-sortGlyph {
+    float: right;
+    font-size: 9px;
+    top: 4px;
+}
+
+.csb-smallIcon {
+    padding: 0px !important;
+    margin: 1px !important;
+    width: 2px;
+}
+
+    .csb-smallIcon > i {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .csb-smallIcon > md-icon {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+.csb-link-td {
+    text-align: center;
+    width: 5px;
+}
+
+.csb-center-icon {
+    padding: 0px !important;
+    margin: 1px !important;
+    text-align: center;
+}
+
+    .csb-center-icon > i {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .csb-center-icon > md-icon {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+
+.material-icons {
+    -ms-font-feature-settings: "liga"
+}
+
+/* hide "new" icon/button when tab is not active */
+
+md-tab-item.md-active > button {
+    visibility: inherit;
+}
+
+md-tab-item > button {
+    visibility: hidden;
+}
+
+
+/* for the action popup menu */
+.csbActionToolbar {
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    min-height: 30px;
+    height: 0px;
+    width: 0px;
+    max-width: 0px;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+}
+
+    .csbActionToolbar.open {
+        height: inherit;
+        width: initial;
+        max-width: 500px;
+        visibility: visible;
+        /*box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.36);*/
+    }
+
+.csbAction-smallbutton {
+    text-transform: none;
+    min-height: 30px;
+    height: 30px;
+    font-weight: normal;
+}
+
+#cssmenu {
+    height: 44px !important;
+    margin-left: 200px;
+}
+
+#cssmenu.mobile {
+    height: 44px !important;
+    margin-left: 0px;
+}
+
+    #cssmenu.mobile > ul.open {
+        overflow: auto;
+        min-height: 500px;
+    }
+
+        #cssmenu.mobile > ul.open::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #cssmenu.mobile > ul.open::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        #cssmenu.mobile > ul.open::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+
+
+/* not needed in the dynamic style  */
+
+
+md-select.md-default-theme[disabled] .md-select-value, md-select[disabled] .md-select-value {
+    background-image: none !important;
+}
+
+md-input-container textarea {
+    width: 100%;
+}
+
+/*  Add things not in core material design for standard select inputs...*/
+
+md-input-container select {
+    min-height: 26px;
+}
+
+
+td > md-input-container > .md-input {
+    height: auto;
+    line-height: inherit;
+}
+
+
+
+md-tooltip .md-content {
+    height: auto !important;
+}
+
+md-autocomplete {
+    height: 30px !important;
+    margin-bottom: 19px;
+}
+
+td md-autocomplete {
+    margin-bottom: 0px;
+}
+
+md-autocomplete-wrap {
+    height: 30px !important;
+}
+
+md-auto-complete {
+    padding-bottom: 8px;
+}
+
+md-autocomplete[md-floating-label] {
+    padding-bottom: 8px;
+}
+
+.md-virtual-repeat-container {
+    position: absolute !important;
+}
+
+md-select:not([disabled]).ng-invalid.ng-dirty .md-select-label, md-select:not([disabled]):focus .md-select-label {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+
+.md-select-label {
+    padding-bottom: 1px;
+    padding-top: 0px;
+    /*background-color: yellow;
+    border-top: 5px solid red;
+    border-bottom: 5px solid red;*/
+}
+
+/*md-input-container>md-checkbox {
+    top: 20px;
+}*/
+
+/* override angular css for inputs in grid */
+td > md-input-container {
+    padding: 0px;
+}
+
+md-checkbox {
+    margin-top: 0px;
+}
+
+td * md-checkbox {
+    margin-bottom: 0px;
+    width: 15px;
+}
+
+md-input-container {
+    
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 8px;
+}
+
+td > md-input-container {
+    margin: 0;
+    padding: 0 0.2em;
+    width: 100%;
+    text-align: center;
+}
+
+    td > md-input-container * {
+        text-align: left;
+    }
+
+md-input-container {
+    margin-bottom: 0px;
+}
+
+.md-title {
+    padding-bottom: 10px;
+}
+/*looks like md-select doesn't have the error space. just fixing the spacing here*/
+md-select {
+    margin-bottom: 19px !important;
+}
+.md-errors-spacer{
+	min-height:19px !important;
+}
+
+td * md-select {
+    margin-bottom: 0px !important;
+}
+
+/*we use a different error for this, so remove it. the cell can grow to show the error*/
+td .md-errors-spacer {
+    display: none;
+}
+
+.formSection {
+    padding-top: 15px;
+}
+find-control>h1{
+    margin:0px !important;
+    padding-top:8px !important;
+    padding-left:8px !important;
+    padding-bottom:0px !important;
+    padding-right:0px !important;
+}
+find-control {
+    padding:0px !important;
+}
+
+#lookupDialog.ui-dialog-content {
+    width: 100% !important;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+span[ng-bind-html] {
+    border: 0;
+}
+
+md-input-container .md-placeholder, md-input-container label:not(.md-no-float):not(.md-container-ignore) {
+    width: auto;
+}
+
+.dateWrapper {
+    padding-bottom: 24px;
+}
+
+td * .dateWrapper {
+    padding-bottom: 0px;
+}
+
+
+.csb-numeric-type {
+    text-align: right;
+}
+
+    .csb-numeric-type > div {
+        text-align: right;
+    }
+
+    .csb-numeric-type > input {
+        text-align: right;
+    }
+
+/*.csb-override-flex {
+    display: initial;
+}*/
+
+.csb-center-align {
+    text-align: center;
+}
+
+#LoginForgotPasswordLink {
+    font-size: larger;
+    color: red;
+    cursor: pointer;
+}
+
+dd{
+    margin:0px !important;
+}
+
+.calendarDay{
+    min-height: 150px;
+}
+
+.md-select-menu-container{
+    z-index:99;
+}
+
+/* Fixed Header Directive */
+.fixed-header {
+    top: 0;
+    position: fixed;
+    width: auto;
+    display: table;
+    z-index: 99;
+}
+
+.tbody-offset:before {
+    content: " ";
+    display: block;
+}

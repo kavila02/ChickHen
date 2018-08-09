@@ -1,0 +1,18 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="Layer House Daily">
+    <field fieldName="LayerHouseWeeklyID" readOnly="true" displayName="Return" type="link icon reorder" ScreenID="LayerHouseWeekly"/>
+    <field fieldName="LayerHouseDailyID"  readOnly="true" displayName="LayerHouseDailyID"/>
+    <field fieldName="LayerHouseID" readOnly="true" displayName="LayerHouseID"/>
+    <field fieldName="LayerHouseName" readOnly="true" displayName="Layer House Name" />
+    <field fieldName="DateOfRecord" readOnly="true" displayName="Date"/>
+    <field fieldName="Mortality" multilineEdit="true" displayName="Mortality"/>
+    <field fieldName="FeedDelivery" multilineEdit="true" displayName="Feed Delivery"/>
+    <field fieldName="RationCode" format="numer 2" displayName="Ration Code"/>
+    <field fieldName="DailyEggs" multilineEdit="true" displayName="Daily Eggs"/>
+    <field fieldName="Water" multilineEdit="true" displayName="Water"/>
+    <field fieldName="MinTemp" format="numeric 2" multilineEdit="true" displayName="Min Temp"/>
+    <field fieldName="MaxTemp" format="numeric 2" multilineEdit="true" displayName="Max Temp"/>
+    <field fieldName="Chlorine" format="numeric 2" multilineEdit="true" displayName="Chlorine"/>
+    
+  </section>
+</fieldList>

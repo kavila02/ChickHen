@@ -1,0 +1,17 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Location" displayStyle="paging:100">
+    <field fieldName="LocationID" readOnly="true" displayName="Edit" type="link icon edit" ScreenID="Location"/>
+    <field fieldName="Location" readOnly="true" displayName="Location"/>
+    <field fieldName="LocationAbbreviation" readOnly="true" displayName="Abbreviation"/>
+    <field fieldName="AddressName" readOnly="true" displayName="Address Name"/>
+    <field fieldName="Address1" readOnly="true" displayName="Address1"/>
+    <!--<field fieldName="Address2" readOnly="true" displayName="Address2"/>
+    <field fieldName="Address3" readOnly="true" displayName="Address3"/>-->
+    <field fieldName="City" readOnly="true" displayName="City"/>
+    <field fieldName="State" readOnly="true" displayName="State"/>
+    <field fieldName="Zip" readOnly="true" displayName="Zip"/>
+    
+    <field fieldName="PhoneNumber1" readOnly="true" displayName="Phone Number"/>
+    <field fieldName="FolderName" readOnly="true" displayName="Autotask Folder"/>
+  </section>
+</fieldList>

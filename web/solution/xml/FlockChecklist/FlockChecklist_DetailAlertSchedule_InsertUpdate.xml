@@ -1,0 +1,11 @@
+<CargasConnect>
+  <FlockChecklist_DetailAlertSchedule_InsertUpdate>
+    <FlockChecklist_DetailAlertScheduleID/>
+    <FlockChecklist_DetailID/>
+    <AlertDescription/>
+    <AlertTemplateID/>
+    <TimeFromStep/>
+    <TimeFromStep_DatePartID/>
+    <StartDateOrEndDate/>
+  </FlockChecklist_DetailAlertSchedule_InsertUpdate>
+</CargasConnect>

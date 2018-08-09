@@ -1,0 +1,14 @@
+﻿<div style="width:96px; text-align:center;">
+    <div ng-if="thisRecord.FlockChecklistID!='0'">
+        <a name="FlockChecklistID" id="FlockChecklistID" href="List.html?screenID=FlockChecklist_Detail_List&amp;p={{thisRecord.FlockChecklistID}}">
+            <i id="FlockChecklist" class="center material-icons ng-binging ng-scope">reorder edit</i>
+        </a>
+        <md-tooltip md-direction="bottom">{{thisRecord.FlockChecklistName}}</md-tooltip>
+    </div>
+    <div ng-if="thisRecord.FlockChecklistID=='0'">
+        <a name="FlockChecklistID" id="FlockChecklistID" href="List.html?screenID=NewFlockChecklist_Select&amp;p={{thisRecord.FlockID}}">
+            <i id="FlockChecklist" class="center material-icons ng-binging ng-scope">reorder add</i>
+        </a>
+        <md-tooltip md-direction="bottom">Create New</md-tooltip>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<CargasConnect>
+  <Location_InsertUpdate>
+    <LocationID/>
+    <Location/>
+    <AddressName/>
+    <Address1/>
+    <Address2/>
+    <Address3/>
+    <City/>
+    <Zip/>
+    <State/>
+    <PhoneNumber1/>
+    <LocationAbbreviation/>
+    <USDAPlantNumber1/>
+    <USDAPlantNumber2/>
+    <PDANumber/>
+    <PDAPremiseID/>
+    <FolderName/>
+  </Location_InsertUpdate>
+</CargasConnect>

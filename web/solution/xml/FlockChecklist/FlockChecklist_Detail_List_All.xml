@@ -1,0 +1,14 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist Detail">
+    <field fieldName="FlockChecklist_DetailID" displayName="View" type="link icon reorder" ScreenID="FlockChecklist_Detail_Simple"/>
+    <field fieldName="LinkValue" displayName="Edit" type="link icon edit" ScreenID="FlockChecklist_Detail"/>
+    <field fieldName="FlockName" readOnly="true" displayName="Flock"/>
+    <field fieldName="FlockChecklistName" readOnly="true" displayName="Checklist"/>
+    <field fieldName="StepName" readOnly="true" displayName="Step Name"/>
+    <field fieldName="StepOrder" readOnly="true" displayName="Step Order"/>
+    <field fieldName="DateOfAction" readOnly="true" displayName="Date"/>
+    <field fieldName="ActionDescription" multilineEdit="true" displayName="Action Description"/>
+    <field fieldName="Detail_Status" readOnly="true" displayName="Status"/>
+    <field fieldName="CompletedDate" multilineEdit="true" displayName="Completed Date"/>
+  </section>
+</fieldList>

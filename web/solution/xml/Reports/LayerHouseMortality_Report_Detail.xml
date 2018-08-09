@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section>
+    <field fieldName="DateOfRecord" readOnly="true" Width="1" displayName="Date"/>
+    <field fieldName="Mortality" readOnly="true" displayName="Mortality" />
+  </section>
+</fieldList>

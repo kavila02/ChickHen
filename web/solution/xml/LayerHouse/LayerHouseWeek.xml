@@ -1,0 +1,39 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+
+  <section columnSpan="4" displayName="Layer House Week: {{thisRecord.display}}">
+    <field fieldName="LayerHouseID" required="true" customValidateFunction="RedirectToNewDate({thisRecord});" className="black" columnSpan="2" displayName="Layer House" >
+      <lookupList>
+        <source sql="exec LayerHouse_Lookup"/>
+      </lookupList>
+    </field>
+    <!---->
+    <field fieldName="WeekEndingDate" displayName="Date" customValidateFunction="RedirectToNewDate({thisRecord});" />
+    <field fieldName="BirdAge" displayName="Bird Age" format="numeric 0" readOnly="true" className="black" />
+  </section>
+  <section columnSpan="4">
+    <field fieldName="BeginningInventory" readOnly="true" className="black" displayName="Beginning Feed Inventory" format="numeric 0"/>
+    <field fieldName="NoOfHens" readOnly="true" className="black" displayName="# of Hens" format="numeric 0"/>
+    <field fieldName="HenWeight" displayName="Hen Weight" format="numeric 2"/>
+    <field fieldName="PercentWeightUniformity" displayName="% Weight Uniformity" format="numeric 2"/>
+    <field fieldName="AmmoniaNh3" displayName="AmmoniaNh3" format="numeric 0"/>
+    
+    <field fieldName="FeedInventory" displayName="Ending Feed Inventory" format="numeric 0"/>
+    <field fieldName="LightProgram" displayName="Light Hours" format="numeric 2"/>
+    <field fieldName="LightIntensity" displayName="Light Intensity" format="numeric 2"/>
+    <field fieldName="Rodents" displayName="Rodents" format="numeric 0"/>
+    <field fieldName="FlyCounts" displayName="Fly Counts" format="numeric 0"/>
+    
+    <field fieldName="CaseWeight" displayName="Case Weight" format="numeric 2"/>
+    <field fieldName="PoundsPerHundred" className="black" readOnly="true" displayName="Pounds Per Hundred"/>
+    <field fieldName="PercentProduction" className="black" format="numeric 2" readOnly="true" displayName="% Production"/>
+    <field fieldName="Consumption" className="black" readOnly="true" format="numeric 0" displayName="Consumption" />
+  </section>
+  <section columnSpan="3">
+    <field fieldName="Mortality" className="black" readOnly="true" displayName="Total Mortality" format="numeric 0"/>
+    <field fieldName="TotalFeedDeliveries" className="black" readOnly="true" displayName="Total Feed Deliveries" format="numeric 0"/>
+    <field fieldName="EggsProduced" className="black" readOnly="true" displayName="Total Eggs Produced" format="numeric 0"/>
+    <field fieldName="Water" className="black" readOnly="true" displayName="Total Water" format="numeric 0"/>
+    <field fieldName="LowTemp" format="numeric 2" className="black" readOnly="true" displayName="Avg Low Temp"/>
+    <field fieldName="HiTemp" format="numeric 2" className="black" readOnly="true" displayName="Avg Hi Temp"/>
+  </section>
+</fieldList>

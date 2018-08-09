@@ -1,0 +1,20 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Vaccines" mobileLayoutSize="none">
+    <field fieldName="FlockID" readOnly="true" displayName="Add/Edit" type="htmlfile ~\solution\CustomPages\FlockVaccine_DetailButton.html"/>
+    <field fieldName="VaccineName" readOnly="true" displayName="Vaccine"/>
+    <!--<field fieldName="VaccineID" readOnly="true" displayName="Vaccine">
+      <lookupList>
+        <source sql="exec Vaccine_Lookup"/>
+      </lookupList>
+    </field>-->
+    <field fieldName="VaccineStatusID" readOnly="true" displayName="Status">
+      <lookupList>
+        <source sql="exec VaccineStatus_Lookup" />
+      </lookupList>
+    </field>
+    <field fieldName="ScheduledDate" readOnly="true" displayName="Scheduled Date"/>
+    <field fieldName="CompletedDate" readOnly="true" displayName="Completed Date"/>
+    <field fieldName="FlockVaccineNotes" readOnly="true" displayName="Notes"/>
+    <field fieldName="FlockVaccineID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockVaccine_Delete" visibleFieldName="FlockVaccineID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

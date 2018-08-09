@@ -1,0 +1,8 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="FowlOutMover" displayStyle="paging:100">
+
+    <field fieldName="FowlOutMover" multilineEdit="true" displayName="Fowl-Out Mover"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Active"/>
+  </section>
+</fieldList>

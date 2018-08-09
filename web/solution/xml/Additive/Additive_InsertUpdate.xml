@@ -1,0 +1,11 @@
+<CargasConnect>
+  <Additive_InsertUpdate>
+    <AdditiveID/>
+    <Additive/>
+    <ApprovedForColony/>
+    <ApprovedForAviary/>
+    <ApprovedForOrganic/>
+    <IsActive/>
+    <SortOrder/>
+  </Additive_InsertUpdate>
+</CargasConnect>

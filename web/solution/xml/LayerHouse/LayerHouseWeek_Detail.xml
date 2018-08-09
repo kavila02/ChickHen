@@ -1,0 +1,13 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="Layer House Daily">
+    <field fieldName="DateOfRecord" readOnly="true" displayName="Date"/>
+    <field fieldName="Mortality" displayName="Mortality" format="numeric 0"/>
+    <field fieldName="FeedDelivery" displayName="Feed Delivery" format="numeric 0"/>
+    <field fieldName="RationCode" format="numeric 2" displayName="Ration Code"/>
+    <field fieldName="DailyEggs" displayName="Daily Eggs" format="numeric 0"/>
+    <field fieldName="Water" displayName="Water" format="numeric 0"/>
+    <field fieldName="MinTemp" format="numeric 2" displayName="Min Temp"/>
+    <field fieldName="MaxTemp" format="numeric 2" displayName="Max Temp"/>
+    <field fieldName="Chlorine" format="numeric 2" displayName="Chlorine"/>
+  </section>
+</fieldList>

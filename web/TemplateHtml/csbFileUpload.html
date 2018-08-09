@@ -1,0 +1,16 @@
+﻿<div>
+<input type="file" style="opacity:0" />
+<label class="{{ chooseFileButtonStyle }} md-no-float" >{{chooseFileButtonText}} 
+    <i class="material-icons" style="vertical-align: text-bottom;">attach_file</i>
+</label>
+    <button class="{{ uploadFileButtonStyle }}" ng-show="autoUpload=='false' && files.length > 0" ng-click="upload()">
+        {{uploadFileButtonText}}
+        <i class="material-icons" style="vertical-align: text-bottom;">cloud_upload</i>
+    </button>
+    <table ng-show="files.length>0" class="table table-striped table-bordered table-condensed md-default-theme table-nopadding">
+        <thead>
+            <tr><td>file(s)</td><td>status</td></tr>
+        </thead>
+        <tr ng-repeat="thisFile in files"><td>{{thisFile.name}}</td><td>{{thisFile.status}}</td></tr>
+    </table>
+</div>

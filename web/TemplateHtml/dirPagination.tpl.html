@@ -1,0 +1,39 @@
+﻿    <style ng-controller="initializeCargasCSS as initCSS" >
+
+        /*override bootstrap for paging*/
+        .pagination {
+            margin:inherit;
+        }
+        .pagination.md-default-theme>.active>a {
+            background-color: {{initCSS.resolveColor(400)}};
+            border-color:{{initCSS.resolveColor(400)}};
+            color:{{initCSS.resolveColor(400, 1)}};
+        }
+        .pagination.md-default-theme>li>a:hover, .pagination.md-default-theme>li>span:hover, .pagination>.md-default-themeli>a:focus, .pagination.md-default-theme>li>span:focus {
+            color:{{initCSS.resolveColor(50, 1)}};
+            background-color: {{initCSS.resolveColor(50)}};                                   
+        }
+        .pagination.md-default-theme>li>a, .pagination.md-default-theme>li>span {
+            color:{{initCSS.resolveColor(50,1)}};
+        }
+
+    </style>
+<!---->
+<ul class="pagination md-default-theme" ng-if="1 < pages.length">
+    <li ng-if=" boundarylinks" ng-class="{ disabled : pagination.current == 1 }">
+    <a href="" ng-click="setCurrent(1)">&laquo;</a>
+    </li>
+    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }" class="ng-scope">
+        <a href="" ng-click="setCurrent(pagination.current - 1)" class="ng-binding">‹</a>
+    </li>
+    <li ng-repeat="pageNumber in pages track by $index" ng-class="{ active : pagination.current == pageNumber, disabled : pageNumber == '...' }">
+        <a href="" ng-click="setCurrent(pageNumber)">{{ pageNumber }}</a>
+    </li>
+    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }" class="ng-scope">
+        <a href="" ng-click="setCurrent(pagination.current + 1)" class="ng-binding">›</a>
+    </li>
+    <li ng-if="boundaryLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+        <a href="" ng-click="setCurrent(pagination.last)">&raquo;</a>
+    </li>
+    <li><a href=""> Rows: {{range.total}}</a></li>
+</ul>

@@ -1,0 +1,23 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist Detail Alert Schedule">
+    <field fieldName="AlertDescription" multilineEdit="true" displayName="Alert Description"/>
+    <field fieldName="AlertTemplateID" multilineEdit="true" displayName="Alert Template">
+      <lookupList>
+        <source sql="exec AlertTemplate_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="TimeFromStep" multilineEdit="true" displayName="Number of"/>
+    <field fieldName="TimeFromStep_DatePartID" multilineEdit="true" displayName="Days/Weeks/Etc">
+      <lookupList>
+        <source sql="exec DatePart_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="StartDateOrEndDate" displayName="From">
+      <lookupList>
+        <source sql="exec StartDateOrEndDate_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FlockChecklist_DetailAlertScheduleID" displayName="Recipients" type="link display RecipientsList" ScreenID="FlockChecklist_DetailAlertSchedule_Recipients" className="recipientsWidth"/>
+    <field fieldName="FlockChecklist_DetailAlertScheduleID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockChecklist_DetailAlertSchedule_Delete" visibleFieldName="FlockChecklist_DetailAlertScheduleID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

@@ -1,0 +1,6 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Send Alerts" >
+
+    <field fieldName="alertDate" multilineEdit="true" displayName="Alert Date"/>
+  </section>
+</fieldList>

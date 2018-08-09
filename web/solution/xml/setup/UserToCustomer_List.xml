@@ -1,0 +1,11 @@
+﻿<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="User To Customer" displayStyle="paging=none">
+    <field fieldName="CUSTNMBR_Display" displayName="Customer Number" readOnly="true" toolTip="fieldname ParentName"/>
+    <field fieldName="CUSTNAME" displayName="Customer" readOnly="true" toolTip="fieldname ParentName"/>
+    <field fieldName="SourceDatabase"/>
+    <field fieldName="IsLinked" displayName="Link?" multilineEdit="true"/>
+    <field fieldName="CPRCSTNM" className="hiddenField"/>
+	<field fieldName="IsPrimary" displayName="Primary Contact&lt;br/&gt;Customer" multilineEdit="true"/>
+  </section>
+</fieldList>
+

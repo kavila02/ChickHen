@@ -1,0 +1,9 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="LogDateTime" format="d-MMM-yyyy H:mm:ss"/>
+    <field fieldName="WarningLogID" type="link display Warning" ScreenID="WarningLog_Form" displayName="Warning"/>
+    <field fieldName="UserFullName"/>
+    <field fieldName="XmlScreenID"/>
+    <field fieldName="Source"/>
+  </section>
+</fieldList>

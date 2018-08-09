@@ -1,0 +1,10 @@
+<CargasConnect>
+  <Contact_InsertUpdate>
+    <ContactID/>
+    <ContactName/>
+    <PrimaryEmailAddress/>
+    <SecondaryEmailAddress/>
+    <PhoneNumber/>
+    <Active/>
+  </Contact_InsertUpdate>
+</CargasConnect>

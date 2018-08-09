@@ -1,0 +1,5 @@
+<fieldList>
+  <section displayName="Message">
+    <field fieldName="Message" displayName="" readOnly="true"/>
+  </section>
+</fieldList>

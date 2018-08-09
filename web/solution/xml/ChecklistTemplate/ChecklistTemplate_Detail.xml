@@ -1,0 +1,106 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Checklist Template  Detail" columnSpan="4">
+
+    <field fieldName="StepName" multilineEdit="true" displayName="Step Name" columnSpan="2" padding="1"/>
+    <field fieldName="StepOrder" readOnly="true" displayName="Step Order" columnSpan="1"/>
+    <field fieldName="ActionDescription" multilineEdit="true" displayName="Action Description" columnSpan="4"/>
+  </section>
+  <section>
+    <field fieldName="ChecklistTemplate_DetailID" readOnly="true" displayName="" padding="3" type="link display Vaccines" ScreenID="ChecklistTemplate_Detail_Vaccine"/>
+  </section>
+  
+  <!--Start Date-->
+  <section displayName="Start Date (Date of Action)" header="true">
+    <field fieldName="StepOrFieldCalculation" multilineEdit="true" displayName="Step Or Field Calculation (for Date of Action)" columnSpan="1" padding="3">
+      <lookupList>
+        <source sql="exec StepOrFieldCalculation_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+  
+  <!--Step-->
+
+  <section displayName="Start Date Scheduling (from Step)" columnSpan="3" header="false" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="1">
+    <field fieldName="DateOfAction_TimeFromStep" multilineEdit="true" displayName="(number of)" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="1" columnSpan="1"/>
+    <field fieldName="TimeFromStep_DatePartID" multilineEdit="true" displayName="(days/weeks/etc)" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="1" columnSpan="1">
+      <lookupList>
+        <source sql="exec DatePart_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="DateOfAction_FlockChecklist_DetailID" multilineEdit="true" displayName="From Step" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="1" columnSpan="1" >
+      <lookupList>
+        <source sql="exec ChecklistTemplate_Detail_Lookup @ChecklistTemplateID = '{1}'"/>
+      </lookupList>
+    </field>
+  </section>
+  
+    <!--Field-->
+  <section displayName="Start Date Scheduling (from Field Value)" columnSpan="3" header="false" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="2">
+    <field fieldName="DateOfAction_TimeFromField" multilineEdit="true" displayName="(number of)" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="2" columnSpan="1"/>
+    <field fieldName="TimeFromField_DatePartID" multilineEdit="true" displayName="(days/weeks/etc)" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="2" columnSpan="1">
+      <lookupList>
+        <source sql="exec DatePart_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="DateOfAction_FieldReferenceID" multilineEdit="true" displayName="From Date found on" visibleFieldName="StepOrFieldCalculation" visibleFieldValue="2" columnSpan="1">
+      <lookupList>
+        <source sql="exec FieldReference_Lookup" />
+      </lookupList>
+    </field>
+  </section>
+
+  <!--End Date-->
+  <section displayName="End Date (leave blank if not a range)" header="true">
+    <field fieldName="StepOrFieldCalculation_EndDate" multilineEdit="true" displayName="End Date: Step Or Field Calculation" columnSpan="1" padding="3">
+      <lookupList>
+        <source sql="exec StepOrFieldCalculation_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+
+  <!--Step-->
+
+  <section displayName="End Date Scheduling (from Step)" columnSpan="3" header="false" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="1">
+    <field fieldName="DateOfAction_TimeFromStep_EndDate" multilineEdit="true" displayName="(number of)" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="1" columnSpan="1"/>
+    <field fieldName="TimeFromStep_DatePartID_EndDate" multilineEdit="true" displayName="(days/weeks/etc)" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="1" columnSpan="1">
+      <lookupList>
+        <source sql="exec DatePart_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="DateOfAction_FlockChecklist_DetailID_EndDate" multilineEdit="true" displayName="From Step" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="1" columnSpan="1" >
+      <lookupList>
+        <source sql="exec ChecklistTemplate_Detail_Lookup @ChecklistTemplateID = '{1}'"/>
+      </lookupList>
+    </field>
+  </section>
+
+  <!--Field-->
+  <section displayName="End Date Scheduling (from Field Value)" columnSpan="3" header="false" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="2">
+    <field fieldName="DateOfAction_TimeFromField_EndDate" multilineEdit="true" displayName="(number of)" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="2" columnSpan="1"/>
+    <field fieldName="TimeFromField_DatePartID_EndDate" multilineEdit="true" displayName="(days/weeks/etc)" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="2" columnSpan="1">
+      <lookupList>
+        <source sql="exec DatePart_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="DateOfAction_FieldReferenceID_EndDate" multilineEdit="true" displayName="From Date found on" visibleFieldName="StepOrFieldCalculation_EndDate" visibleFieldValue="2" columnSpan="1">
+      <lookupList>
+        <source sql="exec FieldReference_Lookup" />
+      </lookupList>
+    </field>
+  </section>
+
+  <section displayName="More Info" header="true">
+    <field fieldName="OriginatorID" multilineEdit="true" displayName="Originator">
+      <lookupList>
+        <source sql="exec ContactRole_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="DetailedNotes" multilineEdit="true" type="htmleditor" displayName="Details" textRows="10"/>
+
+    <field fieldName="DefaultDetail_StatusID" multilineEdit="true" displayName="Default Status">
+      <lookupList>
+        <source sql="exec Detail_Status_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

@@ -1,0 +1,30 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Delete Major Object" >
+    <field fieldName="EntityID" multilineEdit="true" displayName="Entity" required="true">
+      <lookupList>
+        <element text="" value=""/>
+        <element text="Flock" value="Flock"/>
+        <element text="Flock Checklist" value="FlockChecklist"/>
+        <element text="Checklist Template" value="ChecklistTemplate"/>
+      </lookupList>
+    </field>
+    <field fieldName="FlockID" displayName="Flock" visibleFieldName="EntityID" visibleFieldValue="Flock">
+      <lookupList>
+        <source sql="Flock_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FlockChecklistID" displayName="Flock Checklist" visibleFieldName="EntityID" visibleFieldValue="FlockChecklist">
+      <lookupList>
+        <source sql="FlockChecklist_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ChecklistTemplateID" displayName="Checklist Template" visibleFieldName="EntityID" visibleFieldValue="ChecklistTemplate">
+      <lookupList>
+        <source sql="ChecklistTemplate_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FlockWarningMessage" displayName="" type="html" readOnly="true" visibleFieldName="EntityID" visibleFieldValue="Flock"/>
+    <field fieldName="FlockChecklistWarningMessage" displayName="" type="html" readOnly="true" visibleFieldName="EntityID" visibleFieldValue="FlockChecklist"/>
+    <field fieldName="ChecklistTemplateWarningMessage" displayName="" type="html" readOnly="true" visibleFieldName="EntityID" visibleFieldValue="ChecklistTemplate"/>
+  </section>
+</fieldList>

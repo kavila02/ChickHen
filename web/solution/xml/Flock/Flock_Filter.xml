@@ -1,0 +1,8 @@
+<fieldList>
+  <section displayName="" columnSpan="4">
+    <field fieldName="IncludeHistorical" displayName="Include Historical"/>
+    <field fieldName="IncludeCurrentFlock" displayName="Include Current Flock"/>
+    <field fieldName="IncludeLastFlockOrdered" displayName="Include Last Flock Ordered"/>
+    <field fieldName="IncludeInterimFlocks" displayName="Include Interim Flocks"/>
+  </section>
+</fieldList>

@@ -1,0 +1,30 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist Detail" displayStyle="paging:25;">
+
+    <!--<field fieldName="LinkValue" readOnly="true" displayName="Edit" type="link icon edit" ScreenID="FlockChecklist_Detail"/>-->
+    <field fieldName="FlockChecklist_DetailID" displayName="Edit/New" type="htmlfile ~\solution\CustomPages\FlockChecklist_DetailButton.html" className="center width96"/>
+    <field fieldName="StepName" readOnly="true" displayName="Step Name"/>
+    <field fieldName="StepOrder" readOnly="true" displayName="Step Order"/>
+    <field fieldName="DateOfAction" readOnly="true" displayName="Date"/>
+    <field fieldName="ActionDescription" multilineEdit="true" displayName="Action Description"/>
+    <!--<field fieldName="FlockChecklist_DetailID" displayName="" type="command icon arrow_drop_up" ScreenID="FlockChecklist_Detail_SortUp"/>
+    <field fieldName="FlockChecklist_DetailID" displayName="" type="command icon arrow_drop_down" ScreenID="FlockChecklist_Detail_SortDown"/>-->
+    <field fieldName="FlockChecklist_DetailID" displayName="Sort" type="htmlfile ~\solution\CustomPages\FlockChecklistSort.html" className="center"/>
+    
+    
+    <!--<field fieldName="StepOrFieldCalculation" multilineEdit="true" displayName="Step Or Field Calculation"/>
+    <field fieldName="DateOfAction_TimeFromStep" multilineEdit="true" displayName="Date Of Action Time From Step"/>
+    <field fieldName="TimeFromStep_DatePartID" multilineEdit="true" displayName="Time From Step Date Part ID"/>
+    <field fieldName="DateOfAction_FlockChecklist_DetailID" multilineEdit="true" displayName="Date Of Action Flock Checklist Detail ID"/>
+    <field fieldName="DateOfAction_TimeFromField" multilineEdit="true" displayName="Date Of Action Time From Field"/>
+    <field fieldName="TimeFromField_DatePartID" multilineEdit="true" displayName="Time From Field Date Part ID"/>
+    <field fieldName="DateOfAction_FieldReferenceID" multilineEdit="true" displayName="Date Of Action Field Reference ID"/>
+    <field fieldName="OriginatorID" multilineEdit="true" displayName="Originator ID"/>
+    <field fieldName="DetailedNotes" multilineEdit="true" displayName="Detailed Notes"/>
+    <field fieldName="CompletedByID" multilineEdit="true" displayName="Completed By ID"/>-->
+    <field fieldName="CompletedDate" multilineEdit="true" displayName="Completed Date"/>
+    <!--<field fieldName="DefaultDetail_StatusID" multilineEdit="true" displayName="Default Detail Status ID"/>-->
+    <field fieldName="attachmentsHtml" type="html" displayName="Attachments" />
+    <field fieldName="FlockChecklist_DetailID" displayName="Delete" type="command icon delete" ScreenID="FlockChecklist_Detail_Delete" visibleFieldName="FlockChecklist_DetailID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

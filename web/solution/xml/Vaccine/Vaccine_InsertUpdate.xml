@@ -1,0 +1,11 @@
+<CargasConnect>
+  <Vaccine_InsertUpdate>
+    <VaccineID/>
+    <VaccineName/>
+    <ActiveStartDate/>
+    <ActiveEndDate/>
+    <ReplacementVaccineID/>
+    <DiseaseID/>
+    <SortOrder/>
+  </Vaccine_InsertUpdate>
+</CargasConnect>

@@ -1,0 +1,12 @@
+<fieldList>
+  <section displayName="Support - Activity - Details - Detail">
+    <field fieldName="LogDateTime" readOnly="true"/>
+    <field fieldName="UserFullName" readOnly="true"/>
+    <field fieldName="XmlScreenID" readOnly="true"/>
+    <field fieldName="IsPost" readOnly="true"/>
+    <field fieldName="IpAddress" readOnly="true"/>
+    <field fieldName="Url" readOnly="true"/>
+    <field fieldName="UserAgent" readOnly="true"/>
+    <field fieldName="ActivityLogID" readOnly="true"/>
+  </section>
+</fieldList>

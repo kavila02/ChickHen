@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Step Attachments">
+    <field fieldName="LinkValue" readOnly="true" displayName="Edit/Upload" type="link icon insert_drive_file" ScreenID="ChecklistTemplate_DetailAttachment_Upload"/>
+    <field fieldName="DisplayName" readOnly="true" displayName="File Name"/>
+    <field fieldName="FileDescription" readOnly="true" displayName="Description"/>
+    <field fieldName="AttachmentType" readOnly="true" displayName="Type"/>
+    <field fieldName="PathLink" readOnly="true" displayName="Download" type="htmlfile ~\solution\CustomPages\AttachmentDownload.html"/>
+    <field fieldName="ChecklistTemplate_DetailAttachmentID" readOnly="true" displayName="Delete" type="command icon delete" toolTip="Does NOT delete file from Soonr" ScreenID="ChecklistTemplate_DetailAttachment_Delete" visibleFieldName="ChecklistTemplate_DetailAttachmentID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

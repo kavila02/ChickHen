@@ -1,0 +1,11 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="LogDateTime"/>
+    <field fieldName="ActivityLogID" type="link display XmlScreenID" ScreenID="ActivityLog_Form" displayName="Page"/>
+    <field fieldName="IsPost"/>
+    <field fieldName="UserFullName"/>
+    <field fieldName="IpAddress"/>
+    <field fieldName="Url"/>
+    <field fieldName="UserAgent"/>
+  </section>
+</fieldList>

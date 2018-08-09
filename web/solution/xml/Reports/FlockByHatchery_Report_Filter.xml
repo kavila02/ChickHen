@@ -1,0 +1,12 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Housing Report" displayStyle="paging:50" >
+    <field fieldName="HatcheryID" multilineEdit="true" displayName="Hatchery">
+      <lookupList>
+        <source sql="exec Hatchery_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="startdate" multilineEdit="true" displayName="Min Hatch Date" />
+    <field fieldName="enddate" multilineEdit="true" displayName="Max Hatch Date"/>
+    
+  </section>
+</fieldList>

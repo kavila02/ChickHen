@@ -1,0 +1,10 @@
+<CargasConnect>
+  <ProductBreed_InsertUpdate>
+    <ProductBreedID/>
+    <ProductBreed/>
+    <NumberOfWeeks/>
+    <WeeksHatchToHouse/>
+    <SortOrder/>
+    <IsActive/>
+  </ProductBreed_InsertUpdate>
+</CargasConnect>

@@ -1,0 +1,12 @@
+<fieldList>
+  <section displayName="Support - Performance - Details - Detail">
+    <field fieldName="LogDateTime" readOnly="true"/>
+    <field fieldName="UserFullName" readOnly="true"/>
+    <field fieldName="XmlScreenID" readOnly="true"/>
+    <field fieldName="Milliseconds" readOnly="true"/>
+    <field fieldName="PerformanceLogEntryTypeName" readOnly="true"/>
+    <field fieldName="Source" readOnly="true"/>
+    <field fieldName="SourceDetail" readOnly="true"/>
+    <field fieldName="PerformanceLogID" readOnly="true"/>
+  </section>
+</fieldList>

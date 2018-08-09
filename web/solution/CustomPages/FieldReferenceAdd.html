@@ -1,0 +1,11 @@
+﻿<div layout="row" layout-wrap style="height:300px;width:250px;overflow-y:auto;">
+    <div style="text-align:center;" ng-repeat="fieldReference in parentData.detailRecords[0].FieldReference_List">
+        <md-content class="md-padding" >
+            <md-button class="md-disabled md-raised md-primary md-hue-1 csb-button md-button md-default-theme" style="text-transform:none; width:175px;"
+               id="saveButton" ng-click="parentData.changeFunction('addFieldReference({thisRecord},{record})', '', true, fieldReference, '', '')">
+                {{fieldReference.FriendlyName}}
+                <div class="md-ripple-container"></div>
+            </md-button>
+        </md-content>
+    </div>
+</div>

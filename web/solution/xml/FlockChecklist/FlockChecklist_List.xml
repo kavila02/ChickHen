@@ -1,0 +1,9 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Checklist">
+    <field fieldName="FlockChecklistID" displayName="View" type="link icon reorder" className="width96" ScreenID="FlockChecklist_Detail_List_ReadOnly" />
+    <field fieldName="FlockID" displayName="Flock" width="150"  type="link display FlockName" ScreenID="Flock_Get"/>
+    <field fieldName="FlockChecklistName" readOnly="true" displayName="Flock Checklist Name"/>
+    <field fieldName="NextStep" readOnly="true" displayName="Next Step"/>
+    
+  </section>
+</fieldList>

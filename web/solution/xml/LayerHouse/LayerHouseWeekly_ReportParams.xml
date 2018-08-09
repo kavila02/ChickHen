@@ -1,0 +1,11 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="Layer House Daily">
+
+    <field fieldName="LayerHouseID"  displayName="LayerHouseID">
+      <lookupList>
+        <source sql="exec LayerHouse_Lookup"/>
+      </lookupList>
+    </field>
+   
+  </section>
+</fieldList>

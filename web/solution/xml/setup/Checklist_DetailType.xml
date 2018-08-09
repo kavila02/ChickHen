@@ -1,0 +1,9 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Checklist Detail Type" displayStyle="paging:100">
+
+    <field fieldName="Checklist_DetailType" multilineEdit="true" displayName="Checklist Detail Type"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="Active" multilineEdit="true" displayName="Active"/>
+    <!--<field fieldName="Checklist_DetailTypeID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="Checklist_DetailType_Delete" visibleFieldName="Checklist_DetailTypeID.toString()!" visibleFieldValue="0"/>-->
+  </section>
+</fieldList>

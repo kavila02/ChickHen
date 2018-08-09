@@ -1,0 +1,10 @@
+<fieldList>
+  <section displayName="Support - Warnings - Warning">
+    <field fieldName="LogDateTime" readOnly="true"/>
+    <field fieldName="UserFullName" readOnly="true"/>
+    <field fieldName="XmlScreenID" readOnly="true"/>
+    <field fieldName="Source" readOnly="true"/>
+    <field fieldName="Warning" readOnly="true"/>
+    <field fieldName="WarningLogID" readOnly="true"/>
+  </section>
+</fieldList>

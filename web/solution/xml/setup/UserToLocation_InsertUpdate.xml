@@ -1,0 +1,7 @@
+<CargasConnect>
+  <UserToLocation_InsertUpdate>
+    <UserToLocationID/>
+    <UserTableID/>
+    <LocationID/>
+  </UserToLocation_InsertUpdate>
+</CargasConnect>

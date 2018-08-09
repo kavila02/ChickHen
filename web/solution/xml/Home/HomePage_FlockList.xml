@@ -1,0 +1,17 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Home Page Flock" displayStyle="paging:30;">
+    <field fieldName="FlockName" readOnly="true" displayName="Flock Name" className="center"/>
+    <field fieldName="Location" readOnly="true" displayName="Location" className="center"/>
+    <field fieldName="LayerHouseName" readOnly="true" displayName="Layer House" className="center"/>
+    <field fieldName="HatchDate_First" readOnly="true" displayName="Hatch Date" className="center"/>
+    <field fieldName="CurrentAge_Weeks" readOnly="true" displayName="Current Age (wk)" className="center"/>
+    <field fieldName="HousingDate_Average" readOnly="true" displayName="Housing Date" className="center"/>
+    <field fieldName="AgeAtHousing_Weeks" readOnly="true" displayName="Age At Housing (wk)" className="center"/>
+    <field fieldName="AmtOfBirds" readOnly="true" displayName="Amt Of Birds" className="center"/>
+    <field fieldName="ProductBreed" readOnly="true" displayName="Breed" className="center"/>
+    <field fieldName="FowlOutDate" readOnly="true" displayName="Fowl Out Date" className="center"/>
+    <field fieldName="HousingOutAge_Weeks" readOnly="true" displayName="Housing Out Age (wk)" className="center"/>
+    <field fieldName="PulletGrower" readOnly="true" displayName="Pullet Grower" type="html" className="center"/>
+    <field fieldName="NumberChicksOrdered" readOnly="true" displayName="Number Chicks Ordered" className="center"/>
+  </section>
+</fieldList>

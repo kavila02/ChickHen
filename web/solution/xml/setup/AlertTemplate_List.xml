@@ -1,0 +1,9 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Alert Template">
+    <field fieldName="AlertTemplateID" displayName="Edit" type="link icon edit" ScreenID="AlertTemplate"/>
+    <field fieldName="AlertName" displayName="Alert Name"/>
+    <field fieldName="SortOrder" displayName="Sort Order"/>
+    <field fieldName="IsActive" displayName="Is Active"/>
+    <field fieldName="AlertTemplateID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="AlertTemplate_Delete" ng-if="thisRecord.AlertTemplateID.toString()!=='0'"/>
+  </section>
+</fieldList>

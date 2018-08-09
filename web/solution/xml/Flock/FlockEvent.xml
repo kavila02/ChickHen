@@ -1,0 +1,24 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Event" columnSpan="3" mobileLayoutSize="none">
+    <field fieldName="EventDate" displayName="Event Date" padding="2"/>
+    <field fieldName="EventDescription" displayName="Event Description" columnSpan="3"/>
+    <field fieldName="FollowUpDescription" displayName="Follow Up Description" columnSpan="3"/>
+    <field fieldName="CreatedBy_UserTableID" displayName="Created By User">
+      <lookupList>
+        <source sql="exec UserTable_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FollowUpCreatedBy_UserTableID" displayName="Follow Up Created By User">
+      <lookupList>
+        <source sql="exec UserTable_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FollowUpContact" displayName="Follow Up Contact">
+      <lookupList>
+        <source sql="exec Contact_Lookup"/>
+      </lookupList>
+    </field>
+    
+    
+  </section>
+</fieldList>

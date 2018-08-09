@@ -1,0 +1,8 @@
+﻿<CargasConnect>
+  <UserToCustomer_InsertUpdate>
+	<UserTableID />
+	<CUSTNMBR />
+	<IsLinked />
+	<IsPrimary />
+  </UserToCustomer_InsertUpdate>
+</CargasConnect>

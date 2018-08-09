@@ -1,0 +1,14 @@
+<CargasConnect>
+  <VaccineAttachment_InsertUpdate>
+    <AttachmentID/>
+    <VaccineAttachmentID/>
+    <VaccineID/>
+    <FileDescription/>
+    <AttachmentTypeID/>
+    <UserName/>
+    <Path/>
+    <DisplayName/>
+    <DriveName/>
+    <FileSize/>
+  </VaccineAttachment_InsertUpdate>
+</CargasConnect>

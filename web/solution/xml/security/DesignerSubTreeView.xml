@@ -1,0 +1,51 @@
+﻿<fieldList>
+  - <section displayStyle="maxRowsToRender=15">
+    <field fieldName="displayValue" type="display" fieldID="DF1920C7-B6CD-4BB4-BC8D-0CDA6C5DFD20" />
+    <field fieldName="rowID" type="value" fieldID="C6F0F769-2A14-4824-9F14-840A21695264" />
+    <field fieldName="parentID" type="parentID" fieldID="96DC0E26-01F6-4BDE-BBA6-AD31974D7867" />
+    <field fieldName="linkValue" type="link" fieldID="4598CED4-55E2-4856-917A-4C18CFFEB136" />
+    <field fieldName="screenValue" type="screen" fieldID="CF632A95-77B0-45D4-A78A-6BC6FE1C5F04" />
+    <field fieldName="initiallyOpen" type="initiallyOpen" fieldID="D777CEDF-E622-4CF5-9D7D-D1EA64B39C2A" />
+    <field fieldName="displayValue" type="title" fieldID="2B6E4E87-0BF8-41C9-AC5F-96EF095B2E8D" />
+  </section>
+  - <section>
+    <field fieldName="displayValue" type="display" fieldID="FA0D5241-1D20-4989-BD2E-113DD11C657F" />
+    <field fieldName="rowID" type="value" fieldID="AAC54CA0-0EFC-42D4-BAD6-E26C2E3E775F" />
+    <field fieldName="parentID" type="parentID" fieldID="F8456449-B0E2-4BAD-B2CF-D8A1EBC65216" />
+    <field fieldName="linkValue" type="link" fieldID="C3E14919-6C47-4E3C-B785-F0E8C3FD9EF6" />
+    <field fieldName="screenValue" type="screen" fieldID="E4219A94-6ADE-48B2-B399-83F2D7CE6287" />
+    <field fieldName="displayValue" type="title" fieldID="08D06298-934C-4961-B7C1-AD0467543935" />
+  </section>
+  - <section>
+    <field fieldName="displayValue" type="display" fieldID="4F3EB14D-6B76-4FCF-A2AE-F8A82A7DD828" />
+    <field fieldName="rowID" type="value" fieldID="A91DD67C-5CF9-4F1E-B9CB-7AB1F3BE607F" />
+    <field fieldName="parentID" type="parentID" fieldID="08AEB9F9-1725-4488-A87D-C9E5AE038689" />
+    <field fieldName="linkValue" type="link" fieldID="EF346D68-DEF2-4386-8D12-FBB4D19F94AE" />
+    <field fieldName="screenValue" type="screen" fieldID="F6E01DCF-36B0-4A98-94A6-92A1A6445AD2" />
+    <field fieldName="displayValue" type="title" fieldID="05EE73EC-7707-485C-A18C-54747301B8D7" />
+  </section>
+  - <section>
+    <field fieldName="displayValue" type="display" fieldID="1DEF1EDB-6C89-435F-855E-61A8A5A85069" />
+    <field fieldName="rowID" type="value" fieldID="48E34AA1-A58E-4D44-88B7-C04CF8F3BE36" />
+    <field fieldName="parentID" type="parentID" fieldID="20525F6E-C139-4652-A43A-FFC087B8F7C3" />
+    <field fieldName="linkValue" type="link" fieldID="69388117-511F-4400-B4B6-C8A512EE99D0" />
+    <field fieldName="screenValue" type="screen" fieldID="3C9E5D50-A6A0-4D1D-9E8C-B69A3D58B864" />
+    <field fieldName="displayValue" type="title" fieldID="D7ECB02B-F5F1-4666-9F81-BEF9DE48AF68" />
+  </section>
+  - <section>
+    <field fieldName="displayValue" type="display" fieldID="E6979BE8-7F65-4323-A856-4A3C20988022" />
+    <field fieldName="rowID" type="value" fieldID="F4B1194A-FC86-4916-8F71-87F4D9E1F7A2" />
+    <field fieldName="parentID" type="parentID" fieldID="7597FFFE-F73C-43B5-8F16-20C51846FEBF" />
+    <field fieldName="linkValue" type="link" fieldID="2EF10575-8EE8-4A6C-B701-1DBB2A122BE2" />
+    <field fieldName="screenValue" type="screen" fieldID="E63F6BE5-B772-4100-9B2C-A7054834D7E7" />
+    <field fieldName="displayValue" type="title" fieldID="6292F5C1-5CB8-4F81-A543-2B64B1826131" />
+  </section>
+  - <section>
+    <field fieldName="displayValue" type="display" fieldID="8350E55A-3901-42E0-ACAE-17E707B557E8" />
+    <field fieldName="rowID" type="value" fieldID="E29BEEBD-73B1-4BDD-8ECB-8D36AACE9F83" />
+    <field fieldName="parentID" type="parentID" fieldID="B0D73276-3809-4B93-93E2-4515AA256119" />
+    <field fieldName="linkValue" type="link" fieldID="85D9206C-1E82-42C4-896D-884A8BD1CB07" />
+    <field fieldName="screenValue" type="screen" fieldID="D58AF602-2B37-49F9-8029-59D46EE63445" />
+    <field fieldName="displayValue" type="title" fieldID="06F69FD4-8261-43E7-A9F8-475DCE20AF97" />
+  </section>
+</fieldList>

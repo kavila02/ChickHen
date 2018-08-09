@@ -1,0 +1,10 @@
+﻿<CargasConnect>
+  <csb.UserTable_InsertUpdate>
+    <UserTableID/>
+	<UserID/>
+    <EmailAddress/>
+	<UserGroupID/>
+    <ContactName/>
+    <Inactive />
+  </csb.UserTable_InsertUpdate>
+</CargasConnect>

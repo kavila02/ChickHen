@@ -1,0 +1,11 @@
+<CargasConnect>
+  <ChecklistTemplate_DetailAlertSchedule_InsertUpdate>
+    <ChecklistTemplate_DetailAlertScheduleID/>
+    <ChecklistTemplate_DetailID/>
+    <AlertDescription/>
+    <AlertTemplateID/>
+    <TimeFromStep/>
+    <TimeFromStep_DatePartID/>
+    <StartDateOrEndDate/>
+  </ChecklistTemplate_DetailAlertSchedule_InsertUpdate>
+</CargasConnect>

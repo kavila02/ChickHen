@@ -1,0 +1,9 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Vaccines" mobileLayoutSize="none">
+    <field fieldName="VaccineScheduleID" multilineEdit="true" displayName="Vaccine Schedule">
+      <lookupList>
+        <source sql="exec VaccineSchedule_Lookup"/>
+      </lookupList>
+    </field>   
+  </section>
+</fieldList>

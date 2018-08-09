@@ -1,0 +1,10 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="LogDateTime" format="d-MMM-yyyy H:mm:ss"/>
+    <field fieldName="ExceptionLogID" type="link display ExceptionSummary" ScreenID="ExceptionLog_Form" displayName="Summary"/>
+    <field fieldName="UserFullName"/>
+    <field fieldName="XmlScreenID"/>
+    <field fieldName="Method"/>
+    <field fieldName="Url"/>
+  </section>
+</fieldList>

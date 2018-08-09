@@ -1,0 +1,24 @@
+<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="Layer House Week Report" displayStyle="paging:50">
+    <field fieldName="LayerHouseName" readOnly="true" displayName="House #"/>
+    <field fieldName="NoOfHens" readOnly="true" displayName="# Hens" />
+    <field fieldName="BirdAge" readOnly="true" displayName="Bird Age" />
+    <field fieldName="FlockName" readOnly="true" displayName="Flock"/>
+    <field fieldName="Mortality" readOnly="true" displayName="Mortality" />
+    <field fieldName="HenWeight" readOnly="true" displayName="Hen weight oz." />
+    <field fieldName="HiTemp" readOnly="true" displayName="Hi Temp" />
+    <field fieldName="LowTemp" readOnly="true" displayName="Low Temp" />
+    <field fieldName="AmmoniaNh3" readOnly="true" displayName="Ammonia Nh3" />
+    <field fieldName="LightProgram" readOnly="true" displayName="Light Program" />
+    <field fieldName="Rodents" readOnly="true" displayName="Rodents" />
+    <field fieldName="FlyCounts" readOnly="true" displayName="Fly Counts" />
+    <field fieldName="EggsProduced" readOnly="true" displayName="Eggs Produced" />
+    <field fieldName="CaseWeight" readOnly="true" displayName="Case Weight lbs." />
+    <field fieldName="FeedInventory" readOnly="true" displayName="Feed Inventory" />
+    <field fieldName="Water" readOnly="true" displayName="Water cons gal." />
+    <field fieldName="BeginningInventory" readOnly="true" displayName="Beginning Inventory" />
+    <field fieldName="TotalFeedDeliveries" readOnly="true" displayName="Total Feed Deliveries" />
+    <field fieldName="PoundsPerHundred" readOnly="true" displayName="Lbs Per Hundred" />
+    <field fieldName="PercentProduction" readOnly="true" displayName="% Production" />
+  </section>
+</fieldList>

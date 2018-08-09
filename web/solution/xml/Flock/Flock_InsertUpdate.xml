@@ -1,0 +1,37 @@
+<CargasConnect>
+  <Flock_InsertUpdate>
+    <FlockID/>
+    <FlockName/>
+    <LayerHouseID/>
+    <ProductBreedID/>
+    <Quantity/>
+    <ServicesNotes/>
+    <NPIP/>
+    <FlockNumber/>
+    <OldOutDate/>
+    <PulletsMovedID/>
+    <NumberChicksOrdered/>
+    <OldFowlHatchDate/>
+    <ServiceTechID/>
+    <TotalHoused/>
+    <HousingOutDate/>
+    <FowlRemoved/>
+    <FowlOutID/>
+    <HatchDate_First/>
+    <HatchDate_Last/>
+    <HatchDate_Average/>
+    <HousingDate_First/>
+    <HousingDate_Last/>
+    <HousingDate_Average/>
+    <LastPulletWeight/>
+    <OrderNumber/>
+
+    <HatcheryID/>
+    <ChickPlacementDate/>
+    <TotalChicksPlaced/>
+    <PulletHousingTransConfirmNumber/>
+    <FowlOutTransConfirmNumber/>
+    
+    <UserName/>
+  </Flock_InsertUpdate>
+</CargasConnect>

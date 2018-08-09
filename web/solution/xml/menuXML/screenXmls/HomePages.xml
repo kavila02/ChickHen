@@ -1,0 +1,7 @@
+<screenList>
+  <!--.....................................HomePages.xml.......................................-->
+  <screen id="HomePage" displayName="ChickHen" dataStatement="select 1" pageName="Form.html" formatXML="solution\xml\Home\BlankHome.xml">
+    <reference type="displaySettings" ScreenID="NoHeaderNoMenu" displayStyle="NoContext" />
+  </screen>
+  <!--.....................................End HomePages.xml.......................................-->
+</screenList>

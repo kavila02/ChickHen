@@ -1,0 +1,26 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Layer Houses" displayStyle="paging:100" mobileLayoutSize="small">
+    <field fieldName="LocationID" readOnly="true" displayName="Location">
+      <lookupList>
+        <source sql="exec Location_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="LayerHouseName" readOnly="true" displayName="Layer House Name"/>
+    <field fieldName="YearBuilt" readOnly="true" displayName="Year Built"/>
+    <field fieldName="HouseStyle" readOnly="true" displayName="House Style"/>
+    <field fieldName="BirdsPerHouse" readOnly="true" displayName="Birds Per House"/>
+    <field fieldName="CageHeight" readOnly="true" displayName="Colony Height (in)"/>
+    <field fieldName="CageWidth" readOnly="true" displayName="Colony Width (in)"/>
+    <field fieldName="CageDepth" readOnly="true" displayName="Colony Depth (in)/Perch Space"/>
+    <field fieldName="CageSizeNotes" readOnly="true" displayName="Colony Size Notes"/>
+    <field fieldName="CubicInchesInCage" readOnly="true" displayName="Cubic Inches in Colony/Trough Space"/>
+    <field fieldName="SquareInchesInCage" readOnly="true" displayName="Square Inches In Colony/Floor Space"/>
+    <field fieldName="NumberCages" readOnly="true" displayName="Number of Colonies/Nest Space"/>
+    <field fieldName="DrinkersPerCage" readOnly="true" displayName="Drinkers Per Colony"/>
+    <field fieldName="BirdCapacity" readOnly="true" displayName="Colony Bird Capacity White"/>
+    <field fieldName="BirdCapacityBrown" readOnly="true" displayName="Colony Bird Capacity Brown"/>
+    <field fieldName="PEQAPNumber" readOnly="true" displayName="PEQAP Number"/>
+    <field fieldName="SortOrder" readOnly="true" displayName="Sort Order"/>
+
+  </section>
+</fieldList>

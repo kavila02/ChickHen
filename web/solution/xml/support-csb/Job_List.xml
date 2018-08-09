@@ -1,0 +1,13 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="Name"/>
+    <field fieldName="Description" textColumns="75"/>
+    <field fieldName="IsRunning"/>
+    <field fieldName="NextRunDateTime"/>
+    <field fieldName="LastRunDateTime"/>
+    <field fieldName="ModifyDateTime"/>
+    <field fieldName="CreateDateTime" format="yyyy-MM-dd H:mm:ss"/>
+    <field fieldName="Owner"/>
+    <field fieldName="LastRunErrorMessage" textColumns="25"/>
+  </section>
+</fieldList>

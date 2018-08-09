@@ -1,0 +1,13 @@
+﻿<fieldList>
+  <section>
+    <field fieldName="link" ScreenID="ScreenSecurityForGroupUser" type="link icon Edit" hideWhenNull="1" fieldID="8EAE74FF-C4D2-4394-8459-D9DDEBD010BE" />
+    <field fieldName="Name" readOnly="true" displayName="Name" fieldID="8DC3C518-5952-42DB-BDA2-FAD217CF7299" />
+    <field fieldName="Type" readOnly="true" displayName="Type" fieldID="7FA5D995-874A-4AC0-A9B4-BBFEF6C621BD" />
+    <field fieldName="EffectivePermission" readOnly="true" displayName="Effective Permission" fieldID="4654D2A8-4612-4018-BEB6-2D3D9489C5E2" />
+    <field fieldName="ExplicitPermission" displayName="Explicit Permission" multilineEdit="1" fieldID="C357E117-D590-4B53-A5F1-5859CA7BAF27">
+      <lookupList>
+        <source sql="EXEC csb.GroupUserSecurityExplicitPermissions" />
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

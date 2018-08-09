@@ -1,0 +1,8 @@
+<CargasConnect>
+  <FlockContact_InsertUpdate>
+    <FlockContactID/>
+    <FlockID/>
+    <ContactRoleID/>
+    <ContactID/>
+  </FlockContact_InsertUpdate>
+</CargasConnect>

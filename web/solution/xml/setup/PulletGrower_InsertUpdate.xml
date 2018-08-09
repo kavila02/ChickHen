@@ -1,0 +1,18 @@
+<CargasConnect>
+  <PulletGrower_InsertUpdate>
+    <PulletGrowerID/>
+    <PulletGrower/>
+    <Address/>
+    <City/>
+    <State/>
+    <Zip/>
+    <SortOrder/>
+    <IsActive/>
+    <Capacity/>
+    <Latitude/>
+    <Longitude/>
+    <Phone/>
+    <PremiseID/>
+    <NPIPNo/>
+  </PulletGrower_InsertUpdate>
+</CargasConnect>

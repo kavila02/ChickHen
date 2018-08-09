@@ -1,0 +1,17 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Vaccine" displayStyle="paging:25">
+
+    <field fieldName="VaccineName" multilineEdit="true" displayName="Vaccine Name"/>
+    <field fieldName="VaccineID" readOnly="true" displayName="Diseases" type="link display DiseaseList" hideWhenNull="true" ScreenID="VaccineDisease">
+    </field>
+    <field fieldName="ActiveStartDate" multilineEdit="true" displayName="Active Start Date"/>
+    <field fieldName="ActiveEndDate" multilineEdit="true" displayName="Active End Date"/>
+    <field fieldName="ReplacementVaccineID" multilineEdit="true" displayName="Replacement Vaccine">
+      <lookupList>
+        <source sql="exec Vaccine_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="VaccineID" readOnly="true" type="link icon insert_drive_file" displayName="Edit Attachments" ScreenID="VaccineAttachment_List"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+  </section>
+</fieldList>

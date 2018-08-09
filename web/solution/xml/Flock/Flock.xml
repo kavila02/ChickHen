@@ -1,0 +1,101 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock - {{thisRecord.FlockName}}" columnSpan="3" collapsed="false">
+    <field fieldName="OldFowlHatchDate" multilineEdit="true" displayName="Previous Flock Hatch Date" customValidateFunction="test()"/>
+    <field fieldName="OldOutDate" multilineEdit="true" displayName="Previous Flock Out Date" toolTip="fieldname HatchDate_First"/>
+  </section>
+  <section displayName="" ng-if="false" columnSpan="3" header="true" section-ng-show="parentData.screenPropertySet.sectionInfo[0][0] == '1'">
+
+    <!--<field fieldName="FlockName" multilineEdit="true" displayName="Flock Name" columnSpan="3"/>-->
+
+    <field fieldName="LayerHouseID" multilineEdit="true" displayName="Layer House" customValidateFunction="previousHousingInfo({thisRecord},{detailRecords})">
+      <lookupList>
+        <source sql="exec LayerHouse_Lookup"/>
+      </lookupList>
+    </field>
+    <!--<field fieldName="Quantity" multilineEdit="true" displayName="Quantity"/>-->
+    <field fieldName="ProductBreedID" multilineEdit="true" displayName="Product/Breed" padding="1">
+      <lookupList>
+        <source sql="exec ProductBreed_Lookup" />
+      </lookupList>
+    </field>
+
+    <field fieldName="FowlAge" readOnly="true" displayName="Fowl Age (weeks)" className="black" />
+
+
+    <!--<field fieldName="FlockNumber" multilineEdit="true" displayName="Flock Number"/>-->
+    <field fieldName="HatcheryID" multilineEdit="true" displayName="Hatchery" padding="2">
+      <lookupList>
+        <source sql="exec Hatchery_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+  <section columnSpan="4" section-ng-show="parentData.screenPropertySet.sectionInfo[0][0] == '1'">
+    <field fieldName="FlockID" padding="2" displayName="Edit Vaccines&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;" readOnly="true" type="link icon brightness_low" ScreenID="FlockVaccine_List"/>
+    <field fieldName="FlockID" displayName="Edit Additives&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;" readOnly="true" type="link icon brightness_low" ScreenID="FlockAdditive_List"/>
+  </section>
+  <section displayName="Hatch Info" header="true" columnSpan="3" collapsed="false">
+    
+    <field fieldName="HatchDate_First" multilineEdit="true" displayName="First Hatch Date"/>
+    <field fieldName="HatchDate_Last" multilineEdit="true" displayName="Last Hatch Date" padding="1"/>
+    <!--<field fieldName="HatchDate_Average" multilineEdit="true" displayName="Hatch Date (Avg)" />-->
+
+    <!--<field fieldName="ChickPlacementDate" multilineEdit="true" displayName="Chick Placement Date"/>-->
+    <field fieldName="TotalChicksPlaced" multilineEdit="true" displayName="Total Chicks Placed" padding="2"/>
+    
+    <field fieldName="PulletsMovedID" multilineEdit="true" displayName="Pullet Housing Transportation" >
+      <lookupList>
+        <source sql="exec PulletMover_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="PulletHousingTransConfirmNumber" multilineEdit="true" displayName="Transp. Confirmation #" padding="1"/>
+
+  </section>
+  <section columnSpan="3" displayName="Order Info" header="true" collapsed="false">
+    <field fieldName="OrderNumber" multilineEdit="true" displayName="Order Number" />
+    <field fieldName="NumberChicksOrdered" multilineEdit="true" displayName="Number of Chicks Ordered" padding="1"/>
+  </section>
+  <section columnSpan="3" displayName="Housing Info" header="true" collapsed="false">
+    <field fieldName="HousingDate_First" multilineEdit="true" displayName="First Housing Date"/>
+    <field fieldName="HousingDate_Last" multilineEdit="true" displayName="Last Housing Date"/>
+    <field fieldName="HousingDate_Average" multilineEdit="true" displayName="Housing Date (Avg)" customValidateFunction="previousHousingInfo({thisRecord},{detailRecords})"/>
+
+    <field fieldName="AgeAtHousing_Weeks" readOnly="true" displayName="Age at Housing (weeks)" className="black"/>
+    <field fieldName="AgeAtHousing_Days" readOnly="true" displayName="Age at Housing (days)" className="black"/>
+
+    <field fieldName="TotalHoused" multilineEdit="true" displayName="Total Housed" />
+    <field fieldName="LastPulletWeight" multilineEdit="true" displayName="Last Pullet Weight" />
+  </section>
+  <section columnSpan="3" displayName="Fowl Out Info" header="true" collapsed="false">
+
+    <field fieldName="FowlOutID" multilineEdit="true" displayName="Fowl Out Transportation">
+      <lookupList>
+        <source sql="exec FowlOutMover_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FowlOutTransConfirmNumber" multilineEdit="true" displayName="Transp. Confirmation #" />
+    <field fieldName="HousingOutDate" multilineEdit="true" displayName="Final Fowl Out Date"/>
+    <!--
+    <field fieldName="FowlRemoved" multilineEdit="true" displayName="Fowl Removed"/>
+-->
+  </section>
+  <section columnSpan="3" collapsed="false" displayName="Service Info &amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;a ng-model=&quot;thisRecord.FlockID&quot; name=&quot;FlockID&quot; id=&quot;FlockID&quot; href=&quot;Form.html?screenID=FlockServiceNotes_Print&amp;p={{thisRecord.FlockID}}&quot; class=&quot;ng-pristine ng-valid ng-touched&quot; aria-invalid=&quot;false&quot; style=&quot;&quot; target=&quot;_blank&quot;&gt;&lt;i id=&quot;FlockID&quot; class=&quot;csb-center-icon material-icons ng-binging ng-scope&quot;&gt;print&lt;/i&gt;&lt;/a&gt;" header="true">
+
+    <field fieldName="ServiceTechID" multilineEdit="true" displayName="Service Tech" padding="2" >
+      <lookupList>
+        <source sql="exec Contact_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ServicesNotes" multilineEdit="true" displayName="Services Notes" columnSpan="3" textRows="3"/>
+
+
+    
+
+
+
+    
+    
+    
+    
+    
+  </section>
+</fieldList>

@@ -1,0 +1,10 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Vaccine Schedule">
+
+    <field fieldName="VaccineSchedule" multilineEdit="true" displayName="Vaccine Schedule"/>
+    <field fieldName="VaccineScheduleID" readOnly="true" displayName="Select Vaccines" type="link icon playlist" ScreenID="VaccineScheduleVaccine" visibleFieldName="VaccineScheduleID.toString()!" visibleFieldValue="0"/>
+    <field fieldName="SortOrder" multilineEdit="true" displayName="Sort Order"/>
+    <field fieldName="IsActive" multilineEdit="true" displayName="Is Active"/>
+    <field fieldName="VaccineScheduleID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="VaccineSchedule_Delete" visibleFieldName="VaccineScheduleID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

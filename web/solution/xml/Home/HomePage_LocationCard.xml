@@ -1,0 +1,15 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Home Page Location Card (Current Flocks)" columnSpan="2">
+    <field fieldName="Location" className="black" readOnly="true" displayName="Location"/>
+    <field fieldName="FarmBirdCapacity" className="black" readOnly="true" displayName="Farm Bird Capacity"/>
+    
+    <field fieldName="USDAPlantNumber" className="black" readOnly="true" displayName="USDA Plant Number"/>
+    <field fieldName="CurrentBirdTotal" className="black" readOnly="true" displayName="Current Bird Total"/>
+    
+    <field fieldName="PDAPremiseID" className="black" readOnly="true" displayName="PDA Premise" padding="1"/>
+    <field fieldName="PDANumber" className="black" readOnly="true" displayName="PDA Number" padding="1"/>
+    <field fieldName="PEQAPNumbers" className="black" readOnly="true" displayName="PEQAP Numbers" padding="1"/>
+    
+    
+  </section>
+</fieldList>

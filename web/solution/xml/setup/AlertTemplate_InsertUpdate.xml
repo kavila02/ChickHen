@@ -1,0 +1,10 @@
+<CargasConnect>
+  <AlertTemplate_InsertUpdate>
+    <AlertTemplateID/>
+    <alertBody/>
+    <AlertName/>
+    <SortOrder/>
+    <IsActive/>
+    <alertSubject/>
+  </AlertTemplate_InsertUpdate>
+</CargasConnect>

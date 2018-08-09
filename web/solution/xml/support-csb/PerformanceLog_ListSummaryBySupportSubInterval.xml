@@ -1,0 +1,15 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="SubInterval"/>
+    <field fieldName="FirstLogDateTime"/>
+    <field fieldName="LastLogDateTime"/>
+    <field fieldName="LogEntryCount" displayName="Runs"/>
+    <field fieldName="UserCount"/>
+    <field fieldName="PageCount"/>
+    <field fieldName="SourceCount"/>
+    <field fieldName="MillisecondsAverage"/>
+    <field fieldName="MillisecondsSum"/>
+    <field fieldName="MillisecondsMin"/>
+    <field fieldName="MillisecondsMax"/>
+  </section>
+</fieldList>

@@ -1,0 +1,8 @@
+<screenXmlList>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\Security.xml"/>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\ChecklistTemplate.xml"/>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\Flock.xml"/>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\FlockChecklist.xml"/>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\HomePages.xml"/>
+  <screenXml filePath="solution\xml\menuXML\screenXmls\Setup.xml"/>
+</screenXmlList>

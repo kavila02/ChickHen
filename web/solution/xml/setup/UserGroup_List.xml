@@ -1,0 +1,7 @@
+﻿<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="User Groups" displayStyle="paging=500">
+    
+    <field fieldName="UserGroup" textColumns="30" multilineEdit="true" />
+  </section>
+</fieldList>
+

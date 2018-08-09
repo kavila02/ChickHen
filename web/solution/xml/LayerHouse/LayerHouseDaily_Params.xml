@@ -1,0 +1,10 @@
+﻿<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="" displayStyle="paging:50">
+    <field fieldName="weekEndDate" displayName="Date"/>
+    <field fieldName="LayerHouseID" multilineEdit="true" displayName="Layer House">
+      <lookupList>
+        <source sql="exec LayerHouse_Lookup"/>
+      </lookupList>
+    </field>
+  </section>
+</fieldList>

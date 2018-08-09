@@ -1,0 +1,18 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="PulletGrower" displayStyle="paging:100">
+
+    <field fieldName="PulletGrower" displayName="Pullet Grower"/>
+    <field fieldName="Capacity" displayName="Capacity" format="numeric 0"/>
+    <field fieldName="Address" />
+    <field fieldName="City" />
+    <field fieldName="State" />
+    <field fieldName="Zip" />
+    <field fieldName="Latitude" format="numeric 5"/>
+    <field fieldName="Longitude" format="numeric 5"/>
+    <field fieldName="Phone" format="phone"/>
+    <field fieldName="PremiseID" displayName="Premise ID"/>
+    <field fieldName ="NPIPNo" displayName="NPIP Number"/>
+    <field fieldName="SortOrder" displayName="Sort Order"/>
+    <field fieldName="IsActive" displayName="Active"/>
+  </section>
+</fieldList>

@@ -1,0 +1,14 @@
+<fieldList>
+  <section displayName="Support - Exceptions - Exception">
+    <field fieldName="LogDateTime" readOnly="true"/>
+    <field fieldName="UserFullName" readOnly="true"/>
+    <field fieldName="XmlScreenID" readOnly="true"/>
+    <field fieldName="Method" readOnly="true"/>
+    <field fieldName="Url" readOnly="true"/>
+    <field fieldName="ExceptionSummary" readOnly="true" className="dataReadOnlyPreFormattedWhiteSpace"/>
+    <field fieldName="ExceptionDetails" readOnly="true" className="dataReadOnlyPreFormattedWhiteSpace"/>
+    <field fieldName="FormVariables" readOnly="true" className="dataReadOnlyPreFormattedWhiteSpace"/>
+    <field fieldName="ServerVariables" readOnly="true" className="dataReadOnlyPreFormattedWhiteSpace"/>
+    <field fieldName="ExceptionLogID" readOnly="true"/>
+  </section>
+</fieldList>

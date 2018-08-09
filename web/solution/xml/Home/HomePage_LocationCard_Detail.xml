@@ -1,0 +1,14 @@
+<fieldList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://csb2018.cargascloud.com/xmlschemas/csbFormatXML.xsd">
+  <section displayName="Home Page Location Card Detail">
+    <field fieldName="Parameters" type="link icon reorder" displayName="Weekly Info" ScreenID="LayerHouseWeek" />
+    <field fieldName="LayerHouseName" readOnly="true" displayName="Layer House" className="center"/>
+    <field fieldName="HatchDate_First" readOnly="true" displayName="Hatch Date" className="center"/>
+    <field fieldName="CurrentAge_Weeks" readOnly="true" displayName="Current Age (wk)" className="center"/>
+    <field fieldName="HousingDate_Average" readOnly="true" displayName="Housing Date" className="center"/>
+    <field fieldName="AgeAtHousing_Weeks" readOnly="true" displayName="Age At Housing (wk)" className="center"/>
+    <field fieldName="AmtOfBirds" readOnly="true" displayName="Amt Of Birds" className="center"/>
+    <field fieldName="ProductBreed" readOnly="true" displayName="Breed" className="center"/>
+    <field fieldName="FowlOutDate" readOnly="true" displayName="Fowl Out Date" className="center"/>
+    <field fieldName="HousingOutAge_Weeks" readOnly="true" displayName="Housing Out Age (wk)" className="center"/>
+  </section>
+</fieldList>

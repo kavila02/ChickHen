@@ -1,0 +1,7 @@
+<CargasConnect>
+  <VaccineScheduleVaccine_InsertUpdate>
+    <VaccineScheduleVaccineID/>
+    <VaccineScheduleID/>
+    <VaccineID/>
+  </VaccineScheduleVaccine_InsertUpdate>
+</CargasConnect>

@@ -1,0 +1,1466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{B0DCBA06-E5AD-4DBD-B930-975CBF0B2955}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ChickHen</RootNamespace>
+    <AssemblyName>ChickHen</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ChickHen.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ChickHen.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="solution\Attachments\" />
+    <Folder Include="solution\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\ADODB.dll" />
+    <Content Include="bin\csi.Framework.dll" />
+    <Content Include="bin\csi.Framework.pdb" />
+    <Content Include="bin\csi.Framework.xml" />
+    <Content Include="bin\CSIActiveReports.dll" />
+    <Content Include="bin\CSIActiveReports.dll.GrapeCity.Licenses.dll" />
+    <Content Include="bin\CSIActiveReports.pdb" />
+    <Content Include="bin\csiTemplates.dll" />
+    <Content Include="bin\CustomerService.dll" />
+    <Content Include="bin\CustomerService.pdb" />
+    <Content Include="bin\CustomerService.xml" />
+    <Content Include="bin\DocumentFormat.OpenXml.dll" />
+    <Content Include="bin\EnvDTE.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Chart.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Diagnostics.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Document.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Document.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Excel.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Html.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Image.Unsafe.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Image.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Pdf.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Export.Word.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Extensibility.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Interop.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Interop64.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Serializer.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Viewer.Win.v7.dll" />
+    <Content Include="bin\GrapeCity.ActiveReports.Web.v7.dll" />
+    <Content Include="bin\Login.dll" />
+    <Content Include="bin\Login.pdb" />
+    <Content Include="bin\Login.xml" />
+    <Content Include="bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.pdb" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\stdole.dll" />
+    <Content Include="cache.aspx" />
+    <Content Include="css\angular-material-calendar.min.css" />
+    <Content Include="css\angular-material.font.css" />
+    <Content Include="css\angular-material.min.css" />
+    <Content Include="css\angular_Previous\angular-material.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Bootstrap\editor.png" />
+    <Content Include="css\Bootstrap\imagebrowser.png" />
+    <Content Include="css\Bootstrap\indeterminate.gif" />
+    <Content Include="css\Bootstrap\loading-image.gif" />
+    <Content Include="css\Bootstrap\loading.gif" />
+    <Content Include="css\Bootstrap\loading_2x.gif" />
+    <Content Include="css\Bootstrap\markers.png" />
+    <Content Include="css\Bootstrap\markers_2x.png" />
+    <Content Include="css\Bootstrap\slider-h.gif" />
+    <Content Include="css\Bootstrap\slider-v.gif" />
+    <Content Include="css\Bootstrap\sprite.png" />
+    <Content Include="css\Bootstrap\sprite_2x.png" />
+    <Content Include="css\Bootstrap\sprite_kpi.png" />
+    <Content Include="css\Bootstrap\sprite_kpi_2x.png" />
+    <Content Include="css\csbMaterialDesign.css" />
+    <Content Include="css\Default\editor.png" />
+    <Content Include="css\Default\imagebrowser.png" />
+    <Content Include="css\Default\loading-image.gif" />
+    <Content Include="css\Default\loading.gif" />
+    <Content Include="css\Default\slider-h.gif" />
+    <Content Include="css\Default\slider-v.gif" />
+    <Content Include="css\Default\sprite.png" />
+    <Content Include="css\images\color-picker\alpha.png" />
+    <Content Include="css\images\color-picker\hue.png" />
+    <Content Include="css\images\color-picker\saturation.png" />
+    <Content Include="css\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="css\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="css\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="css\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\quartzMenu.css" />
+    <Content Include="css\solutionBuilder.css" />
+    <Content Include="css\textAngular.css" />
+    <Content Include="DataLoad\DataLoad.aspx" />
+    <Content Include="DataLoad\DataLoad_DetailReference.aspx" />
+    <Content Include="DataLoad\DataLoad_LookupList.aspx" />
+    <Content Include="DataLoad\DataLoad_ScreenLayout.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Form.html" />
+    <Content Include="generateReport.aspx" />
+    <Content Include="images\bgfix.gif" />
+    <Content Include="images\bgfix.png" />
+    <Content Include="images\bgfixBlue.gif" />
+    <Content Include="images\bgfixBlue.png" />
+    <Content Include="images\bg_blue.gif" />
+    <Content Include="images\bg_blue.png" />
+    <Content Include="images\bg_blueLite.gif" />
+    <Content Include="images\bg_blueLite.png" />
+    <Content Include="images\bg_grey.gif" />
+    <Content Include="images\bg_grey.png" />
+    <Content Include="images\blue_bg.gif" />
+    <Content Include="images\blue_bg.png" />
+    <Content Include="images\BookmarkAdd.png" />
+    <Content Include="images\btnHelp.gif" />
+    <Content Include="images\btnHelp.png" />
+    <Content Include="images\bullet_ball_blue.gif" />
+    <Content Include="images\bullet_ball_blue.png" />
+    <Content Include="images\bullet_ball_green.gif" />
+    <Content Include="images\bullet_ball_green.png" />
+    <Content Include="images\bullet_ball_red.gif" />
+    <Content Include="images\bullet_ball_red.png" />
+    <Content Include="images\bullet_ball_yellow.gif" />
+    <Content Include="images\bullet_ball_yellow.png" />
+    <Content Include="images\calendar__minus.png" />
+    <Content Include="images\cancelchanges.gif" />
+    <Content Include="images\cancelchanges.png" />
+    <Content Include="images\cancelchangesEnabled.gif" />
+    <Content Include="images\cancelchangesEnabled.png" />
+    <Content Include="images\Cargas Query.gif" />
+    <Content Include="images\Cargas Query.png" />
+    <Content Include="images\cell_background1.jpg" />
+    <Content Include="images\cell_background1.png" />
+    <Content Include="images\Check.gif" />
+    <Content Include="images\Check.png" />
+    <Content Include="images\checkmark.gif" />
+    <Content Include="images\checkmark.png" />
+    <Content Include="images\CheckSpelling.gif" />
+    <Content Include="images\CheckSpelling.png" />
+    <Content Include="images\close.gif" />
+    <Content Include="images\close.png" />
+    <Content Include="images\coloricons-sprite.png" />
+    <Content Include="images\comment.gif" />
+    <Content Include="images\comment.png" />
+    <Content Include="images\Copy of downArrow.GIF" />
+    <Content Include="images\Copy of downArrow.png" />
+    <Content Include="images\Copy of upArrow.GIF" />
+    <Content Include="images\Copy of upArrow.png" />
+    <Content Include="images\copy.gif" />
+    <Content Include="images\copy.png" />
+    <Content Include="images\Critical.gif" />
+    <Content Include="images\Critical.png" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\deleteHeader.gif" />
+    <Content Include="images\deleteHeader.png" />
+    <Content Include="images\document-excel.png" />
+    <Content Include="images\document-pdf.png" />
+    <Content Include="images\dot.gif" />
+    <Content Include="images\dot.png" />
+    <Content Include="images\downarrow.bmp" />
+    <Content Include="images\downArrow.gif" />
+    <Content Include="images\downArrow.jpg" />
+    <Content Include="images\downArrow.png" />
+    <Content Include="images\downArrow2.GIF" />
+    <Content Include="images\downArrow2.jpg" />
+    <Content Include="images\downArrow2.png" />
+    <Content Include="images\downArrow2_renamed.png" />
+    <Content Include="images\downArrow3.gif" />
+    <Content Include="images\downArrow3.png" />
+    <Content Include="images\downArrow4.gif" />
+    <Content Include="images\downArrow4.png" />
+    <Content Include="images\downArrowOLD.GIF" />
+    <Content Include="images\downArrowOLD.png" />
+    <Content Include="images\downarrowover.bmp" />
+    <Content Include="images\downarrowpressed.bmp" />
+    <Content Include="images\downarrow_renamed.png" />
+    <Content Include="images\Edit.gif" />
+    <Content Include="images\Edit.png" />
+    <Content Include="images\email.gif" />
+    <Content Include="images\email.png" />
+    <Content Include="images\emailRefresh.png" />
+    <Content Include="images\excel.gif" />
+    <Content Include="images\excel.png" />
+    <Content Include="images\excelheader.GIF" />
+    <Content Include="images\excelheader.png" />
+    <Content Include="images\excelsmall.gif" />
+    <Content Include="images\excelsmall.png" />
+    <Content Include="images\excelsmall_renamed.png" />
+    <Content Include="images\File.gif" />
+    <Content Include="images\File.png" />
+    <Content Include="images\Filter2HS.png" />
+    <Content Include="images\folderClosed.gif" />
+    <Content Include="images\folderClosed.png" />
+    <Content Include="images\form_submit_small.gif" />
+    <Content Include="images\form_submit_small.png" />
+    <Content Include="images\GoTo.gif" />
+    <Content Include="images\GoTo.png" />
+    <Content Include="images\gridheaderbg.png" />
+    <Content Include="images\HelpIcon.gif" />
+    <Content Include="images\HelpIcon.png" />
+    <Content Include="images\IceCreamCone.gif" />
+    <Content Include="images\IceCreamCone.png" />
+    <Content Include="images\icon-folder-calendar.gif" />
+    <Content Include="images\icon-folder-calendar.png" />
+    <Content Include="images\icrmban.gif" />
+    <Content Include="images\icrmban.png" />
+    <Content Include="images\indx_btm_left.jpg" />
+    <Content Include="images\indx_btm_left.png" />
+    <Content Include="images\indx_btm_rt.jpg" />
+    <Content Include="images\indx_btm_rt.png" />
+    <Content Include="images\indx_top_rt.jpg" />
+    <Content Include="images\indx_top_rt.png" />
+    <Content Include="images\indx_tp_left.jpg" />
+    <Content Include="images\indx_tp_left.png" />
+    <Content Include="images\jquery-images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="images\jquery-images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="images\jquery-images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="images\jquery-images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="images\jquery-images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="images\jquery-images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="images\jquery-images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="images\jquery-images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="images\jquery-images\ui-icons_222222_256x240.png" />
+    <Content Include="images\jquery-images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="images\jquery-images\ui-icons_454545_256x240.png" />
+    <Content Include="images\jquery-images\ui-icons_888888_256x240.png" />
+    <Content Include="images\jquery-images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="images\keyboard_magnify.png" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\logo - production.png" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo2.jpg" />
+    <Content Include="images\logo2.png" />
+    <Content Include="images\logoSB.jpg" />
+    <Content Include="images\logoSB.png" />
+    <Content Include="images\logosmall.gif" />
+    <Content Include="images\logosmall.png" />
+    <Content Include="images\logoSmallReport.gif" />
+    <Content Include="images\logosmallReport.png" />
+    <Content Include="images\logo_renamed.png" />
+    <Content Include="images\lookup.gif" />
+    <Content Include="images\lookup.png" />
+    <Content Include="images\lookupOLD.gif" />
+    <Content Include="images\lookupOLD.png" />
+    <Content Include="images\magnifier.png" />
+    <Content Include="images\majorNav_bg.gif" />
+    <Content Include="images\majorNav_bg.png" />
+    <Content Include="images\majorNav_divider_center.gif" />
+    <Content Include="images\majorNav_divider_center.png" />
+    <Content Include="images\majorNav_divider_left.gif" />
+    <Content Include="images\majorNav_divider_left.png" />
+    <Content Include="images\menuBarBG.jpg" />
+    <Content Include="images\menuBarBG.png" />
+    <Content Include="images\menuButtonBG.gif" />
+    <Content Include="images\menuButtonBG.png" />
+    <Content Include="images\menuPopupBG-border.gif" />
+    <Content Include="images\menuPopupBG-border.png" />
+    <Content Include="images\menuPopupBG.gif" />
+    <Content Include="images\menuPopupBG.png" />
+    <Content Include="images\minus.gif" />
+    <Content Include="images\minus.png" />
+    <Content Include="images\New.gif" />
+    <Content Include="images\new.png" />
+    <Content Include="images\newr.gif" />
+    <Content Include="images\newr.png" />
+    <Content Include="images\newrecord.gif" />
+    <Content Include="images\newrecord.png" />
+    <Content Include="images\new_logo_sm.GIF" />
+    <Content Include="images\new_logo_sm.png" />
+    <Content Include="images\noexp.gif" />
+    <Content Include="images\noexp.png" />
+    <Content Include="images\OK.gif" />
+    <Content Include="images\OK.png" />
+    <Content Include="images\PayGoLogo60.png" />
+    <Content Include="images\pdf.gif" />
+    <Content Include="images\pdf.png" />
+    <Content Include="images\pdficonsm.gif" />
+    <Content Include="images\pdficonsm.png" />
+    <Content Include="images\plus.gif" />
+    <Content Include="images\plus.png" />
+    <Content Include="images\PRINT.gif" />
+    <Content Include="images\print.png" />
+    <Content Include="images\printEmployee.GIF" />
+    <Content Include="images\printEmployee.png" />
+    <Content Include="images\PRINT_renamed.png" />
+    <Content Include="images\ProgressIndicatorAni.gif" />
+    <Content Include="images\ProgressIndicatorAni.png" />
+    <Content Include="images\ReadOnly.gif" />
+    <Content Include="images\ReadOnly.png" />
+    <Content Include="images\refresh.gif" />
+    <Content Include="images\refresh.png" />
+    <Content Include="images\rightArrow.gif" />
+    <Content Include="images\rightArrow.png" />
+    <Content Include="images\savechanges.GIF" />
+    <Content Include="images\savechanges.png" />
+    <Content Include="images\savechangesEnabled.GIF" />
+    <Content Include="images\savechangesEnabled.png" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\spacer.png" />
+    <Content Include="images\Sum.PNG" />
+    <Content Include="images\TableHS.png" />
+    <Content Include="images\tool-calendar.gif" />
+    <Content Include="images\tool-calendar.png" />
+    <Content Include="images\tool-calendar_renamed.png" />
+    <Content Include="images\upArrow.gif" />
+    <Content Include="images\upArrow.png" />
+    <Content Include="images\upArrowOLD.GIF" />
+    <Content Include="images\upArrowOLD.png" />
+    <Content Include="images\warning-Mail.gif" />
+    <Content Include="images\warning-Mail.png" />
+    <Content Include="images\warning.gif" />
+    <Content Include="images\warning.png" />
+    <Content Include="images\weirdlyNamed.png" />
+    <Content Include="images\welcome.gif" />
+    <Content Include="images\welcome.png" />
+    <Content Include="images\white.gif" />
+    <Content Include="images\white.png" />
+    <Content Include="images\wizard.gif" />
+    <Content Include="images\wizard.png" />
+    <Content Include="images\wordsmall.GIF" />
+    <Content Include="images\wordsmall.png" />
+    <Content Include="index.html" />
+    <Content Include="js\adapters\mootools-adapter.js" />
+    <Content Include="js\adapters\mootools-adapter.src.js" />
+    <Content Include="js\adapters\prototype-adapter.js" />
+    <Content Include="js\adapters\prototype-adapter.src.js" />
+    <Content Include="js\adapters\standalone-framework.js" />
+    <Content Include="js\adapters\standalone-framework.src.js" />
+    <Content Include="js\angular-1.4.7\angular-animate.js" />
+    <Content Include="js\angular-1.4.7\angular-animate.min.js" />
+    <Content Include="js\angular-1.4.7\angular-aria.js" />
+    <Content Include="js\angular-1.4.7\angular-aria.min.js" />
+    <Content Include="js\angular-1.4.7\angular-cookies.js" />
+    <Content Include="js\angular-1.4.7\angular-cookies.min.js" />
+    <Content Include="js\angular-1.4.7\angular-csp.css" />
+    <Content Include="js\angular-1.4.7\angular-loader.js" />
+    <Content Include="js\angular-1.4.7\angular-loader.min.js" />
+    <Content Include="js\angular-1.4.7\angular-message-format.js" />
+    <Content Include="js\angular-1.4.7\angular-message-format.min.js" />
+    <Content Include="js\angular-1.4.7\angular-messages.js" />
+    <Content Include="js\angular-1.4.7\angular-messages.min.js" />
+    <Content Include="js\angular-1.4.7\angular-mocks.js" />
+    <Content Include="js\angular-1.4.7\angular-resource.js" />
+    <Content Include="js\angular-1.4.7\angular-resource.min.js" />
+    <Content Include="js\angular-1.4.7\angular-route.js" />
+    <Content Include="js\angular-1.4.7\angular-route.min.js" />
+    <Content Include="js\angular-1.4.7\angular-sanitize.js" />
+    <Content Include="js\angular-1.4.7\angular-sanitize.min.js" />
+    <Content Include="js\angular-1.4.7\angular-scenario.js" />
+    <Content Include="js\angular-1.4.7\angular-touch.js" />
+    <Content Include="js\angular-1.4.7\angular-touch.min.js" />
+    <Content Include="js\angular-1.4.7\angular.js" />
+    <Content Include="js\angular-1.4.7\angular.min.js" />
+    <Content Include="js\angular-1.4.7\version.txt" />
+    <Content Include="js\angular-material-calendar.js" />
+    <Content Include="js\angularjs - 1.3.15\angular-animate.min.js" />
+    <Content Include="js\angularjs - 1.3.15\angular-aria.min.js" />
+    <Content Include="js\angularjs - 1.3.15\angular-material.min.js" />
+    <Content Include="js\angularjs - 1.3.15\angular-messages.min.js" />
+    <Content Include="js\angularjs - 1.3.15\angular-sanitize.js" />
+    <Content Include="js\angularjs - 1.3.15\angular.min.js" />
+    <Content Include="js\angularjs - 1.3.15\ngStorage.js" />
+    <Content Include="js\angularjs\angular-animate.min.js" />
+    <Content Include="js\angularjs\angular-aria.min.js" />
+    <Content Include="js\angularjs\angular-material.min.js" />
+    <Content Include="js\angularjs\angular-messages.min.js" />
+    <Content Include="js\angularjs\angular-sanitize.js" />
+    <Content Include="js\angularjs\angular.min.js" />
+    <Content Include="js\angularjs\ngStorage.js" />
+    <Content Include="js\angularJS_Previous\angular-material.min.js" />
+    <Content Include="js\bootstrap\bootstrap.min.js" />
+    <Content Include="js\csbAngularForm.js" />
+    <Content Include="js\csbAngularList.js" />
+    <Content Include="js\csbAngularLogin.js" />
+    <Content Include="js\csbAngularUI.js" />
+    <Content Include="js\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.af.min.js" />
+    <Content Include="js\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="js\cultures\kendo.culture.am.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="js\cultures\kendo.culture.ar.min.js" />
+    <Content Include="js\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="js\cultures\kendo.culture.arn.min.js" />
+    <Content Include="js\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.as.min.js" />
+    <Content Include="js\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.az.min.js" />
+    <Content Include="js\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="js\cultures\kendo.culture.ba.min.js" />
+    <Content Include="js\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="js\cultures\kendo.culture.be.min.js" />
+    <Content Include="js\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="js\cultures\kendo.culture.bg.min.js" />
+    <Content Include="js\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="js\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.bn.min.js" />
+    <Content Include="js\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="js\cultures\kendo.culture.bo.min.js" />
+    <Content Include="js\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="js\cultures\kendo.culture.br.min.js" />
+    <Content Include="js\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="js\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="js\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.bs.min.js" />
+    <Content Include="js\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="js\cultures\kendo.culture.ca.min.js" />
+    <Content Include="js\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="js\cultures\kendo.culture.co.min.js" />
+    <Content Include="js\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.cs.min.js" />
+    <Content Include="js\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="js\cultures\kendo.culture.cy.min.js" />
+    <Content Include="js\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="js\cultures\kendo.culture.da.min.js" />
+    <Content Include="js\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="js\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="js\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="js\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="js\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="js\cultures\kendo.culture.de.min.js" />
+    <Content Include="js\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="js\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="js\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="js\cultures\kendo.culture.dv.min.js" />
+    <Content Include="js\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="js\cultures\kendo.culture.el.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="js\cultures\kendo.culture.en.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="js\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="js\cultures\kendo.culture.es.min.js" />
+    <Content Include="js\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="js\cultures\kendo.culture.et.min.js" />
+    <Content Include="js\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="js\cultures\kendo.culture.eu.min.js" />
+    <Content Include="js\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="js\cultures\kendo.culture.fa.min.js" />
+    <Content Include="js\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="js\cultures\kendo.culture.fi.min.js" />
+    <Content Include="js\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="js\cultures\kendo.culture.fil.min.js" />
+    <Content Include="js\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="js\cultures\kendo.culture.fo.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="js\cultures\kendo.culture.fr.min.js" />
+    <Content Include="js\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="js\cultures\kendo.culture.fy.min.js" />
+    <Content Include="js\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="js\cultures\kendo.culture.ga.min.js" />
+    <Content Include="js\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="js\cultures\kendo.culture.gd.min.js" />
+    <Content Include="js\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="js\cultures\kendo.culture.gl.min.js" />
+    <Content Include="js\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="js\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="js\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.gu.min.js" />
+    <Content Include="js\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="js\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.ha.min.js" />
+    <Content Include="js\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="js\cultures\kendo.culture.he.min.js" />
+    <Content Include="js\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.hi.min.js" />
+    <Content Include="js\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="js\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="js\cultures\kendo.culture.hr.min.js" />
+    <Content Include="js\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="js\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="js\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="js\cultures\kendo.culture.hu.min.js" />
+    <Content Include="js\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="js\cultures\kendo.culture.hy.min.js" />
+    <Content Include="js\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="js\cultures\kendo.culture.id.min.js" />
+    <Content Include="js\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="js\cultures\kendo.culture.ig.min.js" />
+    <Content Include="js\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ii.min.js" />
+    <Content Include="js\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="js\cultures\kendo.culture.is.min.js" />
+    <Content Include="js\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="js\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="js\cultures\kendo.culture.it.min.js" />
+    <Content Include="js\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="js\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="js\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="js\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.iu.min.js" />
+    <Content Include="js\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="js\cultures\kendo.culture.ja.min.js" />
+    <Content Include="js\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="js\cultures\kendo.culture.ka.min.js" />
+    <Content Include="js\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.kk.min.js" />
+    <Content Include="js\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="js\cultures\kendo.culture.kl.min.js" />
+    <Content Include="js\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="js\cultures\kendo.culture.km.min.js" />
+    <Content Include="js\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.kn.min.js" />
+    <Content Include="js\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="js\cultures\kendo.culture.ko.min.js" />
+    <Content Include="js\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.kok.min.js" />
+    <Content Include="js\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="js\cultures\kendo.culture.ky.min.js" />
+    <Content Include="js\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="js\cultures\kendo.culture.lb.min.js" />
+    <Content Include="js\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="js\cultures\kendo.culture.lo.min.js" />
+    <Content Include="js\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="js\cultures\kendo.culture.lt.min.js" />
+    <Content Include="js\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="js\cultures\kendo.culture.lv.min.js" />
+    <Content Include="js\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.mi.min.js" />
+    <Content Include="js\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="js\cultures\kendo.culture.mk.min.js" />
+    <Content Include="js\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ml.min.js" />
+    <Content Include="js\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="js\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="js\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="js\cultures\kendo.culture.mn.min.js" />
+    <Content Include="js\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="js\cultures\kendo.culture.moh.min.js" />
+    <Content Include="js\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.mr.min.js" />
+    <Content Include="js\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="js\cultures\kendo.culture.ms.min.js" />
+    <Content Include="js\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="js\cultures\kendo.culture.mt.min.js" />
+    <Content Include="js\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="js\cultures\kendo.culture.nb.min.js" />
+    <Content Include="js\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="js\cultures\kendo.culture.ne.min.js" />
+    <Content Include="js\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="js\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="js\cultures\kendo.culture.nl.min.js" />
+    <Content Include="js\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="js\cultures\kendo.culture.nn.min.js" />
+    <Content Include="js\cultures\kendo.culture.no.min.js" />
+    <Content Include="js\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.nso.min.js" />
+    <Content Include="js\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="js\cultures\kendo.culture.oc.min.js" />
+    <Content Include="js\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.or.min.js" />
+    <Content Include="js\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.pa.min.js" />
+    <Content Include="js\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="js\cultures\kendo.culture.pl.min.js" />
+    <Content Include="js\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="js\cultures\kendo.culture.prs.min.js" />
+    <Content Include="js\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="js\cultures\kendo.culture.ps.min.js" />
+    <Content Include="js\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="js\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="js\cultures\kendo.culture.pt.min.js" />
+    <Content Include="js\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="js\cultures\kendo.culture.qut.min.js" />
+    <Content Include="js\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="js\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="js\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="js\cultures\kendo.culture.quz.min.js" />
+    <Content Include="js\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="js\cultures\kendo.culture.rm.min.js" />
+    <Content Include="js\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="js\cultures\kendo.culture.ro.min.js" />
+    <Content Include="js\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="js\cultures\kendo.culture.ru.min.js" />
+    <Content Include="js\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="js\cultures\kendo.culture.rw.min.js" />
+    <Content Include="js\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.sa.min.js" />
+    <Content Include="js\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="js\cultures\kendo.culture.sah.min.js" />
+    <Content Include="js\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="js\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="js\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="js\cultures\kendo.culture.se.min.js" />
+    <Content Include="js\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="js\cultures\kendo.culture.si.min.js" />
+    <Content Include="js\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="js\cultures\kendo.culture.sk.min.js" />
+    <Content Include="js\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="js\cultures\kendo.culture.sl.min.js" />
+    <Content Include="js\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="js\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="js\cultures\kendo.culture.sma.min.js" />
+    <Content Include="js\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="js\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="js\cultures\kendo.culture.smj.min.js" />
+    <Content Include="js\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="js\cultures\kendo.culture.smn.min.js" />
+    <Content Include="js\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="js\cultures\kendo.culture.sms.min.js" />
+    <Content Include="js\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="js\cultures\kendo.culture.sq.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.sr.min.js" />
+    <Content Include="js\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="js\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="js\cultures\kendo.culture.sv.min.js" />
+    <Content Include="js\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="js\cultures\kendo.culture.sw.min.js" />
+    <Content Include="js\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="js\cultures\kendo.culture.syr.min.js" />
+    <Content Include="js\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ta.min.js" />
+    <Content Include="js\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="js\cultures\kendo.culture.te.min.js" />
+    <Content Include="js\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="js\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.tg.min.js" />
+    <Content Include="js\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="js\cultures\kendo.culture.th.min.js" />
+    <Content Include="js\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="js\cultures\kendo.culture.tk.min.js" />
+    <Content Include="js\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.tn.min.js" />
+    <Content Include="js\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="js\cultures\kendo.culture.tr.min.js" />
+    <Content Include="js\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="js\cultures\kendo.culture.tt.min.js" />
+    <Content Include="js\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="js\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="js\cultures\kendo.culture.ug.min.js" />
+    <Content Include="js\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="js\cultures\kendo.culture.uk.min.js" />
+    <Content Include="js\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="js\cultures\kendo.culture.ur.min.js" />
+    <Content Include="js\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="js\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="js\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="js\cultures\kendo.culture.uz.min.js" />
+    <Content Include="js\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="js\cultures\kendo.culture.vi.min.js" />
+    <Content Include="js\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="js\cultures\kendo.culture.wo.min.js" />
+    <Content Include="js\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.xh.min.js" />
+    <Content Include="js\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="js\cultures\kendo.culture.yo.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="js\cultures\kendo.culture.zh.min.js" />
+    <Content Include="js\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="js\cultures\kendo.culture.zu.min.js" />
+    <Content Include="js\dirPagination.js" />
+    <Content Include="js\fileUpload\ng-file-upload.min.js" />
+    <Content Include="js\firebase\angularfire.min.js" />
+    <Content Include="js\firebase\firebase.js" />
+    <Content Include="js\jquery\jquery-1.11.2.min.js" />
+    <Content Include="js\jquery\jquery-migrate-1.2.1.js" />
+    <Content Include="js\jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="js\jquery\jquery-ui.min.js" />
+    <Content Include="js\jquery\jquery-ui1.9.0.js" />
+    <Content Include="js\jquery\jquery.smartmenus.min.js" />
+    <Content Include="js\jquery\jquery.validate.js" />
+    <Content Include="js\jquery\jquery1.8.2.js" />
+    <Content Include="js\modules\annotations.js" />
+    <Content Include="js\modules\annotations.src.js" />
+    <Content Include="js\modules\canvas-tools.js" />
+    <Content Include="js\modules\canvas-tools.src.js" />
+    <Content Include="js\modules\data.js" />
+    <Content Include="js\modules\data.src.js" />
+    <Content Include="js\modules\drilldown.js" />
+    <Content Include="js\modules\drilldown.src.js" />
+    <Content Include="js\modules\exporting.js" />
+    <Content Include="js\modules\exporting.src.js" />
+    <Content Include="js\modules\funnel.js" />
+    <Content Include="js\modules\funnel.src.js" />
+    <Content Include="js\modules\heatmap.js" />
+    <Content Include="js\modules\heatmap.src.js" />
+    <Content Include="js\modules\map.js" />
+    <Content Include="js\modules\map.src.js" />
+    <Content Include="js\modules\no-data-to-display.js" />
+    <Content Include="js\modules\no-data-to-display.src.js" />
+    <Content Include="js\quartzMenu.js" />
+    <Content Include="js\sha256.js" />
+    <Content Include="js\solution-builder.js" />
+    <Content Include="js\textAngular\textAngular-rangy.min.js" />
+    <Content Include="js\textAngular\textAngular-sanitize.min.js" />
+    <Content Include="js\textAngular\textAngular.min.js" />
+    <Content Include="js\themes\dark-blue.js" />
+    <Content Include="js\themes\dark-green.js" />
+    <Content Include="js\themes\gray.js" />
+    <Content Include="js\themes\grid.js" />
+    <Content Include="js\themes\skies.js" />
+    <Content Include="List.html" />
+    <Content Include="QuartzMenu\index.html" />
+    <Content Include="QuartzMenu\index2.html" />
+    <Content Include="QuartzMenu\script.js" />
+    <Content Include="QuartzMenu\scriptOrig.js" />
+    <Content Include="QuartzMenu\scriptOrigOrig.js" />
+    <Content Include="QuartzMenu\styles.css" />
+    <Content Include="QuartzMenu\stylesOrig.css" />
+    <Content Include="QuartzMenu\styles_oldMobile.css" />
+    <Content Include="reportViewerAR.aspx" />
+    <Content Include="reportViewerSSRS.aspx" />
+    <Content Include="RunExport2016.aspx" />
+    <Content Include="runProcess.aspx" />
+    <Content Include="solution\custom.css" />
+    <Content Include="solution\custom.js" />
+    <Content Include="solution\CustomPages\AttachmentDownload.html" />
+    <Content Include="solution\CustomPages\Calendar_Link.html" />
+    <Content Include="solution\CustomPages\Calendar.html" />
+    <Content Include="solution\CustomPages\FileTree.html" />
+    <Content Include="solution\CustomPages\FlockServiceNotes_Print.html" />
+    <Content Include="solution\CustomPages\FlockAdditive_DetailButton.html" />
+    <Content Include="solution\CustomPages\FlockVaccine_DetailButton.html" />
+    <Content Include="solution\CustomPages\HomePage_Location.html" />
+    <Content Include="solution\CustomPages\TestAutocomplete.xml" />
+    <Content Include="solution\CustomPages\HouseInformation.html" />
+    <Content Include="solution\CustomPages\HomePage.html" />
+    <Content Include="solution\CustomPages\FlockChecklistSort.html" />
+    <Content Include="solution\CustomPages\FlockChecklist_DetailButton.html" />
+    <Content Include="solution\CustomPages\FlockChecklistEdit.html" />
+    <Content Include="solution\CustomPages\ChecklistTemplate_DetailButton.html" />
+    <Content Include="solution\CustomPages\ChecklistTemplateSort.html" />
+    <Content Include="solution\reports\reportAR\layerHouseWeek.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\rptReportBasic.xml" />
+    <Content Include="solution\xml\Additive\Additive.xml" />
+    <Content Include="solution\xml\Additive\AdditiveDisease.xml" />
+    <Content Include="solution\xml\Additive\AdditiveDisease_Delete.xml" />
+    <Content Include="solution\xml\Additive\AdditiveDisease_InsertUpdate.xml" />
+    <Content Include="solution\xml\Additive\Additive_InsertUpdate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine_Delete.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Vaccine.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklistCalendar_Content.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_InsertUpdate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_Delete.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_List.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_SortDown.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_InsertUpdate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_List.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_InsertUpdate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_InsertUpdate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_List.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_List.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_Detail_SortUp.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAttachment_Delete.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Recipients_Delete.xml" />
+    <Content Include="solution\xml\ChecklistTemplate\ChecklistTemplate_DetailAlertSchedule_Delete.xml" />
+    <Content Include="solution\xml\Contact\Contact.xml" />
+    <Content Include="solution\xml\Contact\Contact_InsertUpdate.xml" />
+    <Content Include="solution\xml\Contact\ContactRole_InsertUpdate.xml" />
+    <Content Include="solution\xml\Contact\ContactRole.xml" />
+    <Content Include="solution\xml\Calendar.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine_Delete.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_Vaccine_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_List_All_Find.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_List_All.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockOrderCalculator.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockEvent.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAttachment_Old.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAdditive.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockEvent_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockVaccineSchedule_Create.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockVaccineSchedule.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockVaccine.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAdditive_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockAdditive_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\FlockAdditive_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAdditive_List_ReadOnly.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockVaccine_List_ReadOnly.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockEvent_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\FlockEvent_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\Flock_Filter.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Home\DefaultHomePage.xml" />
+    <Content Include="solution\xml\Home\HomePage_LocationCardFuture.xml" />
+    <Content Include="solution\xml\Home\HomePage_LocationCard_Detail.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Home\HomePage_LocationCard.xml" />
+    <Content Include="solution\xml\Home\HomePage_FlockList.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeekly_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeekly_List.xml" />
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeek_Detail.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseDaily.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseDaily_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseDaily_Params.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeek.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeekly.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeekly_Create.xml" />
+    <Content Include="solution\xml\LayerHouse\LayerHouseWeekly_Params.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\LayerHouse\LayerHouse_Delete.xml" />
+    <Content Include="solution\xml\Reports\LayerHouseMortality_Report.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\LayerHouseMortality_Report_Detail.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\LayerHouseWeek_Report.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\PulletGrower_ScheduleReport.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\LayerHouseWeek_Report_Params.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\PulletGrower_ScheduleReport_Params.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\FlockByHatchery_Report.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Reports\FlockByHatchery_Report_Filter.xml" />
+    <Content Include="solution\xml\Reports\HousingInformation_Filter.xml" />
+    <Content Include="solution\xml\Reports\HousingInformation.xml" />
+    <Content Include="solution\xml\Reports\LayerHouse_ListRO.xml" />
+    <Content Include="solution\xml\setup\Checklist_DetailType.xml" />
+    <Content Include="solution\xml\setup\Checklist_DetailType_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\Hatchery.xml" />
+    <Content Include="solution\xml\setup\Hatchery_InsertUpdate.xml" />
+    <Content Include="solution\xml\Checklist_DetailType_Filter.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\LayerHouse_DeleteConfirm.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\temp_update.xml" />
+    <Content Include="solution\xml\temp.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_Delete.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_Simple.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_InsertUpdate.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_List.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_InsertUpdate.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAttachment.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_InsertUpdate.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_List.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_InsertUpdate.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_List_ReadOnly.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_List.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_SortDown.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Detail_SortUp.xml" />
+    <Content Include="solution\xml\FlockChecklist\NewFlockChecklist_Select.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_Update.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_List.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAttachment_Delete.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Recipients_Delete.xml" />
+    <Content Include="solution\xml\FlockChecklist\FlockChecklist_DetailAlertSchedule_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockChecklist_DetailAttachment_List_ForFlock.xml" />
+    <Content Include="solution\xml\Flock\FlockVaccine_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockPulletGrower_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockContact_Delete.xml" />
+    <Content Include="solution\xml\Flock\FlockAttachment_Delete.xml" />
+    <Content Include="solution\xml\Flock\Flock_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAttachment.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAttachment_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockAttachment_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\FlockPulletGrower_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\FlockVaccine_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\FlockPulletGrower.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockVaccine_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockContact_List.xml" />
+    <Content Include="solution\xml\Flock\Flock.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Flock\FlockContact_InsertUpdate.xml" />
+    <Content Include="solution\xml\Flock\Flock_InsertUpdate.xml" />
+    <Content Include="solution\xml\dummy.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\global.xml" />
+    <Content Include="solution\xml\Home\BlankHome.xml" />
+    <Content Include="solution\xml\menuXML\leftMenu.xml" />
+    <Content Include="solution\xml\menuXML\menu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\menuXML\resource.xml" />
+    <Content Include="solution\xml\menuXML\screen.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\menuXML\screenXmls\ChecklistTemplate.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\Flock.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\FlockChecklist.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\Setup.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\HomePages.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\Security.xml" />
+    <Content Include="solution\xml\menuXML\screenXmls\xmlScreenList.xml" />
+    <Content Include="solution\xml\Message_Form.xml" />
+    <Content Include="solution\xml\security\DesignerSubTreeView.xml" />
+    <Content Include="solution\xml\security\GroupUserSecurityForScreen.xml" />
+    <Content Include="solution\xml\security\OtherSecurityForScreen.xml" />
+    <Content Include="solution\xml\security\ScreenSecurity.xml" />
+    <Content Include="solution\xml\security\ScreenSecurityForGroupUser.xml" />
+    <Content Include="solution\xml\security\SecurityHome.xml" />
+    <Content Include="solution\xml\security\TabSecurityForScreen.xml" />
+    <Content Include="solution\xml\security\UpdateResourceAndSetPermission.xml" />
+    <Content Include="solution\xml\security\UpdateScreenAndMenuResources.xml" />
+    <Content Include="solution\xml\security\UpdateScreenAndMenuResourcesAndSetPermission.xml" />
+    <Content Include="solution\xml\setup\DeleteMajorObject_Get.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\DeleteMajorObject.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\UserToLocation.xml" />
+    <Content Include="solution\xml\setup\UserToLocation_Delete.xml" />
+    <Content Include="solution\xml\setup\UserToLocation_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\SendEmail.xml" />
+    <Content Include="solution\xml\setup\FlockChecklist_SendAlerts.xml" />
+    <Content Include="solution\xml\setup\FowlOutMover.xml" />
+    <Content Include="solution\xml\setup\AttachmentType.xml" />
+    <Content Include="solution\xml\setup\Detail_Status.xml" />
+    <Content Include="solution\xml\setup\Detail_Status_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\LayerHouse_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\Location_List.xml" />
+    <Content Include="solution\xml\setup\PulletGrower.xml" />
+    <Content Include="solution\xml\setup\FowlOutMover_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\AttachmentType_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\PulletGrower_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\Location.xml" />
+    <Content Include="solution\xml\setup\Location_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\LayerHouse.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\PulletMover.xml" />
+    <Content Include="solution\xml\setup\LayerHouse_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\PulletMover_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\UserGroup_Delete.xml" />
+    <Content Include="solution\xml\setup\UserGroup_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\UserGroup_List.xml" />
+    <Content Include="solution\xml\setup\UserTable_Delete.xml" />
+    <Content Include="solution\xml\setup\UserTable_Form.xml" />
+    <Content Include="solution\xml\setup\UserTable_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\UserTable_List.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\UserToCustomer_Filter.xml" />
+    <Content Include="solution\xml\setup\UserToCustomer_InsertUpdate.xml" />
+    <Content Include="solution\xml\setup\UserToCustomer_List.xml" />
+    <Content Include="solution\xml\setup\ProductBreed.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\setup\ProductBreed_InsertUpdate.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\support-csb\ActivityLog_Form.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_List.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListFind.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListSubIntervalFind.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListSummaryByIpAddress.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListSummaryByPage.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListSummaryBySupportSubInterval.xml" />
+    <Content Include="solution\xml\support-csb\ActivityLog_ListSummaryByUser.xml" />
+    <Content Include="solution\xml\support-csb\ExceptionLog_Form.xml" />
+    <Content Include="solution\xml\support-csb\ExceptionLog_List.xml" />
+    <Content Include="solution\xml\support-csb\ExceptionLog_ListFind.xml" />
+    <Content Include="solution\xml\support-csb\Job_List.xml" />
+    <Content Include="solution\xml\support-csb\Overview_Form.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_Form.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_List.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_ListFind.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_ListSubIntervalFind.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_ListSummaryBySource.xml" />
+    <Content Include="solution\xml\support-csb\PerformanceLog_ListSummaryBySupportSubInterval.xml" />
+    <Content Include="solution\xml\support-csb\ServerDetails_Form.xml" />
+    <Content Include="solution\xml\support-csb\SolutionObject_List.xml" />
+    <Content Include="solution\xml\support-csb\SolutionObject_ListFind.xml" />
+    <Content Include="solution\xml\support-csb\TeamMember_List.xml" />
+    <Content Include="solution\xml\support-csb\WarningLog_Form.xml" />
+    <Content Include="solution\xml\support-csb\WarningLog_List.xml" />
+    <Content Include="solution\xml\support-csb\WarningLog_ListFind.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineScheduleVaccine.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineSchedule.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineDisease.xml" />
+    <Content Include="solution\xml\Vaccine\Disease.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineScheduleVaccine_Delete.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineSchedule_Delete.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineDisease_Delete.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineScheduleVaccine_InsertUpdate.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineSchedule_InsertUpdate.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineDisease_InsertUpdate.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineAttachment.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\xml\Vaccine\VaccineAttachment_Delete.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineAttachment_InsertUpdate.xml" />
+    <Content Include="solution\xml\Vaccine\VaccineAttachment_List.xml" />
+    <Content Include="solution\xml\Vaccine\Vaccine.xml" />
+    <Content Include="solution\xml\Vaccine\Disease_InsertUpdate.xml" />
+    <Content Include="solution\xml\Vaccine\Vaccine_InsertUpdate.xml" />
+    <Content Include="TemplateHtml\AdvancedFilter.html" />
+    <Content Include="TemplateHtml\appBar.tpl.html" />
+    <Content Include="TemplateHtml\contextBar.tpl.html" />
+    <Content Include="TemplateHtml\csbFileUpload.html" />
+    <Content Include="TemplateHtml\dirPagination.tpl.html" />
+    <Content Include="TemplateHtml\FormTabGridContent.html" />
+    <Content Include="TemplateHtml\TreeView.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\CustomerService.dll.config" />
+    <Content Include="bin\Login.dll.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\MaterialIcons-Regular.eot" />
+    <Content Include="fonts\MaterialIcons-Regular.ttf" />
+    <Content Include="fonts\MaterialIcons-Regular.woff" />
+    <Content Include="fonts\MaterialIcons-Regular.woff2" />
+    <Content Include="js\angular-1.4.7\angular-animate.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-aria.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-cookies.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-loader.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-message-format.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-messages.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-resource.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-route.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-sanitize.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular-touch.min.js.map" />
+    <Content Include="js\angular-1.4.7\angular.min.js.map" />
+    <Content Include="js\angular-1.4.7\errors.json" />
+    <Content Include="js\angular-1.4.7\version.json" />
+    <Content Include="AsyncFileUploadHandler.ashx" />
+    <Content Include="AutoCompleteLookup.ashx" />
+    <Content Include="csbAngular_GetFormContentForScreen.ashx" />
+    <Content Include="csbAngular_GetListContentForScreen.ashx" />
+    <Content Include="csbAngular_GetMenu.ashx" />
+    <Content Include="csbAngular_GetSiteHeader.ashx" />
+    <Content Include="csbAngular_GetTabsForScreen.ashx" />
+    <Content Include="csbAngular_SaveDataForScreen.ashx" />
+    <Content Include="csv.ashx" />
+    <Content Include="IntegrateToIntacct.ashx" />
+    <Content Include="csbAngular_MapUpdateXml.ashx" />
+    <Content Include="ContentLoad\ContentLoad_Form.ashx" />
+    <Content Include="ContentLoad\ContentLoad_Menu.ashx" />
+    <Content Include="ContentLoad\ContentLoad_SiteHeader.ashx" />
+    <Content Include="ContentLoad\ContentLoad_Tabs.ashx" />
+    <Content Include="DataSend\DataSend_AutoComplete.ashx" />
+    <Content Include="DataSend\DataSend_FileUpload.ashx" />
+    <Content Include="DataSend\DataSend_MapUpdateXml.ashx" />
+    <Content Include="DataSend\DataSend_SaveData.ashx" />
+    <Content Include="ContentLoad\ContentLoad_ListTable.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="ReportAR\autoReport.rpx" />
+    <Content Include="ReportAR\errorReport2.rpx" />
+    <Content Include="solution\applicationSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solution\authenticationSettings.config" />
+    <Content Include="solution\xml\support-csb\Support.tws" />
+    <Content Include="solution\Powershell\ChickHenFileSync.ps1" />
+    <Content Include="ReportAR\layerHouseWeek.rpx">
+      <SubType>Component</SubType>
+    </Content>
+    <Content Include="solution\reports\reportSSRS\BatchDistributionReportVendor.rdlc" />
+    <Content Include="solution\reports\reportAR\layerHouseWeek.rpx">
+      <SubType>Component</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64843</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64843/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

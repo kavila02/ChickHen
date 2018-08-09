@@ -1,0 +1,8 @@
+﻿    <!-- menu bar  -->
+<md-toolbar layout="row" class="csb-menu-bar" ng-if="!data.screenPropertySet.noMenu">
+    <div id="title" class="mainTitle" csb-site-header ng-class="{mobile:$mdMedia('sm')||$mdMedia('xs')}"></div>
+
+    <div id="cssmenu" class="md-toolbar-tools {{data.screenPropertySet.menuClass}} " ng-class="{mobile:$mdMedia('sm')||$mdMedia('xs')}" csb-menu>loading...</div>
+
+</md-toolbar>
+

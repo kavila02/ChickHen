@@ -1,0 +1,16 @@
+<fieldList>
+  <section displayName="" columnSpan="3">
+    <field fieldName="UserName" type="htmlfile ~\solution\CustomPages\HomePage_Location.html" columnSpan="3"/>
+    <field fieldName="LocationID" displayName="Location">
+      <lookupList>
+        <source sql="exec Location_Lookup @UserName='|UserName|'"/>
+      </lookupList>
+    </field>
+    <field fieldName="LayerHouseID" displayName="Layer House">
+      <lookupList ng-if="thisRecord.LocationID==listItem.LocationID">
+        <source sql="exec LayerHouse_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ShowFuture" displayName="Include Future Flocks"/>
+  </section>
+</fieldList>

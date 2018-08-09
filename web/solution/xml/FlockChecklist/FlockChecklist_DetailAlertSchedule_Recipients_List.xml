@@ -1,0 +1,20 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Recipients" mobileLayoutSize="none">
+    <field fieldName="RecipientType" multilineEdit="true" displayName="Recipient Type">
+      <lookupList>
+        <source sql="exec RecipientType_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ContactRoleID" multilineEdit="true" displayName="Contact Role">
+      <lookupList>
+        <source sql="exec ContactRole_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="ContactID" multilineEdit="true" displayName="Contact">
+      <lookupList>
+        <source sql="exec Contact_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="FlockChecklist_DetailAlertSchedule_RecipientsID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockChecklist_DetailAlertSchedule_Recipients_Delete" visibleFieldName="FlockChecklist_DetailAlertSchedule_RecipientsID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

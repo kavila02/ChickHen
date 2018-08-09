@@ -1,0 +1,19 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Additives" mobileLayoutSize="none">
+    
+    <field fieldName="AdditiveID" multilineEdit="true" displayName="Additive">
+      <lookupList>
+        <source sql="exec Additive_Lookup"/>
+      </lookupList>
+    </field>
+    <field fieldName="AdditiveStatusID" multilineEdit="true" displayName="Status">
+      <lookupList>
+        <source sql="exec AdditiveStatus_Lookup" />
+      </lookupList>
+    </field>
+    <field fieldName="StartDate" multilineEdit="true" displayName="Start Date"/>
+    <field fieldName="EndDate" multilineEdit="true" displayName="End Date"/>
+    <field fieldName="FlockAdditiveNotes" multilineEdit="true" displayName="Notes"/>
+    <field fieldName="FlockAdditiveID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockAdditive_Delete" visibleFieldName="FlockAdditiveID.toString()!" visibleFieldValue="0"/>
+  </section>
+</fieldList>

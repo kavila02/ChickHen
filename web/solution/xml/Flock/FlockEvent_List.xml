@@ -1,0 +1,12 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section displayName="Flock Event">
+    <field fieldName="FlockEventID" displayName="Edit" readOnly="true" type="link icon edit" ScreenID="FlockEvent" ng-if="thisRecord.FlockEventID!==0"/>
+    <field fieldName="EventDate" displayName="Event Date" readOnly="true"/>
+    <field fieldName="EventDescription" readOnly="true" displayName="Event Description"/>
+    <field fieldName="FollowUpDescription" readOnly="true" displayName="Follow Up Description"/>
+    <field fieldName="CreatedBy_User" readOnly="true" displayName="Created By User"/>
+    <field fieldName="FollowUpCreatedBy_User" readOnly="true" displayName="Follow Up Created By User"/>
+    <field fieldName="FollowUpContact" readOnly="true" displayName="Follow Up Contact"/>
+    <field fieldName="FlockEventID" readOnly="true" displayName="Delete" type="command icon delete" ScreenID="FlockEvent_Delete" ng-if="thisRecord.FlockEventID!==0"/>
+  </section>
+</fieldList>

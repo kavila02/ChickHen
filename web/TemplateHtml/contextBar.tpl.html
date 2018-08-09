@@ -1,0 +1,56 @@
+﻿<!-- icon tool bar  -->
+<div class="appBarPlaceholder" ng-if="!data.screenPropertySet.noMenu"></div>
+<md-toolbar style="min-height: 30px; font-size:smaller" class="md-hue-1 contextToolbar" layout="row" ng-if="!data.screenPropertySet.noContext">
+    <div id="contextBarLeft" class="contextBarLeft">
+        <md-button id="saveButton" ng-if="data.screenPropertySet.includeSave=='True'&&((data.screenPropertySet.pageType == 'List' && data.numberOfRowsTouched()>0) && csbForm.$valid||(data.screenPropertySet.pageType == 'Form' && csbForm.$valid)||data.screenPropertySet.pageType == 'Other')" accesskey="S" ng-click="data.saveData(data.screenPropertySet.redirect)" class=" md-disabled md-raised md-primary md-hue-1 csb-button">
+            <!--<md-button ng-if="data.screenPropertySet.includeSave" accesskey="S" ng-click="data.saveData()" class=" md-disabled md-raised md-primary md-hue-1" style="font-size: inherit; height: 24px; min-height:24px; line-height: 24px; margin: 0px; min-width: inherit; width: auto; margin-left:16px">-->
+            <md-tooltip>{{data.screenPropertySet.saveDisplay}}</md-tooltip>
+            <i class="material-icons">{{data.screenPropertySet.saveIcon}}</i>
+        </md-button>
+        <md-button id="reportButton" ng-if="data.screenPropertySet.includeReport=='True'&&(data.screenPropertySet.pageType == 'Form' && csbForm.$valid)" accesskey="R" ng-click="data.runReport()" class=" md-disabled md-raised md-primary md-hue-1 csb-button">
+            <md-tooltip>{{data.screenPropertySet.reportDisplay}}</md-tooltip>
+            <i class="material-icons">{{data.screenPropertySet.reportIcon}}</i>
+        </md-button>
+        <md-button accesskey="R" id="refreshButton" ng-if="data.screenPropertySet.includeRefresh=='True'" class="md-raised md-primary md-hue-1 csb-button" ng-click="data.callReloadAll()">
+            <md-tooltip>{{data.screenPropertySet.refreshDisplay}}</md-tooltip>
+            <i class="material-icons">{{data.screenPropertySet.refreshIcon}}</i>
+        </md-button>
+        <md-button ng-if="data.screenPropertySet.newRecord" accesskey="N" ng-click="data.additionalActionsClick(data.screenPropertySet.newRecord)" class=" md-raised md-primary md-hue-1 csb-button">
+            <md-tooltip>{{data.screenPropertySet.newRecordDisplay}}</md-tooltip>
+            <i class="material-icons">{{data.screenPropertySet.newRecordIcon}}</i>
+        </md-button>
+        <md-button ng-if="data.screenPropertySet.additionalActions.length>1&&data.screenPropertySet.displayStyle!='additionalNoList'" accesskey="A" class="md-raised md-primary md-hue-1 csb-button" ng-click="data.actionOpen=!data.actionOpen">
+            <md-tooltip>{{data.screenPropertySet.additionalDisplay}}</md-tooltip>
+            <i class="material-icons">{{data.screenPropertySet.additionalIcon}}</i>
+        </md-button>
+        <md-toolbar ng-if="data.screenPropertySet.additionalActions.length>1&&data.screenPropertySet.displayStyle!='additionalNoList'" class="csbActionToolbar md-hue-1 md-whiteframe-z3" ng-class=" {open:data.actionOpen}" layout="column">
+            <md-button ng-if="(item.validateForLink&&csbForm.$valid)||!item.validateForLink" ng-repeat="item in data.screenPropertySet.additionalActions" ng-click="data.additionalActionsClick(item)" class="csbAction-smallbutton csb-button">
+                <md-tooltip>{{item.label}}</md-tooltip>
+                <i class="material-icons" ng-if="item.displayStyle.substring(0,4)=='icon'">{{item.displayStyle.substring(5,item.displayStyle.length)}}</i>
+                <span ng-if="item.displayStyle.substring(0,4)!='icon'">{{item.label}}</span>
+            </md-button>
+        </md-toolbar>
+        <md-button ng-if="(data.screenPropertySet.additionalActions.length==1||data.screenPropertySet.displayStyle=='additionalNoList')&&((data.screenPropertySet.additionalActions[0].validateForLink&&csbForm.$valid)||!data.screenPropertySet.additionalActions[0].validateForLink)" ng-repeat="item in data.screenPropertySet.additionalActions" ng-click="data.additionalActionsClick(item)" class="md-raised md-primary md-hue-1 csb-button">
+            <md-tooltip>{{item.label}}</md-tooltip>
+            <i class="material-icons" ng-if="item.displayStyle.substring(0,4)=='icon'">{{item.displayStyle.substring(5,item.displayStyle.length)}}</i>
+            <span ng-if="item.displayStyle.substring(0,4)!='icon'">{{item.label}}</span>
+        </md-button>
+    </div>
+    <div id="contextBarCenter" class="contextBarCenter">
+        <span class="md-title {{data.screenPropertySet.contextHeaderClass}}">{{data.screenPropertySet.contextHeader}}</span>
+    </div>
+    <div id="contextBarRight" class="contextBarRight">
+        <span class="contextUser" ng-if="data.screenPropertySet.includeUserInContext=='True'">User: {{data.screenPropertySet.UserName}}</span>
+    </div>
+    
+</md-toolbar>
+<!-- in progress bar -->
+<div style="min-height: 5px;" id="progressBar" class="progressBar">
+    <md-progress-linear ng-show="data.loadingCount>0" md-mode="indeterminate" aria-valuemin="0" aria-valuemax="100" role="progressbar" class=" md-default-theme  csb-pageheader">
+        <div class="md-container md-ready">
+            <div class="md-dashed"></div>
+            <div class="md-bar md-bar1"></div>
+            <div class="md-bar md-bar2"></div>
+        </div>
+    </md-progress-linear>
+</div>

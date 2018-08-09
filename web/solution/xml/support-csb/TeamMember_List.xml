@@ -1,0 +1,8 @@
+<fieldList>
+  <section displayStyle="paging=500">
+    <field fieldName="Organization"/>
+    <field fieldName="Name"/>
+    <field fieldName="FirstInvolvementDate" format="yyyy-MM-dd HH:mm:ss"/>
+    <field fieldName="Role"/>
+  </section>
+</fieldList>

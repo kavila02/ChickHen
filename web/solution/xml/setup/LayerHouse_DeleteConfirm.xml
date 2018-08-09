@@ -1,0 +1,5 @@
+<fieldList xmlns:xs="http://www.cargas.com/schema/csbFormatXML">
+  <section readOnly="true" displayName="Are you sure you wish to delete layer house: {{thisRecord.Location}} - {{thisRecord.LayerHouseName}}?"  displayStyle="paging:100">
+
+  </section>
+</fieldList>

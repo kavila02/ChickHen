@@ -1,0 +1,11 @@
+<CargasConnect>
+  <FlockVaccine_InsertUpdate>
+    <FlockVaccineID/>
+    <FlockID/>
+    <VaccineID/>
+    <VaccineStatusID/>
+    <FlockVaccineNotes/>
+    <ScheduledDate/>
+    <CompletedDate/>
+  </FlockVaccine_InsertUpdate>
+</CargasConnect>

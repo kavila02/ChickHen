@@ -1,0 +1,22 @@
+﻿<CargasConnect>
+  <LayerHouseWeekly_InsertUpdate>
+    <LayerHouseWeeklyID/>
+    <LayerHouseID/>
+    <WeekEndingDate/>
+    <NoOfHens/>
+    <BeginningInventory/>
+    <HenWeight/>
+    <AmmoniaNh3/>
+    <LightProgram/>
+    <Rodents/>
+    <FlyCounts/>
+    <CaseWeight/>
+    <FeedInventory/>
+    <PoundsPerHundred/>
+    <PercentProduction/>
+    <Mortality />
+    <Consumption />
+    <LightIntensity/>
+    <PercentWeightUniformity/>
+  </LayerHouseWeekly_InsertUpdate>
+</CargasConnect>

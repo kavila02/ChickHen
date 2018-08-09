@@ -1,0 +1,7 @@
+<CargasConnect>
+  <ChecklistTemplate_Detail_Vaccine_InsertUpdate>
+    <ChecklistTemplate_Detail_VaccineID/>
+    <ChecklistTemplate_DetailID/>
+    <VaccineID/>
+  </ChecklistTemplate_Detail_Vaccine_InsertUpdate>
+</CargasConnect>

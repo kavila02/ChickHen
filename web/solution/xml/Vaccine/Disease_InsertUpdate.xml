@@ -1,0 +1,8 @@
+<CargasConnect>
+  <disease_InsertUpdate>
+    <DiseaseID/>
+    <DiseaseName/>
+    <SortOrder/>
+    <IsActive/>
+  </disease_InsertUpdate>
+</CargasConnect>
